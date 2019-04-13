@@ -1,4 +1,4 @@
-package com.netty.test.db;
+package com.netty.test.common.db;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
@@ -7,14 +7,18 @@ import com.netty.test.utils.LordPropertiesUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.Random;
 
 /**
  * @author : chenmq
  * date : 2019-4-08
  * Project : netty-test
- * Description：数据源配置
+ * Description：druid连接池
  * <p>
  * 连接池是一个对数据库连接进行管理的东西，
  * 当一个线程需要用 JDBC 对 数据库操作时，它从池中请求一个连接。
@@ -22,19 +26,18 @@ import java.util.Properties;
  * 这样这就可以被其它想使用它的线程使用，而不是每次都重新建立一个数据库连接。
  */
 
-public class DbConnectionPool {
+public class DbConnectionPool implements ConnectionPool {
 
     private final static Logger LOG = LoggerFactory.getLogger(DbConnectionPool.class);
 
-    private static DbConnectionPool dbPoolConnection = null;
     private static DruidDataSource druidDataSource = null;
 
     private static final String DB_SERVER_PROPERTIES = "db_server.properties";
 
     private static DbConnectionPool instance = new DbConnectionPool();
 
-    public static DbConnectionPool getDbPoolConnection() {
-        return dbPoolConnection;
+    public static DbConnectionPool getInstance() {
+        return instance;
     }
 
     public DbConnectionPool() {
@@ -44,23 +47,31 @@ public class DbConnectionPool {
      * 返回druid数据库连接
      *
      * @return dbConnection
-     * @throws SQLException
      */
-    public DruidPooledConnection getConnection() throws SQLException {
-        return druidDataSource.getConnection();
+    @Override
+    public Connection getConnection() {
+        DruidPooledConnection connection = null;
+        try {
+            connection = druidDataSource.getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return connection;
     }
 
     /**
      * 关闭资源
-     *
-     * @return
      */
-    public boolean close() {
-        if (null == druidDataSource) {
-            return false;
+    @Override
+    public void releaseConn(Connection connection) {
+        try {
+            if (null == connection) {
+                return;
+            }
+            connection.close();
+        } catch (SQLException e) {
+            LOG.error("{}", e.getMessage());
         }
-        druidDataSource.close();
-        return true;
     }
 
     static {
@@ -78,6 +89,32 @@ public class DbConnectionPool {
     }
 
     public static void main(String[] args) {
+        Connection connection = DbConnectionPool.getInstance().getConnection();
+        if (null == connection) {
+            return;
+        }
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement("select * from p_role");
+
+            int nextInt = new Random().nextInt(10);
+            int i = statement.executeUpdate("insert into p_card(id,rid,card ) values (" + nextInt + ",'3',5)");
+            System.out.println(i);
+
+            ResultSet resultSet = statement.executeQuery();
+            if (null == resultSet) {
+                return;
+            }
+
+            while (resultSet.next()) {
+                String rid = resultSet.getString("rid");
+                System.out.println(rid);
+//                String data = resultSet.getString("data");
+//                LOG.info("{},{},", rid, data);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }
