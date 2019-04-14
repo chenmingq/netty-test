@@ -90,31 +90,7 @@ public class DbConnectionPool implements ConnectionPool {
 
     public static void main(String[] args) {
         Connection connection = DbConnectionPool.getInstance().getConnection();
-        if (null == connection) {
-            return;
-        }
-        PreparedStatement statement = null;
-        try {
-            statement = connection.prepareStatement("select * from p_role");
-
-            int nextInt = new Random().nextInt(10);
-            int i = statement.executeUpdate("insert into p_card(id,rid,card ) values (" + nextInt + ",'3',5)");
-            System.out.println(i);
-
-            ResultSet resultSet = statement.executeQuery();
-            if (null == resultSet) {
-                return;
-            }
-
-            while (resultSet.next()) {
-                String rid = resultSet.getString("rid");
-                System.out.println(rid);
-//                String data = resultSet.getString("data");
-//                LOG.info("{},{},", rid, data);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        System.out.println(connection);
     }
 
 }
