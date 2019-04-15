@@ -158,15 +158,14 @@ public class SqlTemplateImpl {
             Student student = new Student();
             student.setName("lance");
             student.setAge(i);
-            student.setStudentNo(String.valueOf(new Random().nextInt(i)));
+            student.setStudentNo(String.valueOf(new Random().nextInt(100)));
             student.setSchoolName("BJUT");
             list.add(student);
         }
         ListTest listTest = new ListTest();
         listTest.setStudents(list);
         new SqlTemplateImpl(instance).insert("insert into test(datas) values (?)", listTest);
-        Object query = new SqlTemplateImpl(instance).query("select * from test where id = ?", ListTest.class, 25);
-
+        Object query = new SqlTemplateImpl(instance).query("select * from test where id = ?", ListTest.class, 86);
         System.out.println(query);
         System.exit(0);
     }
