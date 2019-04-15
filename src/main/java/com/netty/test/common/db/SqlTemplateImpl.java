@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author : chenmq
@@ -153,15 +154,13 @@ public class SqlTemplateImpl {
     public static void main(String[] args) {
         DbConnectionPool instance = DbConnectionPool.getInstance();
         List<Student> list = new ArrayList<>();
-        for (int a = 0; a < 10; a++) {
-            for (int i = 0; i < 20; i++) {
-                Student student = new Student();
-                student.setName("lance");
-                student.setAge(28);
-                student.setStudentNo("2011070122");
-                student.setSchoolName("BJUT");
-                list.add(student);
-            }
+        for (int i = 0; i < 20; i++) {
+            Student student = new Student();
+            student.setName("lance");
+            student.setAge(i);
+            student.setStudentNo(String.valueOf(new Random().nextInt(i)));
+            student.setSchoolName("BJUT");
+            list.add(student);
         }
         ListTest listTest = new ListTest();
         listTest.setStudents(list);
