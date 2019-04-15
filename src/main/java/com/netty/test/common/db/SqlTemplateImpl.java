@@ -6,7 +6,10 @@ import com.netty.test.common.protostuff.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,7 +82,7 @@ public class SqlTemplateImpl {
             }
             resultSet = ps.executeQuery();
             MapperInter mapperInter = new MapperImpl();
-            while(resultSet.next()) {
+            while (resultSet.next()) {
                 return (T) mapperInter.mappingObj(resultSet, t);
             }
         } catch (Exception e) {
@@ -108,7 +111,7 @@ public class SqlTemplateImpl {
         return null;
     }
 
-    public List<String> queryTables(String dbName){
+    public List<String> queryTables(String dbName) {
         //Select Table_Name From Information_Schema.Tables Where Table_Schema = 'mysql'
         if (null == this.connectionPool) {
             return null;
@@ -122,7 +125,7 @@ public class SqlTemplateImpl {
             ps = conn.prepareStatement("Select Table_Name From Information_Schema.Tables Where Table_Schema = '" + dbName + "'");
             resultSet = ps.executeQuery();
             List<String> tableNameList = new ArrayList<>();
-            while(resultSet.next()) {
+            while (resultSet.next()) {
                 tableNameList.add(resultSet.getString(1));
             }
             return tableNameList;
@@ -163,7 +166,8 @@ public class SqlTemplateImpl {
         ListTest listTest = new ListTest();
         listTest.setStudents(list);
         new SqlTemplateImpl(instance).insert("insert into test(datas) values (?)", listTest);
-        Object query = new SqlTemplateImpl(instance).query("select * from test where id = ?", ListTest.class, 159);
+        Object query = new SqlTemplateImpl(instance).query("select * from test where id = ?", ListTest.class, 25);
+
         System.out.println(query);
         System.exit(0);
     }
