@@ -6,31 +6,49 @@ import io.protostuff.ProtostuffIOUtil;
 import io.protostuff.Schema;
 import io.protostuff.runtime.RuntimeSchema;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class ProtoBufUtil {
 
     public ProtoBufUtil() {
     }
 
+    private static Map<Class<?>, Schema<?>> cachedSchema = new ConcurrentHashMap<>();
+
+    private static <T> Schema<T> getSchema(Class<T> clazz) {
+        @SuppressWarnings("unchecked")
+        Schema<T> schema = (Schema<T>) cachedSchema.get(clazz);
+        if (schema == null) {
+            schema = RuntimeSchema.getSchema(clazz);
+            if (schema != null) {
+                cachedSchema.put(clazz, schema);
+            }
+        }
+        return schema;
+    }
+
+
+
     /**
      * 序列化
      *
-     * @param o
+     * @param t
      * @param <T>
      * @return
      */
-    public static <T> byte[] serializer(T o) {
+    public static <T> byte[] serializer(T t) {
         @SuppressWarnings("unchecked")
-        Schema<T> schema = (Schema<T>) RuntimeSchema.getSchema(o.getClass());
-        LinkedBuffer buffer = LinkedBuffer.allocate(1024 * 1024);
-        byte[] bytes = null;
+        Class<T> clazz = (Class<T>) t.getClass();
+        LinkedBuffer buffer = LinkedBuffer.allocate(LinkedBuffer.DEFAULT_BUFFER_SIZE);
         try {
-            bytes = ProtobufIOUtil.toByteArray(o, schema, LinkedBuffer.allocate(1024 * 1024));
+            Schema<T> schema = getSchema(clazz);
+            return ProtostuffIOUtil.toByteArray(t, schema, buffer);
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new IllegalStateException(e.getMessage(), e);
         } finally {
             buffer.clear();
         }
-        return bytes;
     }
 
     /**
@@ -42,16 +60,13 @@ public class ProtoBufUtil {
      * @return
      */
     public static <T> T deserializer(byte[] bytes, Class<T> clazz) {
-
-        T obj = null;
         try {
-            obj = clazz.newInstance();
-            Schema<T> schema = RuntimeSchema.getSchema(clazz);
+            T obj = clazz.newInstance();
+            Schema<T> schema = getSchema(clazz);
             ProtostuffIOUtil.mergeFrom(bytes, obj, schema);
-        } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
+            return obj;
+        } catch (Exception e) {
+            throw new IllegalStateException(e.getMessage(), e);
         }
-
-        return obj;
     }
 }

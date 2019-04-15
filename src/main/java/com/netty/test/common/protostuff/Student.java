@@ -1,10 +1,12 @@
 package com.netty.test.common.protostuff;
 
 import io.protostuff.Tag;
+import lombok.Data;
 
 /**
  *  // 关于@Tag,要么所有属性都有@Tag注解,要么都没有,不能一个类中只有部分属性有@Tag注解
  */
+@Data
 public class Student {
 
     @Tag(1)
@@ -16,38 +18,6 @@ public class Student {
     @Tag(4)
     private String schoolName;
 
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getStudentNo() {
-        return studentNo;
-    }
-
-    public void setStudentNo(String studentNo) {
-        this.studentNo = studentNo;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getSchoolName() {
-        return schoolName;
-    }
-
-    public void setSchoolName(String schoolName) {
-        this.schoolName = schoolName;
-    }
 
     @Override
     public String toString() {

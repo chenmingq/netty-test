@@ -1,16 +1,15 @@
 package com.netty.test.common.db;
 
+import com.netty.test.common.protostuff.ListTest;
 import com.netty.test.common.protostuff.ProtoBufUtil;
 import com.netty.test.common.protostuff.Student;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import java.sql.Wrapper;
 /**
  * @author : chenmq
  * date : 2019-4-13
@@ -19,6 +18,8 @@ import java.sql.Wrapper;
  */
 
 public class SqlTemplateImpl {
+
+    private final static Logger LOG = LoggerFactory.getLogger(SqlTemplateImpl.class);
 
     private ConnectionPool connectionPool;
 
@@ -60,7 +61,7 @@ public class SqlTemplateImpl {
         return result;
     }
 
-    public <T> T query(String sql,Object... params) {
+    public <T> T query(String sql, T t, Object... params) {
         if (null == this.connectionPool) {
             return null;
         }
@@ -77,10 +78,11 @@ public class SqlTemplateImpl {
                 }
             }
             resultSet = ps.executeQuery();
-            while (resultSet.next()) {
-                return (T) resultSet.getObject("datas");
+            MapperInter mapperInter = new MapperImpl();
+            while(resultSet.next()) {
+                return (T) mapperInter.mappingObj(resultSet, t);
             }
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
@@ -106,38 +108,64 @@ public class SqlTemplateImpl {
         return null;
     }
 
-    public static void main(String[] args) {
-
-        DbConnectionPool instance = DbConnectionPool.getInstance();
-        /*List<Student> list = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            Student student = new Student();
-            student.setName("lance");
-            student.setAge(28);
-            student.setStudentNo("2011070122");
-            student.setSchoolName("BJUT");
-            list.add(student);
+    public List<String> queryTables(String dbName){
+        //Select Table_Name From Information_Schema.Tables Where Table_Schema = 'mysql'
+        if (null == this.connectionPool) {
+            return null;
         }
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet resultSet = null;
 
-        new SqlTemplateImpl(instance).insert("insert into test(datas) values (?)", list);*/
-        Object query = new SqlTemplateImpl(instance).query("select * from test where id = ?", 5);
-        Student deserializer = ProtoBufUtil.deserializer((byte[]) query, Student.class);
-        System.out.println(deserializer);
-        System.exit(0);
+        try {
+            conn = this.connectionPool.getConnection();
+            ps = conn.prepareStatement("Select Table_Name From Information_Schema.Tables Where Table_Schema = '" + dbName + "'");
+            resultSet = ps.executeQuery();
+            List<String> tableNameList = new ArrayList<>();
+            while(resultSet.next()) {
+                tableNameList.add(resultSet.getString(1));
+            }
+            return tableNameList;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (null != resultSet) {
+                    resultSet.close();
+                }
+                if (null != ps) {
+                    ps.close();
+                }
+                if (null != conn) {
+                    this.connectionPool.releaseConn(conn);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 
 
-    private static class WrapperImpl<TT> implements Wrapper {
-
-        @Override
-        public <T> T unwrap(Class<T> iface) throws SQLException {
-            return null;
+    public static void main(String[] args) {
+        DbConnectionPool instance = DbConnectionPool.getInstance();
+        List<Student> list = new ArrayList<>();
+        for (int a = 0; a < 10; a++) {
+            for (int i = 0; i < 20; i++) {
+                Student student = new Student();
+                student.setName("lance");
+                student.setAge(28);
+                student.setStudentNo("2011070122");
+                student.setSchoolName("BJUT");
+                list.add(student);
+            }
         }
-
-        @Override
-        public boolean isWrapperFor(Class<?> iface) throws SQLException {
-            return false;
-        }
+        ListTest listTest = new ListTest();
+        listTest.setStudents(list);
+        new SqlTemplateImpl(instance).insert("insert into test(datas) values (?)", listTest);
+        Object query = new SqlTemplateImpl(instance).query("select * from test where id = ?", ListTest.class, 159);
+        System.out.println(query);
+        System.exit(0);
     }
 
 }
