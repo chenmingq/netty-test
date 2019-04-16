@@ -56,30 +56,26 @@ public class MapperImpl implements MapperInter<ResultSet, Class> {
                                 if (null == valObj) {
                                     continue;
                                 }
-                                for (Field objField : objFields) {
-                                    String name = objField.getName();
-                                    if (name.equals(valueField.getName())) {
-                                        if (fieldMap.containsKey(name)) {
-                                            continue;
-                                        }
-                                        fieldMap.put(name, valObj);
-                                    }
+                                String name = valueField.getName();
+                                if (fieldMap.containsKey(name)) {
+                                    continue;
                                 }
+                                fieldMap.put(name, valObj);
                             }
                             break;
                         default:
                             break;
                     }
-
                 } else {
                     for (Field objField : objFields) {
                         String name = objField.getName();
-                        if (name.equalsIgnoreCase(columnName)) {
-                            if (fieldMap.containsKey(name)) {
-                                continue;
-                            }
-                            fieldMap.put(name, value);
+                        if (!name.equalsIgnoreCase(columnName)) {
+                            continue;
                         }
+                        if (fieldMap.containsKey(name)) {
+                            continue;
+                        }
+                        fieldMap.put(name, value);
                     }
                 }
                 LOG.info("columnName == {},columnType =={},columnTypeName == {}", columnName, columnType, columnTypeName);
