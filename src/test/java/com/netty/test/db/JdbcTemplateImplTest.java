@@ -23,6 +23,7 @@ public class JdbcTemplateImplTest {
         queryObj(instance);
         querySchema(instance);
         queryList(instance);*/
+        querySchema(instance);
         LOG.info("{}",instance);
     }
 

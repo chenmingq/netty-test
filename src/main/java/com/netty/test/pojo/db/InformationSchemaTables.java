@@ -47,9 +47,9 @@ public class InformationSchemaTables {
     private String engine;
 
     /**
-     * 版本，默认值10
+     * 版本，默认值10 [偶然性的 BigInteger 或者 long 都会抛异常,所以用了 object]
      */
-    private BigInteger version;
+    private Object version;
 
     /**
      * 行格式[Compact|Dynamic|Fixed]

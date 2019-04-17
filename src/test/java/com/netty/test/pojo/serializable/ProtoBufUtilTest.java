@@ -1,12 +1,18 @@
 package com.netty.test.pojo.serializable;
 
+import com.alibaba.fastjson.JSON;
+import com.google.protobuf.Descriptors;
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.netty.test.coder.serializer.SerializableUtils;
+import com.netty.test.pojo.proto.NettyTest;
 import com.netty.test.pojo.test.ListTest;
 import com.netty.test.pojo.test.Student;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class ProtoBufUtilTest {
 
@@ -33,5 +39,33 @@ public class ProtoBufUtilTest {
         ListTest deSerializerResult = (ListTest) SerializableUtils.deserializer(serializerResult);
 
         System.out.println("deSerializerResult:" + deSerializerResult.toString());
+
+        protoTest(deSerializerResult);
+    }
+
+
+    private static void protoTest (ListTest listTest){
+
+        String jsonString = JSON.toJSONString(listTest);
+
+        NettyTest.ResQueryTableData.Builder resQueryTableData = NettyTest.ResQueryTableData.newBuilder();
+        resQueryTableData.setTableData(jsonString);
+        NettyTest.ResQueryTableData build = resQueryTableData.build();
+
+        byte[] bytes = build.toByteArray();
+
+        System.out.println(build);
+        System.out.println(Arrays.toString(bytes));
+
+        System.out.println("----------------------------------");
+
+        try {
+            NettyTest.ResQueryTableData byteToProtoObj = NettyTest.ResQueryTableData.parseFrom(bytes);
+            System.out.println(byteToProtoObj);
+            System.out.println(jsonString);
+        } catch (InvalidProtocolBufferException e) {
+            e.printStackTrace();
+        }
+
     }
 }

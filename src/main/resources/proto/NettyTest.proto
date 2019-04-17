@@ -1,0 +1,68 @@
+syntax = "proto2";
+
+package com.netty.test.pojo.proto;
+//java_outer_classname "NettyTest";
+
+
+//登录
+message ReqLogin {
+    required string host = 1; //链接地址
+    required string port = 2; //端口
+    required string dbName = 3; //用户名
+    required string userName = 4; //用户名
+    required string password = 5; //密码
+    optional string url = 6; //完整的链接
+}
+
+//登录结果
+message ResLogin {
+  required int32 loginState = 1;//登录状态
+  repeated InformationSchemaTables schemaTableList = 2;//数据库中的表的信息
+}
+
+//查询表数据
+message ReqQueryTableData {
+    required string tableName = 1; //链接地址
+    required int64 id = 2; //链接地址
+}
+
+//返回查询表数据结果
+message ResQueryTableData {
+    required string tableData = 1; //表数据
+}
+
+//数据库中的表的信息
+message InformationSchemaTables {
+    required string tableCatalog = 1; // 表所属目录的名称。
+    required string tableSchema = 2; // 表所属的模式（数据库）的名称。
+    required string tableName = 3; // 表名称
+    required string tableType = 4; // 表类型[system view|base table]
+    required string engine = 5; //使用的数据库引擎[MyISAM|CSV|InnoDB]
+    required int64 version = 6; //版本，默认值10
+    required string rowFormat = 7; //行格式[Compact|Dynamic|Fixed]
+    required int64 tableRows = 8; //表里所存多少行数据
+    required int64 avgRowLength = 9; //平均行长度
+    required int64 dataLength = 10; //数据长度(byte)
+    required int64 maxDataLength = 11; //最大数据长度
+    required int64 indexLength = 12; //索引长度
+    required int64 dataFree = 13; //空间碎片
+    required int64 autoIncrement = 14; //做自增主键的自动增量当前值
+    required int64 createTime = 15; //表的创建时间
+    required int64 updateTime = 16; //表的更新时间
+    optional int64 checkTime = 17;//表的检查时间
+    required string tableCollation = 18; //表的字符校验编码集
+    optional int64 checksum = 19; //校验和
+    optional string createOptions = 20; //创建选项
+    optional string tableComment = 21; //表的注释、备注
+}
+
+//消息类型
+enum MESSAGE_TYPE {
+
+  REQ_LOGIN = 101; // 请求登录
+  RES_LOGIN = 102; // 登录结果
+
+  REQ_QUERY_TABLE_DATA = 201; // 查询表数据
+  RES_QUERY_TABLEDATA = 202; // 查询表数据结果
+
+}
