@@ -1,9 +1,9 @@
-package com.netty.test.serializer.factory;
+package com.netty.test.proto.serializer.factory;
 
-import com.netty.test.proto.SerializeType;
-import com.netty.test.serializer.ProtoStuffImpl;
-import com.netty.test.serializer.SerializableImpl;
-import com.netty.test.serializer.SerializerProcess;
+import com.netty.test.proto.serializer.SerializeType;
+import com.netty.test.proto.serializer.ProtoStuffImpl;
+import com.netty.test.proto.serializer.SerializableImpl;
+import com.netty.test.proto.serializer.SerializerProcess;
 
 import java.util.HashMap;
 import java.util.Map;

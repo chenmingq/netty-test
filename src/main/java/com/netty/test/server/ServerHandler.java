@@ -1,6 +1,6 @@
 package com.netty.test.server;
 
-import com.netty.test.Message;
+import com.netty.test.proto.Message;
 import com.netty.test.proto.CommonConst;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;

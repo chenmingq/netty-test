@@ -1,6 +1,6 @@
-package com.netty.test.serializer;
+package com.netty.test.proto.serializer;
 
-import com.netty.test.serializer.factory.ProtoStuffUtils;
+import com.netty.test.proto.serializer.factory.ProtoStuffUtils;
 
 /**
  * @author : chenmq

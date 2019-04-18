@@ -1,5 +1,7 @@
 package com.netty.test.server;
 
+import com.netty.test.common.cache.ClassCache;
+import com.netty.test.utils.ClassUtil;
 import com.netty.test.utils.LordPropertiesUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,6 +60,9 @@ public class ServerProperties {
             switch (key) {
                 case "server.port":
                     PORT = Integer.parseInt(value);
+                    break;
+                case "scan.mapping":
+                    ClassUtil.lordClazz(value);
                     break;
                 default:
                     break;

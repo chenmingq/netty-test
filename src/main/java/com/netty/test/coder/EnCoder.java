@@ -1,6 +1,6 @@
 package com.netty.test.coder;
 
-import com.netty.test.Message;
+import com.netty.test.proto.Message;
 import com.netty.test.proto.CommonConst;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

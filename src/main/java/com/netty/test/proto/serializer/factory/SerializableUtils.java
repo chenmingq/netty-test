@@ -1,4 +1,4 @@
-package com.netty.test.serializer.factory;
+package com.netty.test.proto.serializer.factory;
 
 
 import java.io.*;

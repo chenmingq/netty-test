@@ -1,6 +1,6 @@
 package com.netty.test.common.db;
 
-import com.netty.test.serializer.factory.SerializableFactory;
+import com.netty.test.proto.serializer.factory.SerializableFactory;
 import com.netty.test.utils.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

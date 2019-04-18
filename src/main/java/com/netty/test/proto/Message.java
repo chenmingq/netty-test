@@ -1,4 +1,4 @@
-package com.netty.test;
+package com.netty.test.proto;
 
 /**
  * @author : chenmq

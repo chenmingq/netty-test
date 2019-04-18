@@ -1,4 +1,4 @@
-package com.netty.test.serializer;
+package com.netty.test.proto.serializer;
 
 /**
  * @author : chenmq

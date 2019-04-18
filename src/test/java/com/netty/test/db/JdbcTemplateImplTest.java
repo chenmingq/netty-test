@@ -3,7 +3,7 @@ package com.netty.test.db;
 import com.netty.test.common.db.ConnectionPool;
 import com.netty.test.common.db.DbConnectionPool;
 import com.netty.test.common.db.JdbcTemplateImpl;
-import com.netty.test.proto.SerializeType;
+import com.netty.test.proto.serializer.SerializeType;
 import com.netty.test.pojo.db.DbParam;
 import com.netty.test.pojo.db.InformationSchemaTables;
 import com.netty.test.pojo.test.ListTest;

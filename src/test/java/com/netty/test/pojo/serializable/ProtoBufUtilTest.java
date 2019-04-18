@@ -2,7 +2,7 @@ package com.netty.test.pojo.serializable;
 
 import com.alibaba.fastjson.JSON;
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.netty.test.serializer.factory.SerializableUtils;
+import com.netty.test.proto.serializer.factory.SerializableUtils;
 import com.netty.test.pojo.proto.NettyTest;
 import com.netty.test.pojo.test.ListTest;
 import com.netty.test.pojo.test.Student;

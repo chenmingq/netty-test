@@ -1,6 +1,6 @@
 package com.netty.test.server;
 
-import com.netty.test.Message;
+import com.netty.test.proto.Message;
 import com.netty.test.pojo.db.DbParam;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;

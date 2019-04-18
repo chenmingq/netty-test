@@ -1,4 +1,4 @@
-package com.netty.test.proto;
+package com.netty.test.proto.serializer;
 
 import java.util.Arrays;
 

@@ -10,4 +10,16 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class SessionManager {
+
+    private static SessionManager instance = new SessionManager();
+
+    public static SessionManager getInstance() {
+        return instance;
+    }
+
+    public SessionManager() {
+    }
+
+
+
 }
