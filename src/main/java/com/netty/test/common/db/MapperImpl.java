@@ -1,6 +1,6 @@
 package com.netty.test.common.db;
 
-import com.netty.test.common.protostuff.ProtoBufUtil;
+import com.netty.test.coder.serializer.SerializableFactory;
 import com.netty.test.consts.ColumnTypeName;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,12 +13,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MapperImpl implements MapperInter<ResultSet, Class> {
+/**
+ * @author : chenmq
+ * date : 2019-4-08
+ * Project : netty-test
+ * Description： mapper 操作对象
+ */
+public class MapperImpl implements MapperInter<Object> {
 
     private final static Logger LOG = LoggerFactory.getLogger(MapperImpl.class);
 
+
     @Override
-    public <RS> RS mappingObj(ResultSet resultSet, Class clazz) {
+    public Object mappingObj(ResultSet resultSet, int serializerType, Class<Object> clazz) {
         Map<String, Object> fieldMap = new HashMap<>();
         try {
             //结果集的元素对象
@@ -26,7 +33,7 @@ public class MapperImpl implements MapperInter<ResultSet, Class> {
             //获取结果集的元素个数
             int colCount = rsmd.getColumnCount();
             //构造业务对象实体
-            Object obj = clazz.newInstance();
+            Object resultObj = clazz.newInstance();
 
             Field[] objFields = clazz.getDeclaredFields();
             //将每一个字段取出进行赋值
@@ -45,7 +52,7 @@ public class MapperImpl implements MapperInter<ResultSet, Class> {
                         case Blob:
                         case MediumBlob:
                         case LongBlob:
-                            value = ProtoBufUtil.deserializer((byte[]) value, clazz);
+                            value = new SerializableFactory().deserializer(serializerType, (byte[]) value, clazz);
                             if (!value.getClass().equals(clazz)) {
                                 break;
                             }
@@ -87,16 +94,15 @@ public class MapperImpl implements MapperInter<ResultSet, Class> {
             for (Field objField : objFields) {
                 String name = objField.getName();
                 objField.setAccessible(true);
-                Object o = fieldMap.get(objField.getName());
-                if (null == o) {
+                Object objValue = fieldMap.get(objField.getName());
+                if (null == objValue) {
                     continue;
                 }
                 String s = "set" + name.replaceFirst(name.substring(0, 1), name.substring(0, 1).toUpperCase());
-                Method method = obj.getClass().getMethod(s, objField.getType());
-                method.invoke(obj, o);
+                Method method = clazz.getMethod(s, objField.getType());
+                method.invoke(resultObj, objValue);
             }
-            System.out.println(obj);
-            return (RS) obj;
+            return resultObj;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -104,7 +110,7 @@ public class MapperImpl implements MapperInter<ResultSet, Class> {
     }
 
     @Override
-    public <RS> List<RS> mappingList(List<ResultSet> t) {
+    public List<Object> mappingList(List<?> t) {
         return null;
     }
 }

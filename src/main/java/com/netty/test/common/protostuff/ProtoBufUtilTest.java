@@ -1,6 +1,10 @@
 package com.netty.test.common.protostuff;
 
+import com.netty.test.coder.serializer.SerializableUtils;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ProtoBufUtilTest {
 
@@ -12,11 +16,19 @@ public class ProtoBufUtilTest {
         student.setStudentNo("2011070122");
         student.setSchoolName("BJUT");
 
-        byte[] serializerResult = ProtoBufUtil.serializer(student);
+        List<Student> list = new ArrayList<>();
+        list.add(student);
+
+        ListTest listTest = new ListTest();
+        listTest.setStudents(list);
+
+        byte[] serializerResult = SerializableUtils.serializer(listTest);
+//        byte[] serializerResult = ProtoStuffUtils.serializer(listTest);
 
         System.out.println("serializer result:" + Arrays.toString(serializerResult));
 
-        Student deSerializerResult = ProtoBufUtil.deserializer(serializerResult,Student.class);
+//        ListTest deSerializerResult = ProtoStuffUtils.deserializer(serializerResult,ListTest.class);
+        ListTest deSerializerResult = (ListTest) SerializableUtils.deserializer(serializerResult);
 
         System.out.println("deSerializerResult:" + deSerializerResult.toString());
     }

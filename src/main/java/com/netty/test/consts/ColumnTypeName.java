@@ -2,6 +2,12 @@ package com.netty.test.consts;
 
 import java.util.Arrays;
 
+/**
+ * @author : chenmq
+ * date : 2019-4-16
+ * Project : netty-test
+ * Description： db的字段类型常量
+ */
 public interface ColumnTypeName {
 
     /**

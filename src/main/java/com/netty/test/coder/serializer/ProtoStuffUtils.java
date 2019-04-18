@@ -1,7 +1,6 @@
-package com.netty.test.common.protostuff;
+package com.netty.test.coder.serializer;
 
 import io.protostuff.LinkedBuffer;
-import io.protostuff.ProtobufIOUtil;
 import io.protostuff.ProtostuffIOUtil;
 import io.protostuff.Schema;
 import io.protostuff.runtime.RuntimeSchema;
@@ -9,10 +8,13 @@ import io.protostuff.runtime.RuntimeSchema;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class ProtoBufUtil {
-
-    public ProtoBufUtil() {
-    }
+/**
+ * @author : chenmq
+ * date : 2019-4-16
+ * Project : netty-test
+ * Description： Protostuff序列化工具
+ */
+public class ProtoStuffUtils {
 
     private static Map<Class<?>, Schema<?>> cachedSchema = new ConcurrentHashMap<>();
 
@@ -27,7 +29,6 @@ public class ProtoBufUtil {
         }
         return schema;
     }
-
 
 
     /**
@@ -61,10 +62,10 @@ public class ProtoBufUtil {
      */
     public static <T> T deserializer(byte[] bytes, Class<T> clazz) {
         try {
-            T obj = clazz.newInstance();
             Schema<T> schema = getSchema(clazz);
-            ProtostuffIOUtil.mergeFrom(bytes, obj, schema);
-            return obj;
+            T t = schema.newMessage();
+            ProtostuffIOUtil.mergeFrom(bytes, t, schema);
+            return t;
         } catch (Exception e) {
             throw new IllegalStateException(e.getMessage(), e);
         }

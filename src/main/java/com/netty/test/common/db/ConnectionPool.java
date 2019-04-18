@@ -14,14 +14,12 @@ public interface ConnectionPool {
     /**
      *  与特定数据库的连接（会话）。
      * @return
-     * @throws SQLException
      */
-    Connection getConnection() throws SQLException;
+    Connection getConnection();
 
     /**
      * 关闭连接
      * @param connection
-     * @throws SQLException
      */
-    void releaseConn(Connection connection) throws SQLException;
+    void releaseConn(Connection connection);
 }
