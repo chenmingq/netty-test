@@ -2,7 +2,9 @@ package com.netty.test.utils;
 
 
 import com.netty.test.annotation.SerializableTag;
-import com.netty.test.common.protostuff.ListTest;
+import org.apache.commons.lang3.StringUtils;
+
+import java.lang.reflect.Field;
 
 /**
  * @author : chenmq
@@ -54,8 +56,64 @@ public class ObjectUtils {
     }
 
 
+    /**
+     * 下划线转驼峰
+     *
+     * @param str
+     * @return
+     */
+    public static String underlineToHump(String str) {
+        if (StringUtils.isEmpty(str)) {
+            throw new RuntimeException("string is not");
+        }
+        char[] chars = str.toCharArray();
+        StringBuilder sbd = new StringBuilder();
+        boolean flage = false;
+        for (char c : chars) {
+            if (flage) {
+                char toUpperCase = Character.toUpperCase(c);
+                sbd.append(toUpperCase);
+                flage = false;
+                continue;
+            }
+            if ('_' == c) {
+                flage = true;
+                continue;
+            }
+            sbd.append(c);
+        }
+        return sbd.toString();
+    }
+
+
+    /**
+     * 驼峰转下划线
+     *
+     * @param str
+     * @return
+     */
+    public static String humpToUnderline(String str) {
+        if (StringUtils.isEmpty(str)) {
+            throw new RuntimeException("string is not");
+        }
+        char[] chars = str.toCharArray();
+        StringBuilder sbd = new StringBuilder();
+
+        for (char c : chars) {
+            if (Character.isUpperCase(c)) {
+                char toLowerCase = Character.toLowerCase(c);
+                sbd.append('_');
+                sbd.append(toLowerCase);
+                continue;
+            }
+            sbd.append(c);
+        }
+        return sbd.toString();
+    }
+
     public static void main(String[] args) {
-        System.out.println(checkSerializableObj(new ListTest()));
+        System.out.println(underlineToHump("ldD1d_dq1ewq"));
+        System.out.println(humpToUnderline("asd1hiDGhs_d"));
     }
 
 

@@ -1,6 +1,8 @@
-package com.netty.test.common.protostuff;
+package com.netty.test.pojo.serializable;
 
 import com.netty.test.coder.serializer.SerializableUtils;
+import com.netty.test.pojo.test.ListTest;
+import com.netty.test.pojo.test.Student;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -17,6 +17,6 @@ public class ProtoStuffImpl implements SerializerProcess {
 
     @Override
     public byte[] serializer(Object val) {
-        return new byte[0];
+        return ProtoStuffUtils.serializer(val);
     }
 }

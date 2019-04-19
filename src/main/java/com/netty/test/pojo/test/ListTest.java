@@ -1,4 +1,4 @@
-package com.netty.test.common.protostuff;
+package com.netty.test.pojo.test;
 
 import com.netty.test.annotation.SerializableTag;
 import io.protostuff.Exclude;

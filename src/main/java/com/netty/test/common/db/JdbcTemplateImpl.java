@@ -1,8 +1,6 @@
 package com.netty.test.common.db;
 
 import com.netty.test.coder.serializer.SerializableFactory;
-import com.netty.test.common.protostuff.ListTest;
-import com.netty.test.common.protostuff.Student;
 import com.netty.test.utils.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +9,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author : chenmq
@@ -90,7 +90,7 @@ public class JdbcTemplateImpl {
      * @param <T>
      * @return
      */
-    public <T> T query(String sql, Class<?> clazz, int serializerType, Object... params) {
+    public <T> T query(String sql, Class<T> clazz, int serializerType, Object... params) {
         if (null == this.connectionPool) {
             return null;
         }
@@ -130,7 +130,37 @@ public class JdbcTemplateImpl {
      * @param <T>
      * @return
      */
-    public <T> List<T> queryList(String sql, Object... params) {
+    public <T> List<T> queryList(String sql, Class<T> clazz, int serializerType, Object... params) {
+
+        if (null == this.connectionPool) {
+            return null;
+        }
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet resultSet = null;
+
+        try {
+            List<T> list = new ArrayList<>();
+            conn = this.connectionPool.getConnection();
+            ps = conn.prepareStatement(sql);
+            if (null != params) {
+                for (int i = 0; i < params.length; i++) {
+                    ps.setObject(i + 1, params[i]);
+                }
+            }
+            resultSet = ps.executeQuery();
+            MapperInter mapperInter = new MapperImpl();
+            while (resultSet.next()) {
+                T t = (T) mapperInter.mappingObj(resultSet, serializerType, clazz);
+                list.add(t);
+            }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtils.close(resultSet, connectionPool, conn, ps);
+        }
+
         return null;
     }
 
@@ -168,34 +198,4 @@ public class JdbcTemplateImpl {
         }
         return null;
     }
-
-
-    public static void main(String[] args) {
-        DbConnectionPool instance = DbConnectionPool.getInstance();
-        List<Student> list = new ArrayList<>();
-
-        Map<Integer, Student> map = new HashMap<>();
-        for (int i = 0; i < 20; i++) {
-            Student student = new Student();
-            student.setName("lance");
-            student.setAge(i);
-            student.setStudentNo(String.valueOf(new Random().nextInt(100)));
-            student.setSchoolName("BJUT");
-            list.add(student);
-            map.put(i, student);
-        }
-        ListTest listTest = new ListTest();
-        listTest.setStudents(list);
-        listTest.setMap(map);
-        Object[] objects = new Object[2];
-        objects[0] = listTest;
-        objects[1] = "zhangsan";
-        new JdbcTemplateImpl(instance).insert("insert into test(datas,user) values (?,?)", 1, objects);
-        ListTest query = new JdbcTemplateImpl(instance).query("select * from test where id = ?", ListTest.class, 1, 212);
-        System.out.println(query);
-        List<String> stringList = new JdbcTemplateImpl(instance).queryTables("chenmq");
-        System.out.println(stringList);
-        System.exit(0);
-    }
-
 }

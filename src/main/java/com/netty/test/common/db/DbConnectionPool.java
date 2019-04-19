@@ -8,11 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
-import java.util.Random;
 
 /**
  * @author : chenmq
@@ -88,9 +85,9 @@ public class DbConnectionPool implements ConnectionPool {
         }
     }
 
-    public static void main(String[] args) {
-        Connection connection = DbConnectionPool.getInstance().getConnection();
-        System.out.println(connection);
-    }
+//    public static void main(String[] args) {
+//        Connection connection = DbConnectionPool.getInstance().getConnection();
+//        System.out.println(connection);
+//    }
 
 }

@@ -1,4 +1,4 @@
-package com.netty.test.common.protostuff;
+package com.netty.test.pojo.test;
 
 import io.protostuff.Tag;
 import lombok.Data;

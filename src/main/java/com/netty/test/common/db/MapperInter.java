@@ -1,7 +1,6 @@
 package com.netty.test.common.db;
 
 import java.sql.ResultSet;
-import java.util.List;
 
 /**
  * @author : chenmq
@@ -22,6 +21,5 @@ public interface MapperInter<T> {
      */
     T mappingObj(ResultSet resultSet, int serializerType, Class<T> clazz);
 
-    List<T> mappingList(List<?> t);
 
 }

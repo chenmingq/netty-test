@@ -10,7 +10,7 @@ import com.netty.test.server.ServerProperties;
  * Project : netty-test
  * Description： netty服务启动类
  */
-public class Start {
+public class ServerStart {
 
 
     public static void main(String[] args) {
