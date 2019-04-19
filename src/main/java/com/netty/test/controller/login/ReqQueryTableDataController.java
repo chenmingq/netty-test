@@ -1,5 +1,6 @@
 package com.netty.test.controller.login;
 
+import com.netty.test.annotation.ParamName;
 import com.netty.test.annotation.ReqMapping;
 import com.netty.test.pojo.proto.NettyTest;
 import com.netty.test.pojo.table.ReqTableData;
@@ -8,8 +9,10 @@ import com.netty.test.pojo.table.ReqTableData;
 public class ReqQueryTableDataController {
 
     @ReqMapping(id = NettyTest.MESSAGE_TYPE.REQ_QUERY_TABLE_DATA_VALUE)
-    public void reqQuery (ReqTableData reqTableData){
+    public void reqQuery(ReqTableData reqTableData, @ParamName(name = "id") Object id) {
+
         System.out.println(reqTableData);
+        System.out.println(id);
 
     }
 

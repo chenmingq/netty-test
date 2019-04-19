@@ -3,13 +3,17 @@ package com.netty.test.proto;
 
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.DynamicMessage;
+import com.netty.test.annotation.ParamName;
 import com.netty.test.annotation.ReqMapping;
 import com.netty.test.common.cache.ClassCache;
 import com.netty.test.server.ServerMessagePool;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.lang.reflect.Type;
+import java.lang.reflect.Parameter;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -35,18 +39,7 @@ public class MessageProcessHelper {
      * @param message
      */
     public void requestExecute(Message message) {
-        int cmdId = message.getCmdId();
-        Descriptors.Descriptor descriptor = ServerMessagePool.getInstance().getMsg(cmdId);
         try {
-            DynamicMessage.Builder builder = DynamicMessage.parseFrom(descriptor, message.getBody()).toBuilder();
-            System.out.println(builder);
-
-            Map<Descriptors.FieldDescriptor, Object> allFields = builder.getAllFields();
-            for (Map.Entry<Descriptors.FieldDescriptor, Object> entry : allFields.entrySet()) {
-                System.out.println(entry.getKey());
-                System.out.println(entry.getValue());
-            }
-
             Map<Integer, Class<?>> reqMappingMap = ClassCache.REQ_MAPPING_MAP;
             if (null == reqMappingMap) {
                 return;
@@ -54,6 +47,16 @@ public class MessageProcessHelper {
             boolean b = reqMappingMap.containsKey(message.getModuleId());
             if (!b) {
                 return;
+            }
+
+            int cmdId = message.getCmdId();
+            Descriptors.Descriptor descriptor = ServerMessagePool.getInstance().getMsg(cmdId);
+            DynamicMessage.Builder builder = DynamicMessage.parseFrom(descriptor, message.getBody()).toBuilder();
+            Map<String, Object> valueMap = new HashMap<>();
+
+            Map<Descriptors.FieldDescriptor, Object> allFields = builder.getAllFields();
+            for (Map.Entry<Descriptors.FieldDescriptor, Object> entry : allFields.entrySet()) {
+                valueMap.put(entry.getKey().getName(), entry.getValue());
             }
             Class<?> aClass = reqMappingMap.get(message.getModuleId());
             Method[] methods = aClass.getMethods();
@@ -66,65 +69,46 @@ public class MessageProcessHelper {
                 if (methodAnnotation.id() != message.getCmdId()) {
                     continue;
                 }
-                //获取形参
-                Type[] parameterTypes = method.getGenericParameterTypes();
 
-                if (parameterTypes.length < 1) {
+                //获取形参
+                Parameter[] parameters = method.getParameters();
+
+                if (parameters.length < 1) {
                     method.invoke(aClass.newInstance());
                 } else {
-                    for (Map.Entry<Descriptors.FieldDescriptor, Object> entry : allFields.entrySet()) {
-//                        System.out.println(entry.getKey());
-//                        System.out.println(entry.getValue());
-                    }
-                    for (Type type : parameterTypes) {
-                        String typeName = type.getTypeName();
-                        Class<?> typeClass = Class.forName(typeName);
-                        Field[] fields = typeClass.getFields();
+                    List<Object> parameterTypeList = new LinkedList<>();
 
-                        Object o = typeClass.newInstance();
+                    for (Parameter parameter : parameters) {
+                        Class<?> typeClass = parameter.getType();
+                        ParamName annotation = parameter.getAnnotation(ParamName.class);
+                        if (null == annotation) {
+                            Object o = typeClass.newInstance();
 
-                        for (Field field : fields) {
-                            String name = field.getName();
-
-                            Object o1 = allFields.get(name);
-                            System.out.println(o1);
-
-                            /*for (Map.Entry<Descriptors.FieldDescriptor, Object> entry : allFields.entrySet()) {
-                                System.out.println(entry.getKey());
-                                System.out.println(entry.getValue());
+                            Field[] declaredFields = typeClass.getDeclaredFields();
+                            for (Field declaredField : declaredFields) {
+                                String fieldName = declaredField.getName();
+                                if (!valueMap.containsKey(fieldName)) {
+                                    continue;
+                                }
+                                declaredField.setAccessible(true);
+                                declaredField.set(o, valueMap.get(fieldName));
                             }
-                            field.setAccessible(true);
-                            String s = "set" + name.replaceFirst(name.substring(0, 1), name.substring(0, 1).toUpperCase());
-                            Method[] methods1 = aClass.getMethods();
-
-                            for (Method method1 : methods1) {
-                                method1.invoke(o, o1);
-                            }*/
-
-
+                            parameterTypeList.add(o);
+                        } else {
+                            String param = annotation.name();
+                            if (!valueMap.containsKey(param)) {
+                                continue;
+                            }
+                            parameterTypeList.add(valueMap.get(param));
                         }
-
-                        Method[] typeClassMethods = typeClass.getMethods();
-                        for (Method typeClassMethod : typeClassMethods) {
-                            /*for (Map.Entry<Descriptors.FieldDescriptor, Object> entry : allFields.entrySet()) {
-                                System.out.println(entry.getKey());
-                                System.out.println(entry.getValue());
-                            }*/
-                           /* String name = typeClassMethod.getName();
-                            System.out.println(name);
-                            String typeClassMethodName = typeClassMethod.getName();
-                            System.out.println(typeClassMethodName);*/
-                        }
-//                        System.out.println(typeClass);
-                        /*Method[] methods1 = type.getClass().getMethods();
-                        for (Method method1 : methods1) {
-                            String name = method1.getName();
-                            System.out.println(name);
-                        }*/
-
                     }
+                    Object[] objects = new Object[parameterTypeList.size()];
 
-                    method.invoke(aClass.newInstance(), builder);
+                    for (int i = 0; i < parameterTypeList.size(); i++) {
+                        objects[i] = parameterTypeList.get(i);
+                    }
+                    // todo 需要向下转型的处理
+                    method.invoke(aClass.newInstance(), objects);
                 }
                 return;
             }
