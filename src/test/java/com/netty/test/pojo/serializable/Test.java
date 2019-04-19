@@ -1,4 +1,4 @@
-package com.netty.test.common.protostuff;
+package com.netty.test.pojo.serializable;
 
 import io.protostuff.LinkedBuffer;
 import io.protostuff.ProtostuffIOUtil;
