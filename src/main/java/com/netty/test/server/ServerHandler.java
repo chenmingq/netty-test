@@ -5,10 +5,14 @@ import com.netty.test.common.manager.SessionManager;
 import com.netty.test.proto.CommonConst;
 import com.netty.test.proto.Message;
 import com.netty.test.proto.MessageProcessHelper;
+import com.netty.test.utils.RemotingUtil;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.handler.timeout.IdleState;
+import io.netty.handler.timeout.IdleStateEvent;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,6 +26,7 @@ import java.util.Date;
  * Project : netty-test
  * Description：
  */
+@Slf4j
 @ChannelHandler.Sharable
 public class ServerHandler extends SimpleChannelInboundHandler<Object> {
 
@@ -35,15 +40,6 @@ public class ServerHandler extends SimpleChannelInboundHandler<Object> {
      */
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-      /*  String str = "Welcome to " + InetAddress.getLocalHost().getHostName() + "！ It is  + new Date() +  now.\r\n";
-        Message message = new Message();
-        message.setBody(str.getBytes());
-        message.setModuleId(1);
-        message.setMagic(CommonConst.MAGIC_CODE);
-        LOGGER.info("{} - > 加入", InetAddress.getLocalHost().getHostName());
-        // Send greeting for a new connection.
-        ctx.write(message);
-        ctx.flush();*/
         Channel channel = ctx.channel();
         String channelRemoteAddr = RemotingHelper.parseChannelRemoteAddr(channel);
         LOGGER.info("NETTY SERVER PIPELINE: channelActive, the channel[{}]", channelRemoteAddr);
@@ -54,7 +50,7 @@ public class ServerHandler extends SimpleChannelInboundHandler<Object> {
         String str = "Welcome to " + InetAddress.getLocalHost().getHostName() + "！\r\n It is " + new Date() + " now.\r\n";
         Message message = new Message();
         message.setBody(str.getBytes());
-        message.setModuleId(1);
+        message.setModuleId(103);
         message.setCmdId(1);
         message.setMagic(CommonConst.MAGIC_CODE);
         ctx.write(message);
@@ -70,16 +66,32 @@ public class ServerHandler extends SimpleChannelInboundHandler<Object> {
      */
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Object o) throws Exception {
-        if (o instanceof Message) {
-            Message message = (Message) o;
-            System.out.println(message);
-            MessageProcessHelper.getInstance().requestExecute(message);
+        boolean b = o instanceof Message;
+        if (!b) {
+            return;
         }
+        Message message = (Message) o;
+        System.out.println(message);
+        MessageProcessHelper.getInstance().requestExecute(message);
     }
 
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         ctx.flush();
+    }
+
+    @Override
+    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+        if (evt instanceof IdleStateEvent) {
+            IdleStateEvent event = (IdleStateEvent) evt;
+            if (event.state().equals(IdleState.ALL_IDLE)) {
+                final String remoteAddress = RemotingHelper.parseChannelRemoteAddr(ctx.channel());
+                log.warn("NETTY SERVER PIPELINE: IDLE exception [{}]", remoteAddress);
+                RemotingUtil.closeChannel(ctx.channel());
+            }
+        }
+
+        ctx.fireUserEventTriggered(evt);
     }
 
     @Override

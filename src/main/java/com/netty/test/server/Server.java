@@ -68,7 +68,7 @@ public class Server {
         EventLoopGroup bossGroup = new NioEventLoopGroup();
 
         serverBootstrap.group(bossGroup, workerGroup)
-                .channel(useEpoll() ? EpollServerSocketChannel.class : NioServerSocketChannel.class)
+                .channel(/*useEpoll() ? EpollServerSocketChannel.class : */NioServerSocketChannel.class)
                 //保持连接数
                 .option(ChannelOption.SO_BACKLOG, 1024)
                 .option(ChannelOption.SO_REUSEADDR, true)
