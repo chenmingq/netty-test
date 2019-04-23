@@ -1,6 +1,6 @@
 package com.netty.test.serializer;
 
-import com.netty.test.coder.serializer.SerializableUtils;
+import com.netty.test.serializer.factory.SerializableUtils;
 
 import java.io.Serializable;
 

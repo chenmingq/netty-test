@@ -1,4 +1,4 @@
-package com.netty.test.consts;
+package com.netty.test.common.db;
 
 import java.util.Arrays;
 

@@ -19,7 +19,7 @@ public interface MapperInter<T> {
      * @param clazz
      * @return
      */
-    T mappingObj(ResultSet resultSet, int serializerType, Class<T> clazz);
+    T mappingObj(ResultSet resultSet, byte serializerType, Class<T> clazz);
 
 
 }

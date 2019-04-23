@@ -1,7 +1,8 @@
 package com.netty.test.common.db;
 
+import com.netty.test.pojo.db.DbParam;
+
 import java.sql.Connection;
-import java.sql.SQLException;
 
 /**
  * @author : chenmq
@@ -22,4 +23,11 @@ public interface ConnectionPool {
      * @param connection
      */
     void releaseConn(Connection connection);
+
+    /**
+     * 数据库连接配置
+     * @param dbParam
+     * @param dev
+     */
+    void loginDb(DbParam dbParam, boolean dev);
 }

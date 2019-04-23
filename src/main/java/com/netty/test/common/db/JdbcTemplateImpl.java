@@ -1,6 +1,6 @@
 package com.netty.test.common.db;
 
-import com.netty.test.coder.serializer.SerializableFactory;
+import com.netty.test.serializer.factory.SerializableFactory;
 import com.netty.test.utils.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,7 +38,7 @@ public class JdbcTemplateImpl {
      * @param params
      * @return
      */
-    public int insert(String sql, int serializerType, Object[] params) {
+    public int insert(String sql, byte serializerType, Object[] params) {
         if (null == params) {
             return 0;
         }
@@ -90,7 +90,7 @@ public class JdbcTemplateImpl {
      * @param <T>
      * @return
      */
-    public <T> T query(String sql, Class<T> clazz, int serializerType, Object... params) {
+    public <T> T query(String sql, Class<T> clazz, byte serializerType, Object... params) {
         if (null == this.connectionPool) {
             return null;
         }
@@ -130,7 +130,7 @@ public class JdbcTemplateImpl {
      * @param <T>
      * @return
      */
-    public <T> List<T> queryList(String sql, Class<T> clazz, int serializerType, Object... params) {
+    public <T> List<T> queryList(String sql, Class<T> clazz, byte serializerType, Object... params) {
 
         if (null == this.connectionPool) {
             return null;

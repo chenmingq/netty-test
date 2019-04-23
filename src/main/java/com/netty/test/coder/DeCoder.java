@@ -1,7 +1,7 @@
 package com.netty.test.coder;
 
-import com.netty.test.Header;
-import com.netty.test.consts.CommonConst;
+import com.netty.test.Message;
+import com.netty.test.proto.CommonConst;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ReplayingDecoder;
@@ -15,7 +15,7 @@ import java.util.List;
  * Project : netty-test
  * Description：
  */
-public class DeCoder extends ReplayingDecoder<Header> {
+public class DeCoder extends ReplayingDecoder<Message> {
     @Override
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf in, List<Object> list) throws Exception {
         int magic = in.readInt();
@@ -35,12 +35,12 @@ public class DeCoder extends ReplayingDecoder<Header> {
         byte[] body = new byte[bodyLength];
         in.readBytes(body);
 
-        Header header = new Header();
-        header.setBody(body);
-        header.setModuleId(moduleId);
-        header.setTimestamp(timestamp);
-        header.setMagic(magic);
+        Message message = new Message();
+        message.setBody(body);
+        message.setModuleId(moduleId);
+        message.setTimestamp(timestamp);
+        message.setMagic(magic);
 
-        list.add(header);
+        list.add(message);
     }
 }

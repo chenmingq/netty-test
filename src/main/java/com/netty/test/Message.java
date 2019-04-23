@@ -6,7 +6,7 @@ package com.netty.test;
  * Project : netty-test
  * Description： 消息头
  */
-public class Header {
+public class Message {
 
     /**
      * 唯一通信标志

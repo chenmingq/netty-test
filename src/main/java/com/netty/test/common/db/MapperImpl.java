@@ -1,7 +1,6 @@
 package com.netty.test.common.db;
 
-import com.netty.test.coder.serializer.SerializableFactory;
-import com.netty.test.consts.ColumnTypeName;
+import com.netty.test.serializer.factory.SerializableFactory;
 import com.netty.test.utils.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,11 +24,11 @@ public class MapperImpl implements MapperInter<Object> {
 
 
     @Override
-    public Object mappingObj(ResultSet resultSet, int serializerType, Class<Object> clazz) {
+    public Object mappingObj(ResultSet resultSet, byte serializerType, Class<Object> clazz) {
         return resultObj(resultSet, clazz, serializerType);
     }
 
-    private <T> T resultObj(ResultSet resultSet, Class<T> clazz, int serializerType) {
+    private <T> T resultObj(ResultSet resultSet, Class<T> clazz, byte serializerType) {
         Map<String, Object> fieldMap = new HashMap<>();
         try {
             //结果集的元素对象

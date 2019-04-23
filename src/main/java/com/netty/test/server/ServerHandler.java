@@ -1,7 +1,7 @@
 package com.netty.test.server;
 
-import com.netty.test.Header;
-import com.netty.test.consts.CommonConst;
+import com.netty.test.Message;
+import com.netty.test.proto.CommonConst;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -31,13 +31,13 @@ public class ServerHandler extends SimpleChannelInboundHandler<Object> {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         String str = "Welcome to " + InetAddress.getLocalHost().getHostName() + "！ It is  + new Date() +  now.\r\n";
-        Header header = new Header();
-        header.setBody(str.getBytes());
-        header.setModuleId(1);
-        header.setMagic(CommonConst.MAGIC_CODE);
+        Message message = new Message();
+        message.setBody(str.getBytes());
+        message.setModuleId(1);
+        message.setMagic(CommonConst.MAGIC_CODE);
         LOGGER.info("{} - > 加入", InetAddress.getLocalHost().getHostName());
         // Send greeting for a new connection.
-        ctx.write(header);
+        ctx.write(message);
         ctx.flush();
     }
 
@@ -50,9 +50,9 @@ public class ServerHandler extends SimpleChannelInboundHandler<Object> {
      */
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Object o) throws Exception {
-        if (o instanceof Header) {
-            Header header = (Header) o;
-            System.out.println(header);
+        if (o instanceof Message) {
+            Message message = (Message) o;
+            System.out.println(message);
         }
     }
 

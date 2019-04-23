@@ -1,6 +1,6 @@
 package com.netty.test.serializer;
 
-import com.netty.test.coder.serializer.ProtoStuffUtils;
+import com.netty.test.serializer.factory.ProtoStuffUtils;
 
 /**
  * @author : chenmq

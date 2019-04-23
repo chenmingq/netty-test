@@ -1,7 +1,7 @@
 package com.netty.test.coder;
 
-import com.netty.test.Header;
-import com.netty.test.consts.CommonConst;
+import com.netty.test.Message;
+import com.netty.test.proto.CommonConst;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
@@ -14,13 +14,13 @@ import io.netty.handler.codec.MessageToByteEncoder;
  * Description：
  */
 
-public class EnCoder extends MessageToByteEncoder<Header> {
+public class EnCoder extends MessageToByteEncoder<Message> {
     @Override
-    protected void encode(ChannelHandlerContext channelHandlerContext, Header msg, ByteBuf out) throws Exception {
+    protected void encode(ChannelHandlerContext channelHandlerContext, Message msg, ByteBuf out) throws Exception {
         doEncodeRequest(msg, out);
     }
 
-    private void doEncodeRequest(Header request, ByteBuf out) {
+    private void doEncodeRequest(Message request, ByteBuf out) {
 
         int magic = request.getMagic();
         byte[] body = request.getBody();

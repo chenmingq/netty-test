@@ -3,7 +3,8 @@ package com.netty.test.db;
 import com.netty.test.common.db.ConnectionPool;
 import com.netty.test.common.db.DbConnectionPool;
 import com.netty.test.common.db.JdbcTemplateImpl;
-import com.netty.test.consts.SerializableTypeConst;
+import com.netty.test.proto.SerializeType;
+import com.netty.test.pojo.db.DbParam;
 import com.netty.test.pojo.db.InformationSchemaTables;
 import com.netty.test.pojo.test.ListTest;
 import com.netty.test.pojo.test.Student;
@@ -19,6 +20,9 @@ public class JdbcTemplateImplTest {
 
     public static void main(String[] args) {
         DbConnectionPool instance = DbConnectionPool.getInstance();
+        DbParam dbParam = new DbParam("localhost",3306,"chenmq","root","123456","","mysql","utf8");
+        instance.loginDb(dbParam,true);
+        insert(instance);
         /*insert(instance);
         queryObj(instance);
         querySchema(instance);
@@ -47,24 +51,24 @@ public class JdbcTemplateImplTest {
             Object[] objects = new Object[2];
             objects[0] = listTest;
             objects[1] = "zhangsan";
-            new JdbcTemplateImpl(pool).insert("insert into test(datas,user) values (?,?)", SerializableTypeConst.SerializableType.JDK_SERIALIZABLE, objects);
+            new JdbcTemplateImpl(pool).insert("insert into test(datas,user) values (?,?)", SerializeType.JDK_SERIALIZABLE.getType(), objects);
         }
     }
 
     private static void queryObj(ConnectionPool pool) {
-        Object query = new JdbcTemplateImpl(pool).query("select * from test where id = ?", Object.class, SerializableTypeConst.SerializableType.JDK_SERIALIZABLE, 391);
+        Object query = new JdbcTemplateImpl(pool).query("select * from test where id = ?", Object.class, SerializeType.JDK_SERIALIZABLE.getType(), 391);
         System.out.println(query);
     }
 
     private static void querySchema(ConnectionPool pool) {
         String sql = String.format("Select * From Information_Schema.Tables Where Table_Schema = '%s' ", "chenmq");
-        List<InformationSchemaTables> informationSchemaTables = new JdbcTemplateImpl(pool).queryList(sql, InformationSchemaTables.class, SerializableTypeConst.SerializableType.JDK_SERIALIZABLE);
+        List<InformationSchemaTables> informationSchemaTables = new JdbcTemplateImpl(pool).queryList(sql, InformationSchemaTables.class, SerializeType.JDK_SERIALIZABLE.getType());
         informationSchemaTables.forEach(System.out::println);
     }
 
     private static void queryList(ConnectionPool pool) {
         String sql = String.format("select * from test where id >= %s", 391);
-        List<ListTest> listTests = new JdbcTemplateImpl(pool).queryList(sql, ListTest.class, SerializableTypeConst.SerializableType.JDK_SERIALIZABLE);
+        List<ListTest> listTests = new JdbcTemplateImpl(pool).queryList(sql, ListTest.class, SerializeType.JDK_SERIALIZABLE.getType());
         System.out.println(listTests.size());
         listTests.forEach(i -> System.out.println(i + "\r\n"));
     }

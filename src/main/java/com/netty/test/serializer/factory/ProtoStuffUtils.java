@@ -1,4 +1,4 @@
-package com.netty.test.coder.serializer;
+package com.netty.test.serializer.factory;
 
 import io.protostuff.LinkedBuffer;
 import io.protostuff.ProtostuffIOUtil;
