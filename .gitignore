@@ -1,5 +1,5 @@
 target/
-
+libs/
 ### STS ###
 .apt_generated
 .classpath
