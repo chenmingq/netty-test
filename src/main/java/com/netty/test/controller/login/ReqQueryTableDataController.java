@@ -13,8 +13,8 @@ public class ReqQueryTableDataController {
     @ReqMapping(id = NettyTest.MESSAGE_TYPE.REQ_QUERY_TABLE_DATA_VALUE)
     public void reqQuery(ReqTableData reqTableData, @ParamName(name = "id") Object id) {
 
-        System.out.println(reqTableData);
-        System.out.println(id);
+//        System.out.println(reqTableData);
+//        System.out.println(id);
 
 
         int msgId = NettyTest.MESSAGE_TYPE.RES_QUERY_TABLE_DATA_VALUE;

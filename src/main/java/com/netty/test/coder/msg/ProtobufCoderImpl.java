@@ -1,14 +1,13 @@
 package com.netty.test.coder.msg;
 
-import com.google.protobuf.DescriptorProtos;
-import com.google.protobuf.Descriptors;
-import com.google.protobuf.DynamicMessage;
-import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.*;
+import com.netty.test.pojo.proto.NettyTest;
 import com.netty.test.proto.BaseMsg;
 import com.netty.test.server.ServerMessagePool;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ProtobufCoderImpl implements MsgCoder {
@@ -40,28 +39,66 @@ public class ProtobufCoderImpl implements MsgCoder {
         if (null == descriptor) {
             return;
         }
+
+        Descriptors.FileDescriptor file = descriptor.getFile();
+        DescriptorProtos.FileDescriptorProto fileDescriptorProto = file.toProto();
+
+        List<Descriptors.Descriptor> messageTypes = file.getMessageTypes();
+//        System.out.println(messageTypes);
+        List<DescriptorProtos.DescriptorProto> messageTypeList = fileDescriptorProto.getMessageTypeList();
+        for (DescriptorProtos.DescriptorProto proto : messageTypeList) {
+            List<DescriptorProtos.FieldDescriptorProto> fieldList = proto.getFieldList();
+            for (DescriptorProtos.FieldDescriptorProto descriptorProto : fieldList) {
+                System.out.println(descriptorProto);
+            }
+        }
+
+//        System.out.println(allFields1);
+//
+//        System.out.println(fileDescriptorProto);
+
+
+        DynamicMessage.Builder builder = DynamicMessage.newBuilder(descriptor);
+
+
+        DynamicMessage.Builder builder1 = builder.buildPartial().toBuilder();
+
+        Map<Descriptors.FieldDescriptor, Object> allFields = builder1.getAllFields();
+        for (Map.Entry<Descriptors.FieldDescriptor, Object> entry : allFields.entrySet()) {
+            System.out.println(entry.getKey());
+        }
+
+
         DescriptorProtos.DescriptorProto descriptorProto = descriptor.toProto();
+
+        List<DescriptorProtos.FieldDescriptorProto> fieldList = descriptorProto.getFieldList();
+
+        /*NettyTest.ResQueryTableData.Builder f =         NettyTest.ResQueryTableData.newBuilder();
+
+        f.setTableData("你好啊啊");
+
+        System.out.println(f);*/
+
 
         Field[] declaredFields = message.getClass().getDeclaredFields();
         for (Field declaredField : declaredFields) {
             String name = declaredField.getName();
-            System.out.println(name);
-        }
-        Map<Descriptors.FieldDescriptor, Object> allFields = descriptorProto.getAllFields();
-
-
-        for (Map.Entry<Descriptors.FieldDescriptor, Object> entry : allFields.entrySet()) {
-            try {
-                Field declaredField = message.getClass().getDeclaredField(entry.getKey().getName());
-                if (null == declaredField) {
+            declaredField.setAccessible(true);
+            for (DescriptorProtos.FieldDescriptorProto proto : fieldList) {
+                String protoName = proto.getName();
+                if (!protoName.equals(name)) {
                     continue;
                 }
-                entry.setValue("你好");
-                System.out.println(entry.getKey());
-                System.out.println(entry.getValue());
-            } catch (NoSuchFieldException e) {
-                e.printStackTrace();
+                System.out.println(protoName);
+                try {
+                    Object value = declaredField.get(message);
+                    System.out.println(value);
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
             }
         }
+
+
     }
 }
