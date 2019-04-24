@@ -1,5 +1,6 @@
 package com.netty.test.common.cache;
 
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Set;
  */
 public class ClassCache {
 
-    public  static Set<Class<?>> REQ_MAPPING_SET = null;
+    public  static Map<Integer,Class<?>> REQ_MAPPING_MAP = null;
 
 
 

@@ -7,9 +7,7 @@ import com.netty.test.common.cache.ClassCache;
 import java.io.File;
 import java.net.URL;
 import java.net.URLDecoder;
-import java.util.Enumeration;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 
 public class ClassUtil {
@@ -23,7 +21,7 @@ public class ClassUtil {
 
 
     public static void lordClazz(String packageName) {
-        Set<Class<?>> mappingClassSet = new HashSet<>();
+        Map<Integer,Class<?>> classMap = new HashMap<>();
         try {
             String packageDirName = packageName.replace(".", "/");
             Set<Class<?>> classSet = new HashSet<>();
@@ -44,13 +42,13 @@ public class ClassUtil {
                 if (null == annotation) {
                     continue;
                 }
-                mappingClassSet.add(aClass);
+                classMap.put(annotation.id(),aClass);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        ClassCache.REQ_MAPPING_SET = mappingClassSet;
+        ClassCache.REQ_MAPPING_MAP = classMap;
     }
 
     /**
