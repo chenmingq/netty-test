@@ -19,12 +19,24 @@ public class ClassUtil {
 
     }
 
+    public static void initReqMappingClazz(String packageName) {
+        Map<Integer, Class<?>> classMap = new HashMap<>();
+        Set<Class<?>> classes = lordClazz(packageName);
+        for (Class<?> aClass : classes) {
+            ReqMapping annotation = aClass.getAnnotation(ReqMapping.class);
+            if (null == annotation) {
+                continue;
+            }
+            classMap.put(annotation.id(), aClass);
+        }
+        ClassCache.REQ_MAPPING_MAP = classMap;
+    }
 
-    public static void lordClazz(String packageName) {
-        Map<Integer,Class<?>> classMap = new HashMap<>();
+
+    private static Set<Class<?>> lordClazz(String packageName) {
+        Set<Class<?>> classSet = new HashSet<>();
         try {
             String packageDirName = packageName.replace(".", "/");
-            Set<Class<?>> classSet = new HashSet<>();
             Enumeration<URL> resources = Thread.currentThread().getContextClassLoader().getResources(packageDirName);
             while (resources.hasMoreElements()) {
                 URL url = resources.nextElement();
@@ -37,18 +49,10 @@ public class ClassUtil {
                 String filePath = URLDecoder.decode(url.getFile(), "UTF-8");
                 findAndAddClassesInPackageByFile(packageName, filePath, true, classSet);
             }
-            for (Class<?> aClass : classSet) {
-                ReqMapping annotation = aClass.getAnnotation(ReqMapping.class);
-                if (null == annotation) {
-                    continue;
-                }
-                classMap.put(annotation.id(),aClass);
-            }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-        ClassCache.REQ_MAPPING_MAP = classMap;
+        return classSet;
     }
 
     /**
@@ -59,7 +63,7 @@ public class ClassUtil {
      * @param recursive
      * @param classes
      */
-    public static void findAndAddClassesInPackageByFile(String packageName, String packagePath, boolean recursive, Set<Class<?>> classes) {
+    private static void findAndAddClassesInPackageByFile(String packageName, String packagePath, boolean recursive, Set<Class<?>> classes) {
         File dir = new File(packagePath);
         if (!dir.exists() || !dir.isDirectory()) {
             return;

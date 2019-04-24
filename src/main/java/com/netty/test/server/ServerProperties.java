@@ -62,7 +62,7 @@ public class ServerProperties {
                     PORT = Integer.parseInt(value);
                     break;
                 case "scan.mapping":
-                    ClassUtil.lordClazz(value);
+                    ClassUtil.initReqMappingClazz(value);
                     break;
                 case "serializer.impl.class":
                     CommonConst.SERIALIZER_IMPL_CLASS = value;

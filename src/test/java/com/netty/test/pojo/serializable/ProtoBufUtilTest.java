@@ -54,7 +54,8 @@ public class ProtoBufUtilTest {
         req.setTableName("test");
 
         ServerProperties.getInstance().initSysProperties();
-        ServerMessagePool.getInstance().registerMsgProto();
+        ServerMessagePool.getInstance().registerRequestMsgProto();
+        ServerMessagePool.getInstance().registerResponseMsgProto();
         Message message = new Message();
         message.setBody(req.build().toByteArray());
         message.setCmdId(201);

@@ -16,7 +16,8 @@ public class ServerStart {
 
     public static void main(String[] args) {
         ServerProperties.getInstance().initSysProperties();
-        ServerMessagePool.getInstance().registerMsgProto();
+        ServerMessagePool.getInstance().registerRequestMsgProto();
+        ServerMessagePool.getInstance().registerResponseMsgProto();
         Server.initServer();
     }
 

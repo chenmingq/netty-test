@@ -30,6 +30,16 @@ public class MessageProcessHelper {
     public MessageProcessHelper() {
     }
 
+    private static MsgCoder MSG_CODER = null;
+
+    static {
+        try {
+            MSG_CODER = (MsgCoder) Class.forName(CommonConst.SERIALIZER_IMPL_CLASS).newInstance();
+        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * request消息处理
      *
@@ -46,8 +56,8 @@ public class MessageProcessHelper {
                 return;
             }
             int cmdId = message.getCmdId();
-            MsgCoder msgCoder = (MsgCoder) Class.forName(CommonConst.SERIALIZER_IMPL_CLASS).newInstance();
-            Map<String, Object> valueMap = msgCoder.prosson(cmdId, message.getBody());
+
+            Map<String, Object> valueMap = MSG_CODER.prossonRequest(cmdId, message.getBody());
             if (null == valueMap) {
                 return;
             }
@@ -116,7 +126,7 @@ public class MessageProcessHelper {
      *
      * @param message
      */
-    public void responseExecute(Object message) {
-
+    public void responseExecute( BaseMsg message) {
+        MSG_CODER.prossonResponse(message);
     }
 }
