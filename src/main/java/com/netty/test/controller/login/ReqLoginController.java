@@ -2,13 +2,14 @@ package com.netty.test.controller.login;
 
 
 import com.netty.test.annotation.ReqMapping;
+import com.netty.test.pojo.proto.NettyTest;
 
-@ReqMapping(id = 1)
+@ReqMapping(id = NettyTest.MESSAGE_TYPE.LOGIN_VALUE)
 public class ReqLoginController {
 
 
-    @ReqMapping(id = 1)
+    @ReqMapping(id = NettyTest.MESSAGE_TYPE.REQ_LOGIN_VALUE)
     public void ss(Object protoMsg) {
-        System.out.println(protoMsg);
+        NettyTest.ReqLogin reqLogin = (NettyTest.ReqLogin) protoMsg;
     }
 }

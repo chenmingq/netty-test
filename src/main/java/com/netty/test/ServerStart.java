@@ -2,6 +2,7 @@ package com.netty.test;
 
 
 import com.netty.test.server.Server;
+import com.netty.test.server.ServerMessagePool;
 import com.netty.test.server.ServerProperties;
 
 /**
@@ -15,6 +16,7 @@ public class ServerStart {
 
     public static void main(String[] args) {
         ServerProperties.getInstance().initSysProperties();
+        ServerMessagePool.getInstance().registerMsgProto();
         Server.initServer();
     }
 

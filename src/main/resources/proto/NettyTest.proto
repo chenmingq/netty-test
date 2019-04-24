@@ -3,12 +3,11 @@ syntax = "proto2";
 package com.netty.test.pojo.proto;
 //java_outer_classname "NettyTest";
 
-
 //登录
 message ReqLogin {
-    required string host = 1; //链接地址
-    required string port = 2; //端口
-    required string dbName = 3; //用户名
+    optional string host = 1; //链接地址
+    optional string port = 2; //端口
+    optional string dbName = 3; //数据库名称
     required string userName = 4; //用户名
     required string password = 5; //密码
     optional string url = 6; //完整的链接
@@ -16,8 +15,8 @@ message ReqLogin {
 
 //登录结果
 message ResLogin {
-  required int32 loginState = 1;//登录状态
-  repeated InformationSchemaTables schemaTableList = 2;//数据库中的表的信息
+    required int32 loginState = 1; //登录状态
+    repeated InformationSchemaTables schemaTableList = 2; //数据库中的表的信息
 }
 
 //查询表数据
@@ -49,7 +48,7 @@ message InformationSchemaTables {
     required int64 autoIncrement = 14; //做自增主键的自动增量当前值
     required int64 createTime = 15; //表的创建时间
     required int64 updateTime = 16; //表的更新时间
-    optional int64 checkTime = 17;//表的检查时间
+    optional int64 checkTime = 17; //表的检查时间
     required string tableCollation = 18; //表的字符校验编码集
     optional int64 checksum = 19; //校验和
     optional string createOptions = 20; //创建选项
@@ -59,10 +58,12 @@ message InformationSchemaTables {
 //消息类型
 enum MESSAGE_TYPE {
 
-  REQ_LOGIN = 101; // 请求登录
-  RES_LOGIN = 102; // 登录结果
+    LOGIN = 10; // 登录模块
+    REQ_LOGIN = 101; // 请求登录
+    RES_LOGIN = 102; // 登录结果
 
-  REQ_QUERY_TABLE_DATA = 201; // 查询表数据
-  RES_QUERY_TABLEDATA = 202; // 查询表数据结果
+    QUERY_TABLE = 20; // 表数据
+    REQ_QUERY_TABLE_DATA = 201; // 查询表数据
+    RES_QUERY_TABLE_DATA = 202; // 查询表数据结果
 
 }

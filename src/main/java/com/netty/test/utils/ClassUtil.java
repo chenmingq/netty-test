@@ -5,11 +5,8 @@ import com.netty.test.annotation.ReqMapping;
 import com.netty.test.common.cache.ClassCache;
 
 import java.io.File;
-import java.lang.reflect.Method;
-import java.lang.reflect.Type;
 import java.net.URL;
 import java.net.URLDecoder;
-import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Set;
@@ -53,7 +50,7 @@ public class ClassUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        ClassCache.reqMappingSet = mappingClassSet;
+        ClassCache.REQ_MAPPING_SET = mappingClassSet;
     }
 
     /**

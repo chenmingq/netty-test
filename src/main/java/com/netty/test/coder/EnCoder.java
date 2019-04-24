@@ -25,12 +25,14 @@ public class EnCoder extends MessageToByteEncoder<Message> {
         int magic = request.getMagic();
         byte[] body = request.getBody();
         int moduleId = request.getModuleId();
+        int cmdId = request.getCmdId();
         long timestamp = request.getTimestamp();
 
         int length = CommonConst.HEAD_LENGTH + body.length;
 
         out.writeInt(magic)
                 .writeInt(moduleId)
+                .writeInt(cmdId)
                 .writeInt(length)
                 .writeLong(timestamp)
                 .writeBytes(body);

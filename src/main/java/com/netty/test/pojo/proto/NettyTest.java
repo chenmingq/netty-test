@@ -4,8363 +4,8881 @@
 package com.netty.test.pojo.proto;
 
 public final class NettyTest {
-  private NettyTest() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private NettyTest() {
+    }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  /**
-   * <pre>
-   *消息类型
-   * </pre>
-   *
-   * Protobuf enum {@code com.netty.test.pojo.proto.MESSAGE_TYPE}
-   */
-  public enum MESSAGE_TYPE
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <pre>
-     * 请求登录
-     * </pre>
-     *
-     * <code>REQ_LOGIN = 101;</code>
-     */
-    REQ_LOGIN(101),
-    /**
-     * <pre>
-     * 登录结果
-     * </pre>
-     *
-     * <code>RES_LOGIN = 102;</code>
-     */
-    RES_LOGIN(102),
-    /**
-     * <pre>
-     * 查询表数据
-     * </pre>
-     *
-     * <code>REQ_QUERY_TABLE_DATA = 201;</code>
-     */
-    REQ_QUERY_TABLE_DATA(201),
-    /**
-     * <pre>
-     * 查询表数据结果
-     * </pre>
-     *
-     * <code>RES_QUERY_TABLEDATA = 202;</code>
-     */
-    RES_QUERY_TABLEDATA(202),
-    ;
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistryLite registry) {
+    }
 
-    /**
-     * <pre>
-     * 请求登录
-     * </pre>
-     *
-     * <code>REQ_LOGIN = 101;</code>
-     */
-    public static final int REQ_LOGIN_VALUE = 101;
-    /**
-     * <pre>
-     * 登录结果
-     * </pre>
-     *
-     * <code>RES_LOGIN = 102;</code>
-     */
-    public static final int RES_LOGIN_VALUE = 102;
-    /**
-     * <pre>
-     * 查询表数据
-     * </pre>
-     *
-     * <code>REQ_QUERY_TABLE_DATA = 201;</code>
-     */
-    public static final int REQ_QUERY_TABLE_DATA_VALUE = 201;
-    /**
-     * <pre>
-     * 查询表数据结果
-     * </pre>
-     *
-     * <code>RES_QUERY_TABLEDATA = 202;</code>
-     */
-    public static final int RES_QUERY_TABLEDATA_VALUE = 202;
-
-
-    public final int getNumber() {
-      return value;
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions(
+                (com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
     /**
-     * @deprecated Use {@link #forNumber(int)} instead.
+     * <pre>
+     * 消息类型
+     * </pre>
+     * <p>
+     * Protobuf enum {@code com.netty.test.pojo.proto.MESSAGE_TYPE}
      */
-    @java.lang.Deprecated
-    public static MESSAGE_TYPE valueOf(int value) {
-      return forNumber(value);
-    }
+    public enum MESSAGE_TYPE
+            implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         * <pre>
+         * 登录模块
+         * </pre>
+         *
+         * <code>LOGIN = 10;</code>
+         */
+        LOGIN(10),
+        /**
+         * <pre>
+         * 请求登录
+         * </pre>
+         *
+         * <code>REQ_LOGIN = 101;</code>
+         */
+        REQ_LOGIN(101),
+        /**
+         * <pre>
+         * 登录结果
+         * </pre>
+         *
+         * <code>RES_LOGIN = 102;</code>
+         */
+        RES_LOGIN(102),
+        /**
+         * <pre>
+         * 表数据
+         * </pre>
+         *
+         * <code>QUERY_TABLE = 20;</code>
+         */
+        QUERY_TABLE(20),
+        /**
+         * <pre>
+         * 查询表数据
+         * </pre>
+         *
+         * <code>REQ_QUERY_TABLE_DATA = 201;</code>
+         */
+        REQ_QUERY_TABLE_DATA(201),
+        /**
+         * <pre>
+         * 查询表数据结果
+         * </pre>
+         *
+         * <code>RES_QUERY_TABLE_DATA = 202;</code>
+         */
+        RES_QUERY_TABLE_DATA(202),
+        ;
 
-    public static MESSAGE_TYPE forNumber(int value) {
-      switch (value) {
-        case 101: return REQ_LOGIN;
-        case 102: return RES_LOGIN;
-        case 201: return REQ_QUERY_TABLE_DATA;
-        case 202: return RES_QUERY_TABLEDATA;
-        default: return null;
-      }
-    }
+        /**
+         * <pre>
+         * 登录模块
+         * </pre>
+         *
+         * <code>LOGIN = 10;</code>
+         */
+        public static final int LOGIN_VALUE = 10;
+        /**
+         * <pre>
+         * 请求登录
+         * </pre>
+         *
+         * <code>REQ_LOGIN = 101;</code>
+         */
+        public static final int REQ_LOGIN_VALUE = 101;
+        /**
+         * <pre>
+         * 登录结果
+         * </pre>
+         *
+         * <code>RES_LOGIN = 102;</code>
+         */
+        public static final int RES_LOGIN_VALUE = 102;
+        /**
+         * <pre>
+         * 表数据
+         * </pre>
+         *
+         * <code>QUERY_TABLE = 20;</code>
+         */
+        public static final int QUERY_TABLE_VALUE = 20;
+        /**
+         * <pre>
+         * 查询表数据
+         * </pre>
+         *
+         * <code>REQ_QUERY_TABLE_DATA = 201;</code>
+         */
+        public static final int REQ_QUERY_TABLE_DATA_VALUE = 201;
+        /**
+         * <pre>
+         * 查询表数据结果
+         * </pre>
+         *
+         * <code>RES_QUERY_TABLE_DATA = 202;</code>
+         */
+        public static final int RES_QUERY_TABLE_DATA_VALUE = 202;
 
-    public static com.google.protobuf.Internal.EnumLiteMap<MESSAGE_TYPE>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        MESSAGE_TYPE> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<MESSAGE_TYPE>() {
-            public MESSAGE_TYPE findValueByNumber(int number) {
-              return MESSAGE_TYPE.forNumber(number);
+
+        public final int getNumber() {
+            return value;
+        }
+
+        /**
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @Deprecated
+        public static MESSAGE_TYPE valueOf(int value) {
+            return forNumber(value);
+        }
+
+        public static MESSAGE_TYPE forNumber(int value) {
+            switch (value) {
+                case 10:
+                    return LOGIN;
+                case 101:
+                    return REQ_LOGIN;
+                case 102:
+                    return RES_LOGIN;
+                case 20:
+                    return QUERY_TABLE;
+                case 201:
+                    return REQ_QUERY_TABLE_DATA;
+                case 202:
+                    return RES_QUERY_TABLE_DATA;
+                default:
+                    return null;
             }
-          };
+        }
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        public static com.google.protobuf.Internal.EnumLiteMap<MESSAGE_TYPE>
+        internalGetValueMap() {
+            return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<
+                MESSAGE_TYPE> internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<MESSAGE_TYPE>() {
+                    public MESSAGE_TYPE findValueByNumber(int number) {
+                        return MESSAGE_TYPE.forNumber(number);
+                    }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
+            return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
+            return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.netty.test.pojo.proto.NettyTest.getDescriptor().getEnumTypes().get(0);
+            return NettyTest.getDescriptor().getEnumTypes().get(0);
+        }
+
+        private static final MESSAGE_TYPE[] VALUES = values();
+
+        public static MESSAGE_TYPE valueOf(
+                com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+                throw new IllegalArgumentException(
+                        "EnumValueDescriptor is not for this type.");
+            }
+            return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private MESSAGE_TYPE(int value) {
+            this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:com.netty.test.pojo.proto.MESSAGE_TYPE)
     }
 
-    private static final MESSAGE_TYPE[] VALUES = values();
+    public interface ReqLoginOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.netty.test.pojo.proto.ReqLogin)
+            com.google.protobuf.MessageOrBuilder {
 
-    public static MESSAGE_TYPE valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      return VALUES[desc.getIndex()];
-    }
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>optional string host = 1;</code>
+         */
+        boolean hasHost();
 
-    private final int value;
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>optional string host = 1;</code>
+         */
+        String getHost();
 
-    private MESSAGE_TYPE(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:com.netty.test.pojo.proto.MESSAGE_TYPE)
-  }
-
-  public interface ReqLoginOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.netty.test.pojo.proto.ReqLogin)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required string host = 1;</code>
-     */
-    boolean hasHost();
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required string host = 1;</code>
-     */
-    java.lang.String getHost();
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required string host = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>optional string host = 1;</code>
+         */
+        com.google.protobuf.ByteString
         getHostBytes();
 
-    /**
-     * <pre>
-     *端口
-     * </pre>
-     *
-     * <code>required string port = 2;</code>
-     */
-    boolean hasPort();
-    /**
-     * <pre>
-     *端口
-     * </pre>
-     *
-     * <code>required string port = 2;</code>
-     */
-    java.lang.String getPort();
-    /**
-     * <pre>
-     *端口
-     * </pre>
-     *
-     * <code>required string port = 2;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 端口
+         * </pre>
+         *
+         * <code>optional string port = 2;</code>
+         */
+        boolean hasPort();
+
+        /**
+         * <pre>
+         * 端口
+         * </pre>
+         *
+         * <code>optional string port = 2;</code>
+         */
+        String getPort();
+
+        /**
+         * <pre>
+         * 端口
+         * </pre>
+         *
+         * <code>optional string port = 2;</code>
+         */
+        com.google.protobuf.ByteString
         getPortBytes();
 
-    /**
-     * <pre>
-     *用户名
-     * </pre>
-     *
-     * <code>required string dbName = 3;</code>
-     */
-    boolean hasDbName();
-    /**
-     * <pre>
-     *用户名
-     * </pre>
-     *
-     * <code>required string dbName = 3;</code>
-     */
-    java.lang.String getDbName();
-    /**
-     * <pre>
-     *用户名
-     * </pre>
-     *
-     * <code>required string dbName = 3;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 数据库名称
+         * </pre>
+         *
+         * <code>optional string dbName = 3;</code>
+         */
+        boolean hasDbName();
+
+        /**
+         * <pre>
+         * 数据库名称
+         * </pre>
+         *
+         * <code>optional string dbName = 3;</code>
+         */
+        String getDbName();
+
+        /**
+         * <pre>
+         * 数据库名称
+         * </pre>
+         *
+         * <code>optional string dbName = 3;</code>
+         */
+        com.google.protobuf.ByteString
         getDbNameBytes();
 
-    /**
-     * <pre>
-     *用户名
-     * </pre>
-     *
-     * <code>required string userName = 4;</code>
-     */
-    boolean hasUserName();
-    /**
-     * <pre>
-     *用户名
-     * </pre>
-     *
-     * <code>required string userName = 4;</code>
-     */
-    java.lang.String getUserName();
-    /**
-     * <pre>
-     *用户名
-     * </pre>
-     *
-     * <code>required string userName = 4;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 用户名
+         * </pre>
+         *
+         * <code>required string userName = 4;</code>
+         */
+        boolean hasUserName();
+
+        /**
+         * <pre>
+         * 用户名
+         * </pre>
+         *
+         * <code>required string userName = 4;</code>
+         */
+        String getUserName();
+
+        /**
+         * <pre>
+         * 用户名
+         * </pre>
+         *
+         * <code>required string userName = 4;</code>
+         */
+        com.google.protobuf.ByteString
         getUserNameBytes();
 
-    /**
-     * <pre>
-     *密码
-     * </pre>
-     *
-     * <code>required string password = 5;</code>
-     */
-    boolean hasPassword();
-    /**
-     * <pre>
-     *密码
-     * </pre>
-     *
-     * <code>required string password = 5;</code>
-     */
-    java.lang.String getPassword();
-    /**
-     * <pre>
-     *密码
-     * </pre>
-     *
-     * <code>required string password = 5;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 密码
+         * </pre>
+         *
+         * <code>required string password = 5;</code>
+         */
+        boolean hasPassword();
+
+        /**
+         * <pre>
+         * 密码
+         * </pre>
+         *
+         * <code>required string password = 5;</code>
+         */
+        String getPassword();
+
+        /**
+         * <pre>
+         * 密码
+         * </pre>
+         *
+         * <code>required string password = 5;</code>
+         */
+        com.google.protobuf.ByteString
         getPasswordBytes();
 
-    /**
-     * <pre>
-     *完整的链接
-     * </pre>
-     *
-     * <code>optional string url = 6;</code>
-     */
-    boolean hasUrl();
-    /**
-     * <pre>
-     *完整的链接
-     * </pre>
-     *
-     * <code>optional string url = 6;</code>
-     */
-    java.lang.String getUrl();
-    /**
-     * <pre>
-     *完整的链接
-     * </pre>
-     *
-     * <code>optional string url = 6;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 完整的链接
+         * </pre>
+         *
+         * <code>optional string url = 6;</code>
+         */
+        boolean hasUrl();
+
+        /**
+         * <pre>
+         * 完整的链接
+         * </pre>
+         *
+         * <code>optional string url = 6;</code>
+         */
+        String getUrl();
+
+        /**
+         * <pre>
+         * 完整的链接
+         * </pre>
+         *
+         * <code>optional string url = 6;</code>
+         */
+        com.google.protobuf.ByteString
         getUrlBytes();
-  }
-  /**
-   * <pre>
-   *登录
-   * </pre>
-   *
-   * Protobuf type {@code com.netty.test.pojo.proto.ReqLogin}
-   */
-  public  static final class ReqLogin extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.netty.test.pojo.proto.ReqLogin)
-      ReqLoginOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ReqLogin.newBuilder() to construct.
-    private ReqLogin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ReqLogin() {
-      host_ = "";
-      port_ = "";
-      dbName_ = "";
-      userName_ = "";
-      password_ = "";
-      url_ = "";
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ReqLogin(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              host_ = bs;
-              break;
-            }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000002;
-              port_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
-              dbName_ = bs;
-              break;
-            }
-            case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000008;
-              userName_ = bs;
-              break;
-            }
-            case 42: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000010;
-              password_ = bs;
-              break;
-            }
-            case 50: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000020;
-              url_ = bs;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ReqLogin_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ReqLogin_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.netty.test.pojo.proto.NettyTest.ReqLogin.class, com.netty.test.pojo.proto.NettyTest.ReqLogin.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int HOST_FIELD_NUMBER = 1;
-    private volatile java.lang.Object host_;
     /**
      * <pre>
-     *链接地址
+     * 登录
      * </pre>
-     *
-     * <code>required string host = 1;</code>
-     */
-    public boolean hasHost() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required string host = 1;</code>
-     */
-    public java.lang.String getHost() {
-      java.lang.Object ref = host_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          host_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required string host = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getHostBytes() {
-      java.lang.Object ref = host_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        host_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PORT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object port_;
-    /**
-     * <pre>
-     *端口
-     * </pre>
-     *
-     * <code>required string port = 2;</code>
-     */
-    public boolean hasPort() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <pre>
-     *端口
-     * </pre>
-     *
-     * <code>required string port = 2;</code>
-     */
-    public java.lang.String getPort() {
-      java.lang.Object ref = port_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          port_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *端口
-     * </pre>
-     *
-     * <code>required string port = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPortBytes() {
-      java.lang.Object ref = port_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        port_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DBNAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object dbName_;
-    /**
-     * <pre>
-     *用户名
-     * </pre>
-     *
-     * <code>required string dbName = 3;</code>
-     */
-    public boolean hasDbName() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <pre>
-     *用户名
-     * </pre>
-     *
-     * <code>required string dbName = 3;</code>
-     */
-    public java.lang.String getDbName() {
-      java.lang.Object ref = dbName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          dbName_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *用户名
-     * </pre>
-     *
-     * <code>required string dbName = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDbNameBytes() {
-      java.lang.Object ref = dbName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        dbName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int USERNAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object userName_;
-    /**
-     * <pre>
-     *用户名
-     * </pre>
-     *
-     * <code>required string userName = 4;</code>
-     */
-    public boolean hasUserName() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <pre>
-     *用户名
-     * </pre>
-     *
-     * <code>required string userName = 4;</code>
-     */
-    public java.lang.String getUserName() {
-      java.lang.Object ref = userName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          userName_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *用户名
-     * </pre>
-     *
-     * <code>required string userName = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getUserNameBytes() {
-      java.lang.Object ref = userName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PASSWORD_FIELD_NUMBER = 5;
-    private volatile java.lang.Object password_;
-    /**
-     * <pre>
-     *密码
-     * </pre>
-     *
-     * <code>required string password = 5;</code>
-     */
-    public boolean hasPassword() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <pre>
-     *密码
-     * </pre>
-     *
-     * <code>required string password = 5;</code>
-     */
-    public java.lang.String getPassword() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          password_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *密码
-     * </pre>
-     *
-     * <code>required string password = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPasswordBytes() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        password_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int URL_FIELD_NUMBER = 6;
-    private volatile java.lang.Object url_;
-    /**
-     * <pre>
-     *完整的链接
-     * </pre>
-     *
-     * <code>optional string url = 6;</code>
-     */
-    public boolean hasUrl() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <pre>
-     *完整的链接
-     * </pre>
-     *
-     * <code>optional string url = 6;</code>
-     */
-    public java.lang.String getUrl() {
-      java.lang.Object ref = url_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          url_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *完整的链接
-     * </pre>
-     *
-     * <code>optional string url = 6;</code>
-     */
-    public com.google.protobuf.ByteString
-        getUrlBytes() {
-      java.lang.Object ref = url_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        url_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (!hasHost()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPort()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasDbName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasUserName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPassword()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, host_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, port_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dbName_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userName_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, password_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, url_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, host_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, port_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dbName_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userName_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, password_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, url_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.netty.test.pojo.proto.NettyTest.ReqLogin)) {
-        return super.equals(obj);
-      }
-      com.netty.test.pojo.proto.NettyTest.ReqLogin other = (com.netty.test.pojo.proto.NettyTest.ReqLogin) obj;
-
-      boolean result = true;
-      result = result && (hasHost() == other.hasHost());
-      if (hasHost()) {
-        result = result && getHost()
-            .equals(other.getHost());
-      }
-      result = result && (hasPort() == other.hasPort());
-      if (hasPort()) {
-        result = result && getPort()
-            .equals(other.getPort());
-      }
-      result = result && (hasDbName() == other.hasDbName());
-      if (hasDbName()) {
-        result = result && getDbName()
-            .equals(other.getDbName());
-      }
-      result = result && (hasUserName() == other.hasUserName());
-      if (hasUserName()) {
-        result = result && getUserName()
-            .equals(other.getUserName());
-      }
-      result = result && (hasPassword() == other.hasPassword());
-      if (hasPassword()) {
-        result = result && getPassword()
-            .equals(other.getPassword());
-      }
-      result = result && (hasUrl() == other.hasUrl());
-      if (hasUrl()) {
-        result = result && getUrl()
-            .equals(other.getUrl());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasHost()) {
-        hash = (37 * hash) + HOST_FIELD_NUMBER;
-        hash = (53 * hash) + getHost().hashCode();
-      }
-      if (hasPort()) {
-        hash = (37 * hash) + PORT_FIELD_NUMBER;
-        hash = (53 * hash) + getPort().hashCode();
-      }
-      if (hasDbName()) {
-        hash = (37 * hash) + DBNAME_FIELD_NUMBER;
-        hash = (53 * hash) + getDbName().hashCode();
-      }
-      if (hasUserName()) {
-        hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-        hash = (53 * hash) + getUserName().hashCode();
-      }
-      if (hasPassword()) {
-        hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-        hash = (53 * hash) + getPassword().hashCode();
-      }
-      if (hasUrl()) {
-        hash = (37 * hash) + URL_FIELD_NUMBER;
-        hash = (53 * hash) + getUrl().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.netty.test.pojo.proto.NettyTest.ReqLogin parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqLogin parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqLogin parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqLogin parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqLogin parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqLogin parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqLogin parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqLogin parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqLogin parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqLogin parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqLogin parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqLogin parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netty.test.pojo.proto.NettyTest.ReqLogin prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     *登录
-     * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.netty.test.pojo.proto.ReqLogin}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.netty.test.pojo.proto.ReqLogin)
-        com.netty.test.pojo.proto.NettyTest.ReqLoginOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ReqLogin_descriptor;
-      }
+    public static final class ReqLogin extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.netty.test.pojo.proto.ReqLogin)
+            ReqLoginOrBuilder {
+        private static final long serialVersionUID = 0L;
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ReqLogin_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netty.test.pojo.proto.NettyTest.ReqLogin.class, com.netty.test.pojo.proto.NettyTest.ReqLogin.Builder.class);
-      }
+        // Use ReqLogin.newBuilder() to construct.
+        private ReqLogin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
 
-      // Construct using com.netty.test.pojo.proto.NettyTest.ReqLogin.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+        private ReqLogin() {
+            host_ = "";
+            port_ = "";
+            dbName_ = "";
+            userName_ = "";
+            password_ = "";
+            url_ = "";
+        }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        host_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        port_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        dbName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        userName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
-        password_ = "";
-        bitField0_ = (bitField0_ & ~0x00000010);
-        url_ = "";
-        bitField0_ = (bitField0_ & ~0x00000020);
-        return this;
-      }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ReqLogin_descriptor;
-      }
-
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.ReqLogin getDefaultInstanceForType() {
-        return com.netty.test.pojo.proto.NettyTest.ReqLogin.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.ReqLogin build() {
-        com.netty.test.pojo.proto.NettyTest.ReqLogin result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.ReqLogin buildPartial() {
-        com.netty.test.pojo.proto.NettyTest.ReqLogin result = new com.netty.test.pojo.proto.NettyTest.ReqLogin(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.host_ = host_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.port_ = port_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.dbName_ = dbName_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.userName_ = userName_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.password_ = password_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.url_ = url_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.netty.test.pojo.proto.NettyTest.ReqLogin) {
-          return mergeFrom((com.netty.test.pojo.proto.NettyTest.ReqLogin)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.netty.test.pojo.proto.NettyTest.ReqLogin other) {
-        if (other == com.netty.test.pojo.proto.NettyTest.ReqLogin.getDefaultInstance()) return this;
-        if (other.hasHost()) {
-          bitField0_ |= 0x00000001;
-          host_ = other.host_;
-          onChanged();
-        }
-        if (other.hasPort()) {
-          bitField0_ |= 0x00000002;
-          port_ = other.port_;
-          onChanged();
-        }
-        if (other.hasDbName()) {
-          bitField0_ |= 0x00000004;
-          dbName_ = other.dbName_;
-          onChanged();
-        }
-        if (other.hasUserName()) {
-          bitField0_ |= 0x00000008;
-          userName_ = other.userName_;
-          onChanged();
-        }
-        if (other.hasPassword()) {
-          bitField0_ |= 0x00000010;
-          password_ = other.password_;
-          onChanged();
-        }
-        if (other.hasUrl()) {
-          bitField0_ |= 0x00000020;
-          url_ = other.url_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        if (!hasHost()) {
-          return false;
-        }
-        if (!hasPort()) {
-          return false;
-        }
-        if (!hasDbName()) {
-          return false;
-        }
-        if (!hasUserName()) {
-          return false;
-        }
-        if (!hasPassword()) {
-          return false;
-        }
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.netty.test.pojo.proto.NettyTest.ReqLogin parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.netty.test.pojo.proto.NettyTest.ReqLogin) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object host_ = "";
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required string host = 1;</code>
-       */
-      public boolean hasHost() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required string host = 1;</code>
-       */
-      public java.lang.String getHost() {
-        java.lang.Object ref = host_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            host_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required string host = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getHostBytes() {
-        java.lang.Object ref = host_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          host_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required string host = 1;</code>
-       */
-      public Builder setHost(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        host_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required string host = 1;</code>
-       */
-      public Builder clearHost() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        host_ = getDefaultInstance().getHost();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required string host = 1;</code>
-       */
-      public Builder setHostBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        host_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object port_ = "";
-      /**
-       * <pre>
-       *端口
-       * </pre>
-       *
-       * <code>required string port = 2;</code>
-       */
-      public boolean hasPort() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <pre>
-       *端口
-       * </pre>
-       *
-       * <code>required string port = 2;</code>
-       */
-      public java.lang.String getPort() {
-        java.lang.Object ref = port_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            port_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *端口
-       * </pre>
-       *
-       * <code>required string port = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getPortBytes() {
-        java.lang.Object ref = port_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          port_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *端口
-       * </pre>
-       *
-       * <code>required string port = 2;</code>
-       */
-      public Builder setPort(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        port_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *端口
-       * </pre>
-       *
-       * <code>required string port = 2;</code>
-       */
-      public Builder clearPort() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        port_ = getDefaultInstance().getPort();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *端口
-       * </pre>
-       *
-       * <code>required string port = 2;</code>
-       */
-      public Builder setPortBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        port_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object dbName_ = "";
-      /**
-       * <pre>
-       *用户名
-       * </pre>
-       *
-       * <code>required string dbName = 3;</code>
-       */
-      public boolean hasDbName() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <pre>
-       *用户名
-       * </pre>
-       *
-       * <code>required string dbName = 3;</code>
-       */
-      public java.lang.String getDbName() {
-        java.lang.Object ref = dbName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            dbName_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *用户名
-       * </pre>
-       *
-       * <code>required string dbName = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDbNameBytes() {
-        java.lang.Object ref = dbName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          dbName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *用户名
-       * </pre>
-       *
-       * <code>required string dbName = 3;</code>
-       */
-      public Builder setDbName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        dbName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *用户名
-       * </pre>
-       *
-       * <code>required string dbName = 3;</code>
-       */
-      public Builder clearDbName() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        dbName_ = getDefaultInstance().getDbName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *用户名
-       * </pre>
-       *
-       * <code>required string dbName = 3;</code>
-       */
-      public Builder setDbNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        dbName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object userName_ = "";
-      /**
-       * <pre>
-       *用户名
-       * </pre>
-       *
-       * <code>required string userName = 4;</code>
-       */
-      public boolean hasUserName() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <pre>
-       *用户名
-       * </pre>
-       *
-       * <code>required string userName = 4;</code>
-       */
-      public java.lang.String getUserName() {
-        java.lang.Object ref = userName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            userName_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *用户名
-       * </pre>
-       *
-       * <code>required string userName = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getUserNameBytes() {
-        java.lang.Object ref = userName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          userName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *用户名
-       * </pre>
-       *
-       * <code>required string userName = 4;</code>
-       */
-      public Builder setUserName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        userName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *用户名
-       * </pre>
-       *
-       * <code>required string userName = 4;</code>
-       */
-      public Builder clearUserName() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        userName_ = getDefaultInstance().getUserName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *用户名
-       * </pre>
-       *
-       * <code>required string userName = 4;</code>
-       */
-      public Builder setUserNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        userName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object password_ = "";
-      /**
-       * <pre>
-       *密码
-       * </pre>
-       *
-       * <code>required string password = 5;</code>
-       */
-      public boolean hasPassword() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <pre>
-       *密码
-       * </pre>
-       *
-       * <code>required string password = 5;</code>
-       */
-      public java.lang.String getPassword() {
-        java.lang.Object ref = password_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            password_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *密码
-       * </pre>
-       *
-       * <code>required string password = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getPasswordBytes() {
-        java.lang.Object ref = password_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          password_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *密码
-       * </pre>
-       *
-       * <code>required string password = 5;</code>
-       */
-      public Builder setPassword(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        password_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *密码
-       * </pre>
-       *
-       * <code>required string password = 5;</code>
-       */
-      public Builder clearPassword() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        password_ = getDefaultInstance().getPassword();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *密码
-       * </pre>
-       *
-       * <code>required string password = 5;</code>
-       */
-      public Builder setPasswordBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        password_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object url_ = "";
-      /**
-       * <pre>
-       *完整的链接
-       * </pre>
-       *
-       * <code>optional string url = 6;</code>
-       */
-      public boolean hasUrl() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <pre>
-       *完整的链接
-       * </pre>
-       *
-       * <code>optional string url = 6;</code>
-       */
-      public java.lang.String getUrl() {
-        java.lang.Object ref = url_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            url_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *完整的链接
-       * </pre>
-       *
-       * <code>optional string url = 6;</code>
-       */
-      public com.google.protobuf.ByteString
-          getUrlBytes() {
-        java.lang.Object ref = url_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          url_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *完整的链接
-       * </pre>
-       *
-       * <code>optional string url = 6;</code>
-       */
-      public Builder setUrl(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
-        url_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *完整的链接
-       * </pre>
-       *
-       * <code>optional string url = 6;</code>
-       */
-      public Builder clearUrl() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        url_ = getDefaultInstance().getUrl();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *完整的链接
-       * </pre>
-       *
-       * <code>optional string url = 6;</code>
-       */
-      public Builder setUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
-        url_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.netty.test.pojo.proto.ReqLogin)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.netty.test.pojo.proto.ReqLogin)
-    private static final com.netty.test.pojo.proto.NettyTest.ReqLogin DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netty.test.pojo.proto.NettyTest.ReqLogin();
-    }
-
-    public static com.netty.test.pojo.proto.NettyTest.ReqLogin getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<ReqLogin>
-        PARSER = new com.google.protobuf.AbstractParser<ReqLogin>() {
-      @java.lang.Override
-      public ReqLogin parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ReqLogin(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ReqLogin> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ReqLogin> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netty.test.pojo.proto.NettyTest.ReqLogin getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ResLoginOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.netty.test.pojo.proto.ResLogin)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *登录状态
-     * </pre>
-     *
-     * <code>required int32 loginState = 1;</code>
-     */
-    boolean hasLoginState();
-    /**
-     * <pre>
-     *登录状态
-     * </pre>
-     *
-     * <code>required int32 loginState = 1;</code>
-     */
-    int getLoginState();
-
-    /**
-     * <pre>
-     *数据库中的表的信息
-     * </pre>
-     *
-     * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-     */
-    java.util.List<com.netty.test.pojo.proto.NettyTest.InformationSchemaTables> 
-        getSchemaTableListList();
-    /**
-     * <pre>
-     *数据库中的表的信息
-     * </pre>
-     *
-     * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-     */
-    com.netty.test.pojo.proto.NettyTest.InformationSchemaTables getSchemaTableList(int index);
-    /**
-     * <pre>
-     *数据库中的表的信息
-     * </pre>
-     *
-     * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-     */
-    int getSchemaTableListCount();
-    /**
-     * <pre>
-     *数据库中的表的信息
-     * </pre>
-     *
-     * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-     */
-    java.util.List<? extends com.netty.test.pojo.proto.NettyTest.InformationSchemaTablesOrBuilder> 
-        getSchemaTableListOrBuilderList();
-    /**
-     * <pre>
-     *数据库中的表的信息
-     * </pre>
-     *
-     * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-     */
-    com.netty.test.pojo.proto.NettyTest.InformationSchemaTablesOrBuilder getSchemaTableListOrBuilder(
-        int index);
-  }
-  /**
-   * <pre>
-   *登录结果
-   * </pre>
-   *
-   * Protobuf type {@code com.netty.test.pojo.proto.ResLogin}
-   */
-  public  static final class ResLogin extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.netty.test.pojo.proto.ResLogin)
-      ResLoginOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ResLogin.newBuilder() to construct.
-    private ResLogin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ResLogin() {
-      loginState_ = 0;
-      schemaTableList_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ResLogin(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              loginState_ = input.readInt32();
-              break;
+        private ReqLogin(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
             }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                schemaTableList_ = new java.util.ArrayList<com.netty.test.pojo.proto.NettyTest.InformationSchemaTables>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              schemaTableList_.add(
-                  input.readMessage(com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.PARSER, extensionRegistry));
-              break;
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            host_ = bs;
+                            break;
+                        }
+                        case 18: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000002;
+                            port_ = bs;
+                            break;
+                        }
+                        case 26: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000004;
+                            dbName_ = bs;
+                            break;
+                        }
+                        case 34: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000008;
+                            userName_ = bs;
+                            break;
+                        }
+                        case 42: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000010;
+                            password_ = bs;
+                            break;
+                        }
+                        case 50: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000020;
+                            url_ = bs;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          schemaTableList_ = java.util.Collections.unmodifiableList(schemaTableList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ResLogin_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ResLogin_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.netty.test.pojo.proto.NettyTest.ResLogin.class, com.netty.test.pojo.proto.NettyTest.ResLogin.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int LOGINSTATE_FIELD_NUMBER = 1;
-    private int loginState_;
-    /**
-     * <pre>
-     *登录状态
-     * </pre>
-     *
-     * <code>required int32 loginState = 1;</code>
-     */
-    public boolean hasLoginState() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <pre>
-     *登录状态
-     * </pre>
-     *
-     * <code>required int32 loginState = 1;</code>
-     */
-    public int getLoginState() {
-      return loginState_;
-    }
-
-    public static final int SCHEMATABLELIST_FIELD_NUMBER = 2;
-    private java.util.List<com.netty.test.pojo.proto.NettyTest.InformationSchemaTables> schemaTableList_;
-    /**
-     * <pre>
-     *数据库中的表的信息
-     * </pre>
-     *
-     * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-     */
-    public java.util.List<com.netty.test.pojo.proto.NettyTest.InformationSchemaTables> getSchemaTableListList() {
-      return schemaTableList_;
-    }
-    /**
-     * <pre>
-     *数据库中的表的信息
-     * </pre>
-     *
-     * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-     */
-    public java.util.List<? extends com.netty.test.pojo.proto.NettyTest.InformationSchemaTablesOrBuilder> 
-        getSchemaTableListOrBuilderList() {
-      return schemaTableList_;
-    }
-    /**
-     * <pre>
-     *数据库中的表的信息
-     * </pre>
-     *
-     * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-     */
-    public int getSchemaTableListCount() {
-      return schemaTableList_.size();
-    }
-    /**
-     * <pre>
-     *数据库中的表的信息
-     * </pre>
-     *
-     * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-     */
-    public com.netty.test.pojo.proto.NettyTest.InformationSchemaTables getSchemaTableList(int index) {
-      return schemaTableList_.get(index);
-    }
-    /**
-     * <pre>
-     *数据库中的表的信息
-     * </pre>
-     *
-     * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-     */
-    public com.netty.test.pojo.proto.NettyTest.InformationSchemaTablesOrBuilder getSchemaTableListOrBuilder(
-        int index) {
-      return schemaTableList_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (!hasLoginState()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      for (int i = 0; i < getSchemaTableListCount(); i++) {
-        if (!getSchemaTableList(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
+            return NettyTest.internal_static_com_netty_test_pojo_proto_ReqLogin_descriptor;
         }
-      }
-      memoizedIsInitialized = 1;
-      return true;
+
+        @Override
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return NettyTest.internal_static_com_netty_test_pojo_proto_ReqLogin_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            ReqLogin.class, Builder.class);
+        }
+
+        private int bitField0_;
+        public static final int HOST_FIELD_NUMBER = 1;
+        private volatile Object host_;
+
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>optional string host = 1;</code>
+         */
+        public boolean hasHost() {
+            return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>optional string host = 1;</code>
+         */
+        public String getHost() {
+            Object ref = host_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    host_ = s;
+                }
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>optional string host = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getHostBytes() {
+            Object ref = host_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                host_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int PORT_FIELD_NUMBER = 2;
+        private volatile Object port_;
+
+        /**
+         * <pre>
+         * 端口
+         * </pre>
+         *
+         * <code>optional string port = 2;</code>
+         */
+        public boolean hasPort() {
+            return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+
+        /**
+         * <pre>
+         * 端口
+         * </pre>
+         *
+         * <code>optional string port = 2;</code>
+         */
+        public String getPort() {
+            Object ref = port_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    port_ = s;
+                }
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 端口
+         * </pre>
+         *
+         * <code>optional string port = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+        getPortBytes() {
+            Object ref = port_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                port_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int DBNAME_FIELD_NUMBER = 3;
+        private volatile Object dbName_;
+
+        /**
+         * <pre>
+         * 数据库名称
+         * </pre>
+         *
+         * <code>optional string dbName = 3;</code>
+         */
+        public boolean hasDbName() {
+            return ((bitField0_ & 0x00000004) == 0x00000004);
+        }
+
+        /**
+         * <pre>
+         * 数据库名称
+         * </pre>
+         *
+         * <code>optional string dbName = 3;</code>
+         */
+        public String getDbName() {
+            Object ref = dbName_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    dbName_ = s;
+                }
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 数据库名称
+         * </pre>
+         *
+         * <code>optional string dbName = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+        getDbNameBytes() {
+            Object ref = dbName_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                dbName_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int USERNAME_FIELD_NUMBER = 4;
+        private volatile Object userName_;
+
+        /**
+         * <pre>
+         * 用户名
+         * </pre>
+         *
+         * <code>required string userName = 4;</code>
+         */
+        public boolean hasUserName() {
+            return ((bitField0_ & 0x00000008) == 0x00000008);
+        }
+
+        /**
+         * <pre>
+         * 用户名
+         * </pre>
+         *
+         * <code>required string userName = 4;</code>
+         */
+        public String getUserName() {
+            Object ref = userName_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    userName_ = s;
+                }
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 用户名
+         * </pre>
+         *
+         * <code>required string userName = 4;</code>
+         */
+        public com.google.protobuf.ByteString
+        getUserNameBytes() {
+            Object ref = userName_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                userName_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int PASSWORD_FIELD_NUMBER = 5;
+        private volatile Object password_;
+
+        /**
+         * <pre>
+         * 密码
+         * </pre>
+         *
+         * <code>required string password = 5;</code>
+         */
+        public boolean hasPassword() {
+            return ((bitField0_ & 0x00000010) == 0x00000010);
+        }
+
+        /**
+         * <pre>
+         * 密码
+         * </pre>
+         *
+         * <code>required string password = 5;</code>
+         */
+        public String getPassword() {
+            Object ref = password_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    password_ = s;
+                }
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 密码
+         * </pre>
+         *
+         * <code>required string password = 5;</code>
+         */
+        public com.google.protobuf.ByteString
+        getPasswordBytes() {
+            Object ref = password_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                password_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int URL_FIELD_NUMBER = 6;
+        private volatile Object url_;
+
+        /**
+         * <pre>
+         * 完整的链接
+         * </pre>
+         *
+         * <code>optional string url = 6;</code>
+         */
+        public boolean hasUrl() {
+            return ((bitField0_ & 0x00000020) == 0x00000020);
+        }
+
+        /**
+         * <pre>
+         * 完整的链接
+         * </pre>
+         *
+         * <code>optional string url = 6;</code>
+         */
+        public String getUrl() {
+            Object ref = url_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    url_ = s;
+                }
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 完整的链接
+         * </pre>
+         *
+         * <code>optional string url = 6;</code>
+         */
+        public com.google.protobuf.ByteString
+        getUrlBytes() {
+            Object ref = url_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                url_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            if (!hasUserName()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasPassword()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, host_);
+            }
+            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, port_);
+            }
+            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dbName_);
+            }
+            if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userName_);
+            }
+            if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 5, password_);
+            }
+            if (((bitField0_ & 0x00000020) == 0x00000020)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 6, url_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, host_);
+            }
+            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, port_);
+            }
+            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dbName_);
+            }
+            if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userName_);
+            }
+            if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, password_);
+            }
+            if (((bitField0_ & 0x00000020) == 0x00000020)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, url_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof ReqLogin)) {
+                return super.equals(obj);
+            }
+            ReqLogin other = (ReqLogin) obj;
+
+            boolean result = true;
+            result = result && (hasHost() == other.hasHost());
+            if (hasHost()) {
+                result = result && getHost()
+                        .equals(other.getHost());
+            }
+            result = result && (hasPort() == other.hasPort());
+            if (hasPort()) {
+                result = result && getPort()
+                        .equals(other.getPort());
+            }
+            result = result && (hasDbName() == other.hasDbName());
+            if (hasDbName()) {
+                result = result && getDbName()
+                        .equals(other.getDbName());
+            }
+            result = result && (hasUserName() == other.hasUserName());
+            if (hasUserName()) {
+                result = result && getUserName()
+                        .equals(other.getUserName());
+            }
+            result = result && (hasPassword() == other.hasPassword());
+            if (hasPassword()) {
+                result = result && getPassword()
+                        .equals(other.getPassword());
+            }
+            result = result && (hasUrl() == other.hasUrl());
+            if (hasUrl()) {
+                result = result && getUrl()
+                        .equals(other.getUrl());
+            }
+            result = result && unknownFields.equals(other.unknownFields);
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasHost()) {
+                hash = (37 * hash) + HOST_FIELD_NUMBER;
+                hash = (53 * hash) + getHost().hashCode();
+            }
+            if (hasPort()) {
+                hash = (37 * hash) + PORT_FIELD_NUMBER;
+                hash = (53 * hash) + getPort().hashCode();
+            }
+            if (hasDbName()) {
+                hash = (37 * hash) + DBNAME_FIELD_NUMBER;
+                hash = (53 * hash) + getDbName().hashCode();
+            }
+            if (hasUserName()) {
+                hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+                hash = (53 * hash) + getUserName().hashCode();
+            }
+            if (hasPassword()) {
+                hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+                hash = (53 * hash) + getPassword().hashCode();
+            }
+            if (hasUrl()) {
+                hash = (37 * hash) + URL_FIELD_NUMBER;
+                hash = (53 * hash) + getUrl().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static ReqLogin parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ReqLogin parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ReqLogin parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ReqLogin parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ReqLogin parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ReqLogin parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ReqLogin parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ReqLogin parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ReqLogin parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static ReqLogin parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ReqLogin parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ReqLogin parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(ReqLogin prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * <pre>
+         * 登录
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.netty.test.pojo.proto.ReqLogin}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.netty.test.pojo.proto.ReqLogin)
+                ReqLoginOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_ReqLogin_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_ReqLogin_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                ReqLogin.class, Builder.class);
+            }
+
+            // Construct using com.netty.test.pojo.proto.NettyTest.ReqLogin.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                host_ = "";
+                bitField0_ = (bitField0_ & ~0x00000001);
+                port_ = "";
+                bitField0_ = (bitField0_ & ~0x00000002);
+                dbName_ = "";
+                bitField0_ = (bitField0_ & ~0x00000004);
+                userName_ = "";
+                bitField0_ = (bitField0_ & ~0x00000008);
+                password_ = "";
+                bitField0_ = (bitField0_ & ~0x00000010);
+                url_ = "";
+                bitField0_ = (bitField0_ & ~0x00000020);
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_ReqLogin_descriptor;
+            }
+
+            @Override
+            public ReqLogin getDefaultInstanceForType() {
+                return ReqLogin.getDefaultInstance();
+            }
+
+            @Override
+            public ReqLogin build() {
+                ReqLogin result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public ReqLogin buildPartial() {
+                ReqLogin result = new ReqLogin(this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+                    to_bitField0_ |= 0x00000001;
+                }
+                result.host_ = host_;
+                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+                    to_bitField0_ |= 0x00000002;
+                }
+                result.port_ = port_;
+                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+                    to_bitField0_ |= 0x00000004;
+                }
+                result.dbName_ = dbName_;
+                if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+                    to_bitField0_ |= 0x00000008;
+                }
+                result.userName_ = userName_;
+                if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+                    to_bitField0_ |= 0x00000010;
+                }
+                result.password_ = password_;
+                if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+                    to_bitField0_ |= 0x00000020;
+                }
+                result.url_ = url_;
+                result.bitField0_ = to_bitField0_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof ReqLogin) {
+                    return mergeFrom((ReqLogin) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(ReqLogin other) {
+                if (other == ReqLogin.getDefaultInstance()) return this;
+                if (other.hasHost()) {
+                    bitField0_ |= 0x00000001;
+                    host_ = other.host_;
+                    onChanged();
+                }
+                if (other.hasPort()) {
+                    bitField0_ |= 0x00000002;
+                    port_ = other.port_;
+                    onChanged();
+                }
+                if (other.hasDbName()) {
+                    bitField0_ |= 0x00000004;
+                    dbName_ = other.dbName_;
+                    onChanged();
+                }
+                if (other.hasUserName()) {
+                    bitField0_ |= 0x00000008;
+                    userName_ = other.userName_;
+                    onChanged();
+                }
+                if (other.hasPassword()) {
+                    bitField0_ |= 0x00000010;
+                    password_ = other.password_;
+                    onChanged();
+                }
+                if (other.hasUrl()) {
+                    bitField0_ |= 0x00000020;
+                    url_ = other.url_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                if (!hasUserName()) {
+                    return false;
+                }
+                if (!hasPassword()) {
+                    return false;
+                }
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                ReqLogin parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (ReqLogin) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private Object host_ = "";
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>optional string host = 1;</code>
+             */
+            public boolean hasHost() {
+                return ((bitField0_ & 0x00000001) == 0x00000001);
+            }
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>optional string host = 1;</code>
+             */
+            public String getHost() {
+                Object ref = host_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        host_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>optional string host = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getHostBytes() {
+                Object ref = host_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    host_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>optional string host = 1;</code>
+             */
+            public Builder setHost(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                host_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>optional string host = 1;</code>
+             */
+            public Builder clearHost() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                host_ = getDefaultInstance().getHost();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>optional string host = 1;</code>
+             */
+            public Builder setHostBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                host_ = value;
+                onChanged();
+                return this;
+            }
+
+            private Object port_ = "";
+
+            /**
+             * <pre>
+             * 端口
+             * </pre>
+             *
+             * <code>optional string port = 2;</code>
+             */
+            public boolean hasPort() {
+                return ((bitField0_ & 0x00000002) == 0x00000002);
+            }
+
+            /**
+             * <pre>
+             * 端口
+             * </pre>
+             *
+             * <code>optional string port = 2;</code>
+             */
+            public String getPort() {
+                Object ref = port_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        port_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 端口
+             * </pre>
+             *
+             * <code>optional string port = 2;</code>
+             */
+            public com.google.protobuf.ByteString
+            getPortBytes() {
+                Object ref = port_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    port_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 端口
+             * </pre>
+             *
+             * <code>optional string port = 2;</code>
+             */
+            public Builder setPort(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000002;
+                port_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 端口
+             * </pre>
+             *
+             * <code>optional string port = 2;</code>
+             */
+            public Builder clearPort() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                port_ = getDefaultInstance().getPort();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 端口
+             * </pre>
+             *
+             * <code>optional string port = 2;</code>
+             */
+            public Builder setPortBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000002;
+                port_ = value;
+                onChanged();
+                return this;
+            }
+
+            private Object dbName_ = "";
+
+            /**
+             * <pre>
+             * 数据库名称
+             * </pre>
+             *
+             * <code>optional string dbName = 3;</code>
+             */
+            public boolean hasDbName() {
+                return ((bitField0_ & 0x00000004) == 0x00000004);
+            }
+
+            /**
+             * <pre>
+             * 数据库名称
+             * </pre>
+             *
+             * <code>optional string dbName = 3;</code>
+             */
+            public String getDbName() {
+                Object ref = dbName_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        dbName_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 数据库名称
+             * </pre>
+             *
+             * <code>optional string dbName = 3;</code>
+             */
+            public com.google.protobuf.ByteString
+            getDbNameBytes() {
+                Object ref = dbName_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    dbName_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 数据库名称
+             * </pre>
+             *
+             * <code>optional string dbName = 3;</code>
+             */
+            public Builder setDbName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000004;
+                dbName_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 数据库名称
+             * </pre>
+             *
+             * <code>optional string dbName = 3;</code>
+             */
+            public Builder clearDbName() {
+                bitField0_ = (bitField0_ & ~0x00000004);
+                dbName_ = getDefaultInstance().getDbName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 数据库名称
+             * </pre>
+             *
+             * <code>optional string dbName = 3;</code>
+             */
+            public Builder setDbNameBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000004;
+                dbName_ = value;
+                onChanged();
+                return this;
+            }
+
+            private Object userName_ = "";
+
+            /**
+             * <pre>
+             * 用户名
+             * </pre>
+             *
+             * <code>required string userName = 4;</code>
+             */
+            public boolean hasUserName() {
+                return ((bitField0_ & 0x00000008) == 0x00000008);
+            }
+
+            /**
+             * <pre>
+             * 用户名
+             * </pre>
+             *
+             * <code>required string userName = 4;</code>
+             */
+            public String getUserName() {
+                Object ref = userName_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        userName_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 用户名
+             * </pre>
+             *
+             * <code>required string userName = 4;</code>
+             */
+            public com.google.protobuf.ByteString
+            getUserNameBytes() {
+                Object ref = userName_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    userName_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 用户名
+             * </pre>
+             *
+             * <code>required string userName = 4;</code>
+             */
+            public Builder setUserName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000008;
+                userName_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 用户名
+             * </pre>
+             *
+             * <code>required string userName = 4;</code>
+             */
+            public Builder clearUserName() {
+                bitField0_ = (bitField0_ & ~0x00000008);
+                userName_ = getDefaultInstance().getUserName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 用户名
+             * </pre>
+             *
+             * <code>required string userName = 4;</code>
+             */
+            public Builder setUserNameBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000008;
+                userName_ = value;
+                onChanged();
+                return this;
+            }
+
+            private Object password_ = "";
+
+            /**
+             * <pre>
+             * 密码
+             * </pre>
+             *
+             * <code>required string password = 5;</code>
+             */
+            public boolean hasPassword() {
+                return ((bitField0_ & 0x00000010) == 0x00000010);
+            }
+
+            /**
+             * <pre>
+             * 密码
+             * </pre>
+             *
+             * <code>required string password = 5;</code>
+             */
+            public String getPassword() {
+                Object ref = password_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        password_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 密码
+             * </pre>
+             *
+             * <code>required string password = 5;</code>
+             */
+            public com.google.protobuf.ByteString
+            getPasswordBytes() {
+                Object ref = password_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    password_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 密码
+             * </pre>
+             *
+             * <code>required string password = 5;</code>
+             */
+            public Builder setPassword(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000010;
+                password_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 密码
+             * </pre>
+             *
+             * <code>required string password = 5;</code>
+             */
+            public Builder clearPassword() {
+                bitField0_ = (bitField0_ & ~0x00000010);
+                password_ = getDefaultInstance().getPassword();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 密码
+             * </pre>
+             *
+             * <code>required string password = 5;</code>
+             */
+            public Builder setPasswordBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000010;
+                password_ = value;
+                onChanged();
+                return this;
+            }
+
+            private Object url_ = "";
+
+            /**
+             * <pre>
+             * 完整的链接
+             * </pre>
+             *
+             * <code>optional string url = 6;</code>
+             */
+            public boolean hasUrl() {
+                return ((bitField0_ & 0x00000020) == 0x00000020);
+            }
+
+            /**
+             * <pre>
+             * 完整的链接
+             * </pre>
+             *
+             * <code>optional string url = 6;</code>
+             */
+            public String getUrl() {
+                Object ref = url_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        url_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 完整的链接
+             * </pre>
+             *
+             * <code>optional string url = 6;</code>
+             */
+            public com.google.protobuf.ByteString
+            getUrlBytes() {
+                Object ref = url_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    url_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 完整的链接
+             * </pre>
+             *
+             * <code>optional string url = 6;</code>
+             */
+            public Builder setUrl(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000020;
+                url_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 完整的链接
+             * </pre>
+             *
+             * <code>optional string url = 6;</code>
+             */
+            public Builder clearUrl() {
+                bitField0_ = (bitField0_ & ~0x00000020);
+                url_ = getDefaultInstance().getUrl();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 完整的链接
+             * </pre>
+             *
+             * <code>optional string url = 6;</code>
+             */
+            public Builder setUrlBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000020;
+                url_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:com.netty.test.pojo.proto.ReqLogin)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.netty.test.pojo.proto.ReqLogin)
+        private static final ReqLogin DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new ReqLogin();
+        }
+
+        public static ReqLogin getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        @Deprecated
+        public static final com.google.protobuf.Parser<ReqLogin>
+                PARSER = new com.google.protobuf.AbstractParser<ReqLogin>() {
+            @Override
+            public ReqLogin parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ReqLogin(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<ReqLogin> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<ReqLogin> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public ReqLogin getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, loginState_);
-      }
-      for (int i = 0; i < schemaTableList_.size(); i++) {
-        output.writeMessage(2, schemaTableList_.get(i));
-      }
-      unknownFields.writeTo(output);
+    public interface ResLoginOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.netty.test.pojo.proto.ResLogin)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         * 登录状态
+         * </pre>
+         *
+         * <code>required int32 loginState = 1;</code>
+         */
+        boolean hasLoginState();
+
+        /**
+         * <pre>
+         * 登录状态
+         * </pre>
+         *
+         * <code>required int32 loginState = 1;</code>
+         */
+        int getLoginState();
+
+        /**
+         * <pre>
+         * 数据库中的表的信息
+         * </pre>
+         *
+         * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+         */
+        java.util.List<InformationSchemaTables>
+        getSchemaTableListList();
+
+        /**
+         * <pre>
+         * 数据库中的表的信息
+         * </pre>
+         *
+         * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+         */
+        InformationSchemaTables getSchemaTableList(int index);
+
+        /**
+         * <pre>
+         * 数据库中的表的信息
+         * </pre>
+         *
+         * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+         */
+        int getSchemaTableListCount();
+
+        /**
+         * <pre>
+         * 数据库中的表的信息
+         * </pre>
+         *
+         * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+         */
+        java.util.List<? extends InformationSchemaTablesOrBuilder>
+        getSchemaTableListOrBuilderList();
+
+        /**
+         * <pre>
+         * 数据库中的表的信息
+         * </pre>
+         *
+         * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+         */
+        InformationSchemaTablesOrBuilder getSchemaTableListOrBuilder(
+                int index);
     }
 
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, loginState_);
-      }
-      for (int i = 0; i < schemaTableList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, schemaTableList_.get(i));
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.netty.test.pojo.proto.NettyTest.ResLogin)) {
-        return super.equals(obj);
-      }
-      com.netty.test.pojo.proto.NettyTest.ResLogin other = (com.netty.test.pojo.proto.NettyTest.ResLogin) obj;
-
-      boolean result = true;
-      result = result && (hasLoginState() == other.hasLoginState());
-      if (hasLoginState()) {
-        result = result && (getLoginState()
-            == other.getLoginState());
-      }
-      result = result && getSchemaTableListList()
-          .equals(other.getSchemaTableListList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasLoginState()) {
-        hash = (37 * hash) + LOGINSTATE_FIELD_NUMBER;
-        hash = (53 * hash) + getLoginState();
-      }
-      if (getSchemaTableListCount() > 0) {
-        hash = (37 * hash) + SCHEMATABLELIST_FIELD_NUMBER;
-        hash = (53 * hash) + getSchemaTableListList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.netty.test.pojo.proto.NettyTest.ResLogin parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResLogin parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResLogin parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResLogin parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResLogin parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResLogin parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResLogin parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResLogin parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResLogin parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResLogin parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResLogin parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResLogin parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netty.test.pojo.proto.NettyTest.ResLogin prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
-     *登录结果
+     * 登录结果
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.netty.test.pojo.proto.ResLogin}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.netty.test.pojo.proto.ResLogin)
-        com.netty.test.pojo.proto.NettyTest.ResLoginOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ResLogin_descriptor;
-      }
+    public static final class ResLogin extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.netty.test.pojo.proto.ResLogin)
+            ResLoginOrBuilder {
+        private static final long serialVersionUID = 0L;
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ResLogin_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netty.test.pojo.proto.NettyTest.ResLogin.class, com.netty.test.pojo.proto.NettyTest.ResLogin.Builder.class);
-      }
-
-      // Construct using com.netty.test.pojo.proto.NettyTest.ResLogin.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSchemaTableListFieldBuilder();
+        // Use ResLogin.newBuilder() to construct.
+        private ResLogin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        loginState_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (schemaTableListBuilder_ == null) {
-          schemaTableList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          schemaTableListBuilder_.clear();
-        }
-        return this;
-      }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ResLogin_descriptor;
-      }
-
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.ResLogin getDefaultInstanceForType() {
-        return com.netty.test.pojo.proto.NettyTest.ResLogin.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.ResLogin build() {
-        com.netty.test.pojo.proto.NettyTest.ResLogin result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private ResLogin() {
+            loginState_ = 0;
+            schemaTableList_ = java.util.Collections.emptyList();
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.ResLogin buildPartial() {
-        com.netty.test.pojo.proto.NettyTest.ResLogin result = new com.netty.test.pojo.proto.NettyTest.ResLogin(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
-        result.loginState_ = loginState_;
-        if (schemaTableListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            schemaTableList_ = java.util.Collections.unmodifiableList(schemaTableList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.schemaTableList_ = schemaTableList_;
-        } else {
-          result.schemaTableList_ = schemaTableListBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.netty.test.pojo.proto.NettyTest.ResLogin) {
-          return mergeFrom((com.netty.test.pojo.proto.NettyTest.ResLogin)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.netty.test.pojo.proto.NettyTest.ResLogin other) {
-        if (other == com.netty.test.pojo.proto.NettyTest.ResLogin.getDefaultInstance()) return this;
-        if (other.hasLoginState()) {
-          setLoginState(other.getLoginState());
-        }
-        if (schemaTableListBuilder_ == null) {
-          if (!other.schemaTableList_.isEmpty()) {
-            if (schemaTableList_.isEmpty()) {
-              schemaTableList_ = other.schemaTableList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureSchemaTableListIsMutable();
-              schemaTableList_.addAll(other.schemaTableList_);
+        private ResLogin(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
             }
-            onChanged();
-          }
-        } else {
-          if (!other.schemaTableList_.isEmpty()) {
-            if (schemaTableListBuilder_.isEmpty()) {
-              schemaTableListBuilder_.dispose();
-              schemaTableListBuilder_ = null;
-              schemaTableList_ = other.schemaTableList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              schemaTableListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getSchemaTableListFieldBuilder() : null;
-            } else {
-              schemaTableListBuilder_.addAllMessages(other.schemaTableList_);
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
+                            bitField0_ |= 0x00000001;
+                            loginState_ = input.readInt32();
+                            break;
+                        }
+                        case 18: {
+                            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                                schemaTableList_ = new java.util.ArrayList<InformationSchemaTables>();
+                                mutable_bitField0_ |= 0x00000002;
+                            }
+                            schemaTableList_.add(
+                                    input.readMessage(InformationSchemaTables.PARSER, extensionRegistry));
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                    schemaTableList_ = java.util.Collections.unmodifiableList(schemaTableList_);
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
             }
-          }
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        if (!hasLoginState()) {
-          return false;
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return NettyTest.internal_static_com_netty_test_pojo_proto_ResLogin_descriptor;
         }
-        for (int i = 0; i < getSchemaTableListCount(); i++) {
-          if (!getSchemaTableList(i).isInitialized()) {
-            return false;
-          }
-        }
-        return true;
-      }
 
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.netty.test.pojo.proto.NettyTest.ResLogin parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.netty.test.pojo.proto.NettyTest.ResLogin) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        @Override
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return NettyTest.internal_static_com_netty_test_pojo_proto_ResLogin_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            ResLogin.class, Builder.class);
         }
-        return this;
-      }
-      private int bitField0_;
 
-      private int loginState_ ;
-      /**
-       * <pre>
-       *登录状态
-       * </pre>
-       *
-       * <code>required int32 loginState = 1;</code>
-       */
-      public boolean hasLoginState() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <pre>
-       *登录状态
-       * </pre>
-       *
-       * <code>required int32 loginState = 1;</code>
-       */
-      public int getLoginState() {
-        return loginState_;
-      }
-      /**
-       * <pre>
-       *登录状态
-       * </pre>
-       *
-       * <code>required int32 loginState = 1;</code>
-       */
-      public Builder setLoginState(int value) {
-        bitField0_ |= 0x00000001;
-        loginState_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *登录状态
-       * </pre>
-       *
-       * <code>required int32 loginState = 1;</code>
-       */
-      public Builder clearLoginState() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        loginState_ = 0;
-        onChanged();
-        return this;
-      }
+        private int bitField0_;
+        public static final int LOGINSTATE_FIELD_NUMBER = 1;
+        private int loginState_;
 
-      private java.util.List<com.netty.test.pojo.proto.NettyTest.InformationSchemaTables> schemaTableList_ =
-        java.util.Collections.emptyList();
-      private void ensureSchemaTableListIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          schemaTableList_ = new java.util.ArrayList<com.netty.test.pojo.proto.NettyTest.InformationSchemaTables>(schemaTableList_);
-          bitField0_ |= 0x00000002;
-         }
-      }
+        /**
+         * <pre>
+         * 登录状态
+         * </pre>
+         *
+         * <code>required int32 loginState = 1;</code>
+         */
+        public boolean hasLoginState() {
+            return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netty.test.pojo.proto.NettyTest.InformationSchemaTables, com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.Builder, com.netty.test.pojo.proto.NettyTest.InformationSchemaTablesOrBuilder> schemaTableListBuilder_;
+        /**
+         * <pre>
+         * 登录状态
+         * </pre>
+         *
+         * <code>required int32 loginState = 1;</code>
+         */
+        public int getLoginState() {
+            return loginState_;
+        }
 
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public java.util.List<com.netty.test.pojo.proto.NettyTest.InformationSchemaTables> getSchemaTableListList() {
-        if (schemaTableListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(schemaTableList_);
-        } else {
-          return schemaTableListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public int getSchemaTableListCount() {
-        if (schemaTableListBuilder_ == null) {
-          return schemaTableList_.size();
-        } else {
-          return schemaTableListBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public com.netty.test.pojo.proto.NettyTest.InformationSchemaTables getSchemaTableList(int index) {
-        if (schemaTableListBuilder_ == null) {
-          return schemaTableList_.get(index);
-        } else {
-          return schemaTableListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public Builder setSchemaTableList(
-          int index, com.netty.test.pojo.proto.NettyTest.InformationSchemaTables value) {
-        if (schemaTableListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSchemaTableListIsMutable();
-          schemaTableList_.set(index, value);
-          onChanged();
-        } else {
-          schemaTableListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public Builder setSchemaTableList(
-          int index, com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.Builder builderForValue) {
-        if (schemaTableListBuilder_ == null) {
-          ensureSchemaTableListIsMutable();
-          schemaTableList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          schemaTableListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public Builder addSchemaTableList(com.netty.test.pojo.proto.NettyTest.InformationSchemaTables value) {
-        if (schemaTableListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSchemaTableListIsMutable();
-          schemaTableList_.add(value);
-          onChanged();
-        } else {
-          schemaTableListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public Builder addSchemaTableList(
-          int index, com.netty.test.pojo.proto.NettyTest.InformationSchemaTables value) {
-        if (schemaTableListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSchemaTableListIsMutable();
-          schemaTableList_.add(index, value);
-          onChanged();
-        } else {
-          schemaTableListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public Builder addSchemaTableList(
-          com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.Builder builderForValue) {
-        if (schemaTableListBuilder_ == null) {
-          ensureSchemaTableListIsMutable();
-          schemaTableList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          schemaTableListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public Builder addSchemaTableList(
-          int index, com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.Builder builderForValue) {
-        if (schemaTableListBuilder_ == null) {
-          ensureSchemaTableListIsMutable();
-          schemaTableList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          schemaTableListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public Builder addAllSchemaTableList(
-          java.lang.Iterable<? extends com.netty.test.pojo.proto.NettyTest.InformationSchemaTables> values) {
-        if (schemaTableListBuilder_ == null) {
-          ensureSchemaTableListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, schemaTableList_);
-          onChanged();
-        } else {
-          schemaTableListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public Builder clearSchemaTableList() {
-        if (schemaTableListBuilder_ == null) {
-          schemaTableList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          schemaTableListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public Builder removeSchemaTableList(int index) {
-        if (schemaTableListBuilder_ == null) {
-          ensureSchemaTableListIsMutable();
-          schemaTableList_.remove(index);
-          onChanged();
-        } else {
-          schemaTableListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.Builder getSchemaTableListBuilder(
-          int index) {
-        return getSchemaTableListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public com.netty.test.pojo.proto.NettyTest.InformationSchemaTablesOrBuilder getSchemaTableListOrBuilder(
-          int index) {
-        if (schemaTableListBuilder_ == null) {
-          return schemaTableList_.get(index);  } else {
-          return schemaTableListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public java.util.List<? extends com.netty.test.pojo.proto.NettyTest.InformationSchemaTablesOrBuilder> 
-           getSchemaTableListOrBuilderList() {
-        if (schemaTableListBuilder_ != null) {
-          return schemaTableListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(schemaTableList_);
-        }
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.Builder addSchemaTableListBuilder() {
-        return getSchemaTableListFieldBuilder().addBuilder(
-            com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.Builder addSchemaTableListBuilder(
-          int index) {
-        return getSchemaTableListFieldBuilder().addBuilder(
-            index, com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       *数据库中的表的信息
-       * </pre>
-       *
-       * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
-       */
-      public java.util.List<com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.Builder> 
-           getSchemaTableListBuilderList() {
-        return getSchemaTableListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.netty.test.pojo.proto.NettyTest.InformationSchemaTables, com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.Builder, com.netty.test.pojo.proto.NettyTest.InformationSchemaTablesOrBuilder> 
-          getSchemaTableListFieldBuilder() {
-        if (schemaTableListBuilder_ == null) {
-          schemaTableListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.netty.test.pojo.proto.NettyTest.InformationSchemaTables, com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.Builder, com.netty.test.pojo.proto.NettyTest.InformationSchemaTablesOrBuilder>(
-                  schemaTableList_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
-                  getParentForChildren(),
-                  isClean());
-          schemaTableList_ = null;
-        }
-        return schemaTableListBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        public static final int SCHEMATABLELIST_FIELD_NUMBER = 2;
+        private java.util.List<InformationSchemaTables> schemaTableList_;
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        /**
+         * <pre>
+         * 数据库中的表的信息
+         * </pre>
+         *
+         * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+         */
+        public java.util.List<InformationSchemaTables> getSchemaTableListList() {
+            return schemaTableList_;
+        }
+
+        /**
+         * <pre>
+         * 数据库中的表的信息
+         * </pre>
+         *
+         * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+         */
+        public java.util.List<? extends InformationSchemaTablesOrBuilder>
+        getSchemaTableListOrBuilderList() {
+            return schemaTableList_;
+        }
+
+        /**
+         * <pre>
+         * 数据库中的表的信息
+         * </pre>
+         *
+         * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+         */
+        public int getSchemaTableListCount() {
+            return schemaTableList_.size();
+        }
+
+        /**
+         * <pre>
+         * 数据库中的表的信息
+         * </pre>
+         *
+         * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+         */
+        public InformationSchemaTables getSchemaTableList(int index) {
+            return schemaTableList_.get(index);
+        }
+
+        /**
+         * <pre>
+         * 数据库中的表的信息
+         * </pre>
+         *
+         * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+         */
+        public InformationSchemaTablesOrBuilder getSchemaTableListOrBuilder(
+                int index) {
+            return schemaTableList_.get(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            if (!hasLoginState()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            for (int i = 0; i < getSchemaTableListCount(); i++) {
+                if (!getSchemaTableList(i).isInitialized()) {
+                    memoizedIsInitialized = 0;
+                    return false;
+                }
+            }
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                output.writeInt32(1, loginState_);
+            }
+            for (int i = 0; i < schemaTableList_.size(); i++) {
+                output.writeMessage(2, schemaTableList_.get(i));
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(1, loginState_);
+            }
+            for (int i = 0; i < schemaTableList_.size(); i++) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(2, schemaTableList_.get(i));
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof ResLogin)) {
+                return super.equals(obj);
+            }
+            ResLogin other = (ResLogin) obj;
+
+            boolean result = true;
+            result = result && (hasLoginState() == other.hasLoginState());
+            if (hasLoginState()) {
+                result = result && (getLoginState()
+                        == other.getLoginState());
+            }
+            result = result && getSchemaTableListList()
+                    .equals(other.getSchemaTableListList());
+            result = result && unknownFields.equals(other.unknownFields);
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasLoginState()) {
+                hash = (37 * hash) + LOGINSTATE_FIELD_NUMBER;
+                hash = (53 * hash) + getLoginState();
+            }
+            if (getSchemaTableListCount() > 0) {
+                hash = (37 * hash) + SCHEMATABLELIST_FIELD_NUMBER;
+                hash = (53 * hash) + getSchemaTableListList().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static ResLogin parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ResLogin parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ResLogin parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ResLogin parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ResLogin parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ResLogin parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ResLogin parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ResLogin parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ResLogin parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static ResLogin parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ResLogin parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ResLogin parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(ResLogin prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * <pre>
+         * 登录结果
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.netty.test.pojo.proto.ResLogin}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.netty.test.pojo.proto.ResLogin)
+                ResLoginOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_ResLogin_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_ResLogin_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                ResLogin.class, Builder.class);
+            }
+
+            // Construct using com.netty.test.pojo.proto.NettyTest.ResLogin.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                    getSchemaTableListFieldBuilder();
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                loginState_ = 0;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                if (schemaTableListBuilder_ == null) {
+                    schemaTableList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                } else {
+                    schemaTableListBuilder_.clear();
+                }
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_ResLogin_descriptor;
+            }
+
+            @Override
+            public ResLogin getDefaultInstanceForType() {
+                return ResLogin.getDefaultInstance();
+            }
+
+            @Override
+            public ResLogin build() {
+                ResLogin result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public ResLogin buildPartial() {
+                ResLogin result = new ResLogin(this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+                    to_bitField0_ |= 0x00000001;
+                }
+                result.loginState_ = loginState_;
+                if (schemaTableListBuilder_ == null) {
+                    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                        schemaTableList_ = java.util.Collections.unmodifiableList(schemaTableList_);
+                        bitField0_ = (bitField0_ & ~0x00000002);
+                    }
+                    result.schemaTableList_ = schemaTableList_;
+                } else {
+                    result.schemaTableList_ = schemaTableListBuilder_.build();
+                }
+                result.bitField0_ = to_bitField0_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof ResLogin) {
+                    return mergeFrom((ResLogin) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(ResLogin other) {
+                if (other == ResLogin.getDefaultInstance()) return this;
+                if (other.hasLoginState()) {
+                    setLoginState(other.getLoginState());
+                }
+                if (schemaTableListBuilder_ == null) {
+                    if (!other.schemaTableList_.isEmpty()) {
+                        if (schemaTableList_.isEmpty()) {
+                            schemaTableList_ = other.schemaTableList_;
+                            bitField0_ = (bitField0_ & ~0x00000002);
+                        } else {
+                            ensureSchemaTableListIsMutable();
+                            schemaTableList_.addAll(other.schemaTableList_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.schemaTableList_.isEmpty()) {
+                        if (schemaTableListBuilder_.isEmpty()) {
+                            schemaTableListBuilder_.dispose();
+                            schemaTableListBuilder_ = null;
+                            schemaTableList_ = other.schemaTableList_;
+                            bitField0_ = (bitField0_ & ~0x00000002);
+                            schemaTableListBuilder_ =
+                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                                            getSchemaTableListFieldBuilder() : null;
+                        } else {
+                            schemaTableListBuilder_.addAllMessages(other.schemaTableList_);
+                        }
+                    }
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                if (!hasLoginState()) {
+                    return false;
+                }
+                for (int i = 0; i < getSchemaTableListCount(); i++) {
+                    if (!getSchemaTableList(i).isInitialized()) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                ResLogin parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (ResLogin) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private int loginState_;
+
+            /**
+             * <pre>
+             * 登录状态
+             * </pre>
+             *
+             * <code>required int32 loginState = 1;</code>
+             */
+            public boolean hasLoginState() {
+                return ((bitField0_ & 0x00000001) == 0x00000001);
+            }
+
+            /**
+             * <pre>
+             * 登录状态
+             * </pre>
+             *
+             * <code>required int32 loginState = 1;</code>
+             */
+            public int getLoginState() {
+                return loginState_;
+            }
+
+            /**
+             * <pre>
+             * 登录状态
+             * </pre>
+             *
+             * <code>required int32 loginState = 1;</code>
+             */
+            public Builder setLoginState(int value) {
+                bitField0_ |= 0x00000001;
+                loginState_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 登录状态
+             * </pre>
+             *
+             * <code>required int32 loginState = 1;</code>
+             */
+            public Builder clearLoginState() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                loginState_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private java.util.List<InformationSchemaTables> schemaTableList_ =
+                    java.util.Collections.emptyList();
+
+            private void ensureSchemaTableListIsMutable() {
+                if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+                    schemaTableList_ = new java.util.ArrayList<InformationSchemaTables>(schemaTableList_);
+                    bitField0_ |= 0x00000002;
+                }
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    InformationSchemaTables, InformationSchemaTables.Builder, InformationSchemaTablesOrBuilder> schemaTableListBuilder_;
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public java.util.List<InformationSchemaTables> getSchemaTableListList() {
+                if (schemaTableListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(schemaTableList_);
+                } else {
+                    return schemaTableListBuilder_.getMessageList();
+                }
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public int getSchemaTableListCount() {
+                if (schemaTableListBuilder_ == null) {
+                    return schemaTableList_.size();
+                } else {
+                    return schemaTableListBuilder_.getCount();
+                }
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public InformationSchemaTables getSchemaTableList(int index) {
+                if (schemaTableListBuilder_ == null) {
+                    return schemaTableList_.get(index);
+                } else {
+                    return schemaTableListBuilder_.getMessage(index);
+                }
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public Builder setSchemaTableList(
+                    int index, InformationSchemaTables value) {
+                if (schemaTableListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureSchemaTableListIsMutable();
+                    schemaTableList_.set(index, value);
+                    onChanged();
+                } else {
+                    schemaTableListBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public Builder setSchemaTableList(
+                    int index, InformationSchemaTables.Builder builderForValue) {
+                if (schemaTableListBuilder_ == null) {
+                    ensureSchemaTableListIsMutable();
+                    schemaTableList_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    schemaTableListBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public Builder addSchemaTableList(InformationSchemaTables value) {
+                if (schemaTableListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureSchemaTableListIsMutable();
+                    schemaTableList_.add(value);
+                    onChanged();
+                } else {
+                    schemaTableListBuilder_.addMessage(value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public Builder addSchemaTableList(
+                    int index, InformationSchemaTables value) {
+                if (schemaTableListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureSchemaTableListIsMutable();
+                    schemaTableList_.add(index, value);
+                    onChanged();
+                } else {
+                    schemaTableListBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public Builder addSchemaTableList(
+                    InformationSchemaTables.Builder builderForValue) {
+                if (schemaTableListBuilder_ == null) {
+                    ensureSchemaTableListIsMutable();
+                    schemaTableList_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    schemaTableListBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public Builder addSchemaTableList(
+                    int index, InformationSchemaTables.Builder builderForValue) {
+                if (schemaTableListBuilder_ == null) {
+                    ensureSchemaTableListIsMutable();
+                    schemaTableList_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    schemaTableListBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public Builder addAllSchemaTableList(
+                    Iterable<? extends InformationSchemaTables> values) {
+                if (schemaTableListBuilder_ == null) {
+                    ensureSchemaTableListIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                            values, schemaTableList_);
+                    onChanged();
+                } else {
+                    schemaTableListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public Builder clearSchemaTableList() {
+                if (schemaTableListBuilder_ == null) {
+                    schemaTableList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                    onChanged();
+                } else {
+                    schemaTableListBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public Builder removeSchemaTableList(int index) {
+                if (schemaTableListBuilder_ == null) {
+                    ensureSchemaTableListIsMutable();
+                    schemaTableList_.remove(index);
+                    onChanged();
+                } else {
+                    schemaTableListBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public InformationSchemaTables.Builder getSchemaTableListBuilder(
+                    int index) {
+                return getSchemaTableListFieldBuilder().getBuilder(index);
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public InformationSchemaTablesOrBuilder getSchemaTableListOrBuilder(
+                    int index) {
+                if (schemaTableListBuilder_ == null) {
+                    return schemaTableList_.get(index);
+                } else {
+                    return schemaTableListBuilder_.getMessageOrBuilder(index);
+                }
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public java.util.List<? extends InformationSchemaTablesOrBuilder>
+            getSchemaTableListOrBuilderList() {
+                if (schemaTableListBuilder_ != null) {
+                    return schemaTableListBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(schemaTableList_);
+                }
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public InformationSchemaTables.Builder addSchemaTableListBuilder() {
+                return getSchemaTableListFieldBuilder().addBuilder(
+                        InformationSchemaTables.getDefaultInstance());
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public InformationSchemaTables.Builder addSchemaTableListBuilder(
+                    int index) {
+                return getSchemaTableListFieldBuilder().addBuilder(
+                        index, InformationSchemaTables.getDefaultInstance());
+            }
+
+            /**
+             * <pre>
+             * 数据库中的表的信息
+             * </pre>
+             *
+             * <code>repeated .com.netty.test.pojo.proto.InformationSchemaTables schemaTableList = 2;</code>
+             */
+            public java.util.List<InformationSchemaTables.Builder>
+            getSchemaTableListBuilderList() {
+                return getSchemaTableListFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    InformationSchemaTables, InformationSchemaTables.Builder, InformationSchemaTablesOrBuilder>
+            getSchemaTableListFieldBuilder() {
+                if (schemaTableListBuilder_ == null) {
+                    schemaTableListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                            InformationSchemaTables, InformationSchemaTables.Builder, InformationSchemaTablesOrBuilder>(
+                            schemaTableList_,
+                            ((bitField0_ & 0x00000002) == 0x00000002),
+                            getParentForChildren(),
+                            isClean());
+                    schemaTableList_ = null;
+                }
+                return schemaTableListBuilder_;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
 
 
-      // @@protoc_insertion_point(builder_scope:com.netty.test.pojo.proto.ResLogin)
+            // @@protoc_insertion_point(builder_scope:com.netty.test.pojo.proto.ResLogin)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.netty.test.pojo.proto.ResLogin)
+        private static final ResLogin DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new ResLogin();
+        }
+
+        public static ResLogin getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        @Deprecated
+        public static final com.google.protobuf.Parser<ResLogin>
+                PARSER = new com.google.protobuf.AbstractParser<ResLogin>() {
+            @Override
+            public ResLogin parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ResLogin(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<ResLogin> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<ResLogin> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public ResLogin getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:com.netty.test.pojo.proto.ResLogin)
-    private static final com.netty.test.pojo.proto.NettyTest.ResLogin DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netty.test.pojo.proto.NettyTest.ResLogin();
-    }
+    public interface ReqQueryTableDataOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.netty.test.pojo.proto.ReqQueryTableData)
+            com.google.protobuf.MessageOrBuilder {
 
-    public static com.netty.test.pojo.proto.NettyTest.ResLogin getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>required string tableName = 1;</code>
+         */
+        boolean hasTableName();
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<ResLogin>
-        PARSER = new com.google.protobuf.AbstractParser<ResLogin>() {
-      @java.lang.Override
-      public ResLogin parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ResLogin(input, extensionRegistry);
-      }
-    };
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>required string tableName = 1;</code>
+         */
+        String getTableName();
 
-    public static com.google.protobuf.Parser<ResLogin> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ResLogin> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netty.test.pojo.proto.NettyTest.ResLogin getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ReqQueryTableDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.netty.test.pojo.proto.ReqQueryTableData)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required string tableName = 1;</code>
-     */
-    boolean hasTableName();
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required string tableName = 1;</code>
-     */
-    java.lang.String getTableName();
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required string tableName = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>required string tableName = 1;</code>
+         */
+        com.google.protobuf.ByteString
         getTableNameBytes();
 
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>required int64 id = 2;</code>
+         */
+        boolean hasId();
+
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>required int64 id = 2;</code>
+         */
+        long getId();
+    }
+
     /**
      * <pre>
-     *链接地址
+     * 查询表数据
      * </pre>
-     *
-     * <code>required int64 id = 2;</code>
-     */
-    boolean hasId();
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required int64 id = 2;</code>
-     */
-    long getId();
-  }
-  /**
-   * <pre>
-   *查询表数据
-   * </pre>
-   *
-   * Protobuf type {@code com.netty.test.pojo.proto.ReqQueryTableData}
-   */
-  public  static final class ReqQueryTableData extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.netty.test.pojo.proto.ReqQueryTableData)
-      ReqQueryTableDataOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ReqQueryTableData.newBuilder() to construct.
-    private ReqQueryTableData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ReqQueryTableData() {
-      tableName_ = "";
-      id_ = 0L;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ReqQueryTableData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              tableName_ = bs;
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              id_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ReqQueryTableData_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ReqQueryTableData_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.netty.test.pojo.proto.NettyTest.ReqQueryTableData.class, com.netty.test.pojo.proto.NettyTest.ReqQueryTableData.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int TABLENAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object tableName_;
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required string tableName = 1;</code>
-     */
-    public boolean hasTableName() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required string tableName = 1;</code>
-     */
-    public java.lang.String getTableName() {
-      java.lang.Object ref = tableName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          tableName_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required string tableName = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTableNameBytes() {
-      java.lang.Object ref = tableName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tableName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ID_FIELD_NUMBER = 2;
-    private long id_;
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required int64 id = 2;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <pre>
-     *链接地址
-     * </pre>
-     *
-     * <code>required int64 id = 2;</code>
-     */
-    public long getId() {
-      return id_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (!hasTableName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableName_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, id_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableName_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, id_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.netty.test.pojo.proto.NettyTest.ReqQueryTableData)) {
-        return super.equals(obj);
-      }
-      com.netty.test.pojo.proto.NettyTest.ReqQueryTableData other = (com.netty.test.pojo.proto.NettyTest.ReqQueryTableData) obj;
-
-      boolean result = true;
-      result = result && (hasTableName() == other.hasTableName());
-      if (hasTableName()) {
-        result = result && getTableName()
-            .equals(other.getTableName());
-      }
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && (getId()
-            == other.getId());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasTableName()) {
-        hash = (37 * hash) + TABLENAME_FIELD_NUMBER;
-        hash = (53 * hash) + getTableName().hashCode();
-      }
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getId());
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.netty.test.pojo.proto.NettyTest.ReqQueryTableData parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqQueryTableData parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqQueryTableData parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqQueryTableData parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqQueryTableData parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqQueryTableData parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqQueryTableData parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqQueryTableData parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqQueryTableData parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqQueryTableData parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqQueryTableData parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ReqQueryTableData parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netty.test.pojo.proto.NettyTest.ReqQueryTableData prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     *查询表数据
-     * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.netty.test.pojo.proto.ReqQueryTableData}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.netty.test.pojo.proto.ReqQueryTableData)
-        com.netty.test.pojo.proto.NettyTest.ReqQueryTableDataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ReqQueryTableData_descriptor;
-      }
+    public static final class ReqQueryTableData extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.netty.test.pojo.proto.ReqQueryTableData)
+            ReqQueryTableDataOrBuilder {
+        private static final long serialVersionUID = 0L;
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ReqQueryTableData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netty.test.pojo.proto.NettyTest.ReqQueryTableData.class, com.netty.test.pojo.proto.NettyTest.ReqQueryTableData.Builder.class);
-      }
-
-      // Construct using com.netty.test.pojo.proto.NettyTest.ReqQueryTableData.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        // Use ReqQueryTableData.newBuilder() to construct.
+        private ReqQueryTableData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        tableName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ReqQueryTableData_descriptor;
-      }
-
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.ReqQueryTableData getDefaultInstanceForType() {
-        return com.netty.test.pojo.proto.NettyTest.ReqQueryTableData.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.ReqQueryTableData build() {
-        com.netty.test.pojo.proto.NettyTest.ReqQueryTableData result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private ReqQueryTableData() {
+            tableName_ = "";
+            id_ = 0L;
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.ReqQueryTableData buildPartial() {
-        com.netty.test.pojo.proto.NettyTest.ReqQueryTableData result = new com.netty.test.pojo.proto.NettyTest.ReqQueryTableData(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
-        result.tableName_ = tableName_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.id_ = id_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.netty.test.pojo.proto.NettyTest.ReqQueryTableData) {
-          return mergeFrom((com.netty.test.pojo.proto.NettyTest.ReqQueryTableData)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.netty.test.pojo.proto.NettyTest.ReqQueryTableData other) {
-        if (other == com.netty.test.pojo.proto.NettyTest.ReqQueryTableData.getDefaultInstance()) return this;
-        if (other.hasTableName()) {
-          bitField0_ |= 0x00000001;
-          tableName_ = other.tableName_;
-          onChanged();
-        }
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        if (!hasTableName()) {
-          return false;
-        }
-        if (!hasId()) {
-          return false;
-        }
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.netty.test.pojo.proto.NettyTest.ReqQueryTableData parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.netty.test.pojo.proto.NettyTest.ReqQueryTableData) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object tableName_ = "";
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required string tableName = 1;</code>
-       */
-      public boolean hasTableName() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required string tableName = 1;</code>
-       */
-      public java.lang.String getTableName() {
-        java.lang.Object ref = tableName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            tableName_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required string tableName = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTableNameBytes() {
-        java.lang.Object ref = tableName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tableName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required string tableName = 1;</code>
-       */
-      public Builder setTableName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        tableName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required string tableName = 1;</code>
-       */
-      public Builder clearTableName() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        tableName_ = getDefaultInstance().getTableName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required string tableName = 1;</code>
-       */
-      public Builder setTableNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        tableName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long id_ ;
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required int64 id = 2;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required int64 id = 2;</code>
-       */
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required int64 id = 2;</code>
-       */
-      public Builder setId(long value) {
-        bitField0_ |= 0x00000002;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *链接地址
-       * </pre>
-       *
-       * <code>required int64 id = 2;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        id_ = 0L;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.netty.test.pojo.proto.ReqQueryTableData)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.netty.test.pojo.proto.ReqQueryTableData)
-    private static final com.netty.test.pojo.proto.NettyTest.ReqQueryTableData DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netty.test.pojo.proto.NettyTest.ReqQueryTableData();
-    }
-
-    public static com.netty.test.pojo.proto.NettyTest.ReqQueryTableData getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<ReqQueryTableData>
-        PARSER = new com.google.protobuf.AbstractParser<ReqQueryTableData>() {
-      @java.lang.Override
-      public ReqQueryTableData parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ReqQueryTableData(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ReqQueryTableData> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ReqQueryTableData> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netty.test.pojo.proto.NettyTest.ReqQueryTableData getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ResQueryTableDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.netty.test.pojo.proto.ResQueryTableData)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *表数据
-     * </pre>
-     *
-     * <code>required string tableData = 1;</code>
-     */
-    boolean hasTableData();
-    /**
-     * <pre>
-     *表数据
-     * </pre>
-     *
-     * <code>required string tableData = 1;</code>
-     */
-    java.lang.String getTableData();
-    /**
-     * <pre>
-     *表数据
-     * </pre>
-     *
-     * <code>required string tableData = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getTableDataBytes();
-  }
-  /**
-   * <pre>
-   *返回查询表数据结果
-   * </pre>
-   *
-   * Protobuf type {@code com.netty.test.pojo.proto.ResQueryTableData}
-   */
-  public  static final class ResQueryTableData extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.netty.test.pojo.proto.ResQueryTableData)
-      ResQueryTableDataOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ResQueryTableData.newBuilder() to construct.
-    private ResQueryTableData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ResQueryTableData() {
-      tableData_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ResQueryTableData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              tableData_ = bs;
-              break;
+        private ReqQueryTableData(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            tableName_ = bs;
+                            break;
+                        }
+                        case 16: {
+                            bitField0_ |= 0x00000002;
+                            id_ = input.readInt64();
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
             }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ResQueryTableData_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ResQueryTableData_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.netty.test.pojo.proto.NettyTest.ResQueryTableData.class, com.netty.test.pojo.proto.NettyTest.ResQueryTableData.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int TABLEDATA_FIELD_NUMBER = 1;
-    private volatile java.lang.Object tableData_;
-    /**
-     * <pre>
-     *表数据
-     * </pre>
-     *
-     * <code>required string tableData = 1;</code>
-     */
-    public boolean hasTableData() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <pre>
-     *表数据
-     * </pre>
-     *
-     * <code>required string tableData = 1;</code>
-     */
-    public java.lang.String getTableData() {
-      java.lang.Object ref = tableData_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          tableData_ = s;
+            return NettyTest.internal_static_com_netty_test_pojo_proto_ReqQueryTableData_descriptor;
         }
-        return s;
-      }
+
+        @Override
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return NettyTest.internal_static_com_netty_test_pojo_proto_ReqQueryTableData_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            ReqQueryTableData.class, Builder.class);
+        }
+
+        private int bitField0_;
+        public static final int TABLENAME_FIELD_NUMBER = 1;
+        private volatile Object tableName_;
+
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>required string tableName = 1;</code>
+         */
+        public boolean hasTableName() {
+            return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>required string tableName = 1;</code>
+         */
+        public String getTableName() {
+            Object ref = tableName_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    tableName_ = s;
+                }
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>required string tableName = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getTableNameBytes() {
+            Object ref = tableName_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                tableName_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int ID_FIELD_NUMBER = 2;
+        private long id_;
+
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>required int64 id = 2;</code>
+         */
+        public boolean hasId() {
+            return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+
+        /**
+         * <pre>
+         * 链接地址
+         * </pre>
+         *
+         * <code>required int64 id = 2;</code>
+         */
+        public long getId() {
+            return id_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            if (!hasTableName()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasId()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableName_);
+            }
+            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                output.writeInt64(2, id_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableName_);
+            }
+            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(2, id_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof ReqQueryTableData)) {
+                return super.equals(obj);
+            }
+            ReqQueryTableData other = (ReqQueryTableData) obj;
+
+            boolean result = true;
+            result = result && (hasTableName() == other.hasTableName());
+            if (hasTableName()) {
+                result = result && getTableName()
+                        .equals(other.getTableName());
+            }
+            result = result && (hasId() == other.hasId());
+            if (hasId()) {
+                result = result && (getId()
+                        == other.getId());
+            }
+            result = result && unknownFields.equals(other.unknownFields);
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasTableName()) {
+                hash = (37 * hash) + TABLENAME_FIELD_NUMBER;
+                hash = (53 * hash) + getTableName().hashCode();
+            }
+            if (hasId()) {
+                hash = (37 * hash) + ID_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                        getId());
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static ReqQueryTableData parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ReqQueryTableData parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ReqQueryTableData parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ReqQueryTableData parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ReqQueryTableData parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ReqQueryTableData parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ReqQueryTableData parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ReqQueryTableData parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ReqQueryTableData parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static ReqQueryTableData parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ReqQueryTableData parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ReqQueryTableData parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(ReqQueryTableData prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * <pre>
+         * 查询表数据
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.netty.test.pojo.proto.ReqQueryTableData}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.netty.test.pojo.proto.ReqQueryTableData)
+                ReqQueryTableDataOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_ReqQueryTableData_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_ReqQueryTableData_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                ReqQueryTableData.class, Builder.class);
+            }
+
+            // Construct using com.netty.test.pojo.proto.NettyTest.ReqQueryTableData.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                tableName_ = "";
+                bitField0_ = (bitField0_ & ~0x00000001);
+                id_ = 0L;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_ReqQueryTableData_descriptor;
+            }
+
+            @Override
+            public ReqQueryTableData getDefaultInstanceForType() {
+                return ReqQueryTableData.getDefaultInstance();
+            }
+
+            @Override
+            public ReqQueryTableData build() {
+                ReqQueryTableData result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public ReqQueryTableData buildPartial() {
+                ReqQueryTableData result = new ReqQueryTableData(this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+                    to_bitField0_ |= 0x00000001;
+                }
+                result.tableName_ = tableName_;
+                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+                    to_bitField0_ |= 0x00000002;
+                }
+                result.id_ = id_;
+                result.bitField0_ = to_bitField0_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof ReqQueryTableData) {
+                    return mergeFrom((ReqQueryTableData) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(ReqQueryTableData other) {
+                if (other == ReqQueryTableData.getDefaultInstance()) return this;
+                if (other.hasTableName()) {
+                    bitField0_ |= 0x00000001;
+                    tableName_ = other.tableName_;
+                    onChanged();
+                }
+                if (other.hasId()) {
+                    setId(other.getId());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                if (!hasTableName()) {
+                    return false;
+                }
+                if (!hasId()) {
+                    return false;
+                }
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                ReqQueryTableData parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (ReqQueryTableData) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private Object tableName_ = "";
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>required string tableName = 1;</code>
+             */
+            public boolean hasTableName() {
+                return ((bitField0_ & 0x00000001) == 0x00000001);
+            }
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>required string tableName = 1;</code>
+             */
+            public String getTableName() {
+                Object ref = tableName_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        tableName_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>required string tableName = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getTableNameBytes() {
+                Object ref = tableName_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    tableName_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>required string tableName = 1;</code>
+             */
+            public Builder setTableName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                tableName_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>required string tableName = 1;</code>
+             */
+            public Builder clearTableName() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                tableName_ = getDefaultInstance().getTableName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>required string tableName = 1;</code>
+             */
+            public Builder setTableNameBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                tableName_ = value;
+                onChanged();
+                return this;
+            }
+
+            private long id_;
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>required int64 id = 2;</code>
+             */
+            public boolean hasId() {
+                return ((bitField0_ & 0x00000002) == 0x00000002);
+            }
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>required int64 id = 2;</code>
+             */
+            public long getId() {
+                return id_;
+            }
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>required int64 id = 2;</code>
+             */
+            public Builder setId(long value) {
+                bitField0_ |= 0x00000002;
+                id_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 链接地址
+             * </pre>
+             *
+             * <code>required int64 id = 2;</code>
+             */
+            public Builder clearId() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                id_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:com.netty.test.pojo.proto.ReqQueryTableData)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.netty.test.pojo.proto.ReqQueryTableData)
+        private static final ReqQueryTableData DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new ReqQueryTableData();
+        }
+
+        public static ReqQueryTableData getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        @Deprecated
+        public static final com.google.protobuf.Parser<ReqQueryTableData>
+                PARSER = new com.google.protobuf.AbstractParser<ReqQueryTableData>() {
+            @Override
+            public ReqQueryTableData parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ReqQueryTableData(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<ReqQueryTableData> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<ReqQueryTableData> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public ReqQueryTableData getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
+
+    public interface ResQueryTableDataOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.netty.test.pojo.proto.ResQueryTableData)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         * 表数据
+         * </pre>
+         *
+         * <code>required string tableData = 1;</code>
+         */
+        boolean hasTableData();
+
+        /**
+         * <pre>
+         * 表数据
+         * </pre>
+         *
+         * <code>required string tableData = 1;</code>
+         */
+        String getTableData();
+
+        /**
+         * <pre>
+         * 表数据
+         * </pre>
+         *
+         * <code>required string tableData = 1;</code>
+         */
+        com.google.protobuf.ByteString
+        getTableDataBytes();
+    }
+
     /**
      * <pre>
-     *表数据
+     * 返回查询表数据结果
      * </pre>
-     *
-     * <code>required string tableData = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTableDataBytes() {
-      java.lang.Object ref = tableData_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tableData_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (!hasTableData()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableData_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableData_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.netty.test.pojo.proto.NettyTest.ResQueryTableData)) {
-        return super.equals(obj);
-      }
-      com.netty.test.pojo.proto.NettyTest.ResQueryTableData other = (com.netty.test.pojo.proto.NettyTest.ResQueryTableData) obj;
-
-      boolean result = true;
-      result = result && (hasTableData() == other.hasTableData());
-      if (hasTableData()) {
-        result = result && getTableData()
-            .equals(other.getTableData());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasTableData()) {
-        hash = (37 * hash) + TABLEDATA_FIELD_NUMBER;
-        hash = (53 * hash) + getTableData().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.netty.test.pojo.proto.NettyTest.ResQueryTableData parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResQueryTableData parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResQueryTableData parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResQueryTableData parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResQueryTableData parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResQueryTableData parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResQueryTableData parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResQueryTableData parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResQueryTableData parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResQueryTableData parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResQueryTableData parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.ResQueryTableData parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netty.test.pojo.proto.NettyTest.ResQueryTableData prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     *返回查询表数据结果
-     * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.netty.test.pojo.proto.ResQueryTableData}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.netty.test.pojo.proto.ResQueryTableData)
-        com.netty.test.pojo.proto.NettyTest.ResQueryTableDataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ResQueryTableData_descriptor;
-      }
+    public static final class ResQueryTableData extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.netty.test.pojo.proto.ResQueryTableData)
+            ResQueryTableDataOrBuilder {
+        private static final long serialVersionUID = 0L;
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ResQueryTableData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netty.test.pojo.proto.NettyTest.ResQueryTableData.class, com.netty.test.pojo.proto.NettyTest.ResQueryTableData.Builder.class);
-      }
-
-      // Construct using com.netty.test.pojo.proto.NettyTest.ResQueryTableData.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        // Use ResQueryTableData.newBuilder() to construct.
+        private ResQueryTableData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        tableData_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_ResQueryTableData_descriptor;
-      }
-
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.ResQueryTableData getDefaultInstanceForType() {
-        return com.netty.test.pojo.proto.NettyTest.ResQueryTableData.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.ResQueryTableData build() {
-        com.netty.test.pojo.proto.NettyTest.ResQueryTableData result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private ResQueryTableData() {
+            tableData_ = "";
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.ResQueryTableData buildPartial() {
-        com.netty.test.pojo.proto.NettyTest.ResQueryTableData result = new com.netty.test.pojo.proto.NettyTest.ResQueryTableData(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
-        result.tableData_ = tableData_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.netty.test.pojo.proto.NettyTest.ResQueryTableData) {
-          return mergeFrom((com.netty.test.pojo.proto.NettyTest.ResQueryTableData)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        private ResQueryTableData(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            tableData_ = bs;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-      }
 
-      public Builder mergeFrom(com.netty.test.pojo.proto.NettyTest.ResQueryTableData other) {
-        if (other == com.netty.test.pojo.proto.NettyTest.ResQueryTableData.getDefaultInstance()) return this;
-        if (other.hasTableData()) {
-          bitField0_ |= 0x00000001;
-          tableData_ = other.tableData_;
-          onChanged();
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return NettyTest.internal_static_com_netty_test_pojo_proto_ResQueryTableData_descriptor;
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        if (!hasTableData()) {
-          return false;
+        @Override
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return NettyTest.internal_static_com_netty_test_pojo_proto_ResQueryTableData_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            ResQueryTableData.class, Builder.class);
         }
-        return true;
-      }
 
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.netty.test.pojo.proto.NettyTest.ResQueryTableData parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.netty.test.pojo.proto.NettyTest.ResQueryTableData) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        private int bitField0_;
+        public static final int TABLEDATA_FIELD_NUMBER = 1;
+        private volatile Object tableData_;
+
+        /**
+         * <pre>
+         * 表数据
+         * </pre>
+         *
+         * <code>required string tableData = 1;</code>
+         */
+        public boolean hasTableData() {
+            return ((bitField0_ & 0x00000001) == 0x00000001);
         }
-        return this;
-      }
-      private int bitField0_;
 
-      private java.lang.Object tableData_ = "";
-      /**
-       * <pre>
-       *表数据
-       * </pre>
-       *
-       * <code>required string tableData = 1;</code>
-       */
-      public boolean hasTableData() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <pre>
-       *表数据
-       * </pre>
-       *
-       * <code>required string tableData = 1;</code>
-       */
-      public java.lang.String getTableData() {
-        java.lang.Object ref = tableData_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            tableData_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <pre>
+         * 表数据
+         * </pre>
+         *
+         * <code>required string tableData = 1;</code>
+         */
+        public String getTableData() {
+            Object ref = tableData_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    tableData_ = s;
+                }
+                return s;
+            }
         }
-      }
-      /**
-       * <pre>
-       *表数据
-       * </pre>
-       *
-       * <code>required string tableData = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTableDataBytes() {
-        java.lang.Object ref = tableData_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tableData_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <pre>
+         * 表数据
+         * </pre>
+         *
+         * <code>required string tableData = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getTableDataBytes() {
+            Object ref = tableData_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                tableData_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <pre>
-       *表数据
-       * </pre>
-       *
-       * <code>required string tableData = 1;</code>
-       */
-      public Builder setTableData(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        tableData_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *表数据
-       * </pre>
-       *
-       * <code>required string tableData = 1;</code>
-       */
-      public Builder clearTableData() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        tableData_ = getDefaultInstance().getTableData();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *表数据
-       * </pre>
-       *
-       * <code>required string tableData = 1;</code>
-       */
-      public Builder setTableDataBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        tableData_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        private byte memoizedIsInitialized = -1;
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            if (!hasTableData()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableData_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableData_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof ResQueryTableData)) {
+                return super.equals(obj);
+            }
+            ResQueryTableData other = (ResQueryTableData) obj;
+
+            boolean result = true;
+            result = result && (hasTableData() == other.hasTableData());
+            if (hasTableData()) {
+                result = result && getTableData()
+                        .equals(other.getTableData());
+            }
+            result = result && unknownFields.equals(other.unknownFields);
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasTableData()) {
+                hash = (37 * hash) + TABLEDATA_FIELD_NUMBER;
+                hash = (53 * hash) + getTableData().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static ResQueryTableData parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ResQueryTableData parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ResQueryTableData parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ResQueryTableData parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ResQueryTableData parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ResQueryTableData parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ResQueryTableData parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ResQueryTableData parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ResQueryTableData parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static ResQueryTableData parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ResQueryTableData parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ResQueryTableData parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(ResQueryTableData prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * <pre>
+         * 返回查询表数据结果
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.netty.test.pojo.proto.ResQueryTableData}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.netty.test.pojo.proto.ResQueryTableData)
+                ResQueryTableDataOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_ResQueryTableData_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_ResQueryTableData_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                ResQueryTableData.class, Builder.class);
+            }
+
+            // Construct using com.netty.test.pojo.proto.NettyTest.ResQueryTableData.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                tableData_ = "";
+                bitField0_ = (bitField0_ & ~0x00000001);
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_ResQueryTableData_descriptor;
+            }
+
+            @Override
+            public ResQueryTableData getDefaultInstanceForType() {
+                return ResQueryTableData.getDefaultInstance();
+            }
+
+            @Override
+            public ResQueryTableData build() {
+                ResQueryTableData result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public ResQueryTableData buildPartial() {
+                ResQueryTableData result = new ResQueryTableData(this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+                    to_bitField0_ |= 0x00000001;
+                }
+                result.tableData_ = tableData_;
+                result.bitField0_ = to_bitField0_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof ResQueryTableData) {
+                    return mergeFrom((ResQueryTableData) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(ResQueryTableData other) {
+                if (other == ResQueryTableData.getDefaultInstance()) return this;
+                if (other.hasTableData()) {
+                    bitField0_ |= 0x00000001;
+                    tableData_ = other.tableData_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                if (!hasTableData()) {
+                    return false;
+                }
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                ResQueryTableData parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (ResQueryTableData) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private Object tableData_ = "";
+
+            /**
+             * <pre>
+             * 表数据
+             * </pre>
+             *
+             * <code>required string tableData = 1;</code>
+             */
+            public boolean hasTableData() {
+                return ((bitField0_ & 0x00000001) == 0x00000001);
+            }
+
+            /**
+             * <pre>
+             * 表数据
+             * </pre>
+             *
+             * <code>required string tableData = 1;</code>
+             */
+            public String getTableData() {
+                Object ref = tableData_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        tableData_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表数据
+             * </pre>
+             *
+             * <code>required string tableData = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getTableDataBytes() {
+                Object ref = tableData_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    tableData_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表数据
+             * </pre>
+             *
+             * <code>required string tableData = 1;</code>
+             */
+            public Builder setTableData(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                tableData_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表数据
+             * </pre>
+             *
+             * <code>required string tableData = 1;</code>
+             */
+            public Builder clearTableData() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                tableData_ = getDefaultInstance().getTableData();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表数据
+             * </pre>
+             *
+             * <code>required string tableData = 1;</code>
+             */
+            public Builder setTableDataBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                tableData_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
 
 
-      // @@protoc_insertion_point(builder_scope:com.netty.test.pojo.proto.ResQueryTableData)
+            // @@protoc_insertion_point(builder_scope:com.netty.test.pojo.proto.ResQueryTableData)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.netty.test.pojo.proto.ResQueryTableData)
+        private static final ResQueryTableData DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new ResQueryTableData();
+        }
+
+        public static ResQueryTableData getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        @Deprecated
+        public static final com.google.protobuf.Parser<ResQueryTableData>
+                PARSER = new com.google.protobuf.AbstractParser<ResQueryTableData>() {
+            @Override
+            public ResQueryTableData parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ResQueryTableData(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<ResQueryTableData> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<ResQueryTableData> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public ResQueryTableData getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:com.netty.test.pojo.proto.ResQueryTableData)
-    private static final com.netty.test.pojo.proto.NettyTest.ResQueryTableData DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netty.test.pojo.proto.NettyTest.ResQueryTableData();
-    }
+    public interface InformationSchemaTablesOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.netty.test.pojo.proto.InformationSchemaTables)
+            com.google.protobuf.MessageOrBuilder {
 
-    public static com.netty.test.pojo.proto.NettyTest.ResQueryTableData getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <pre>
+         * 表所属目录的名称。
+         * </pre>
+         *
+         * <code>required string tableCatalog = 1;</code>
+         */
+        boolean hasTableCatalog();
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<ResQueryTableData>
-        PARSER = new com.google.protobuf.AbstractParser<ResQueryTableData>() {
-      @java.lang.Override
-      public ResQueryTableData parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ResQueryTableData(input, extensionRegistry);
-      }
-    };
+        /**
+         * <pre>
+         * 表所属目录的名称。
+         * </pre>
+         *
+         * <code>required string tableCatalog = 1;</code>
+         */
+        String getTableCatalog();
 
-    public static com.google.protobuf.Parser<ResQueryTableData> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ResQueryTableData> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netty.test.pojo.proto.NettyTest.ResQueryTableData getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface InformationSchemaTablesOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.netty.test.pojo.proto.InformationSchemaTables)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * 表所属目录的名称。
-     * </pre>
-     *
-     * <code>required string tableCatalog = 1;</code>
-     */
-    boolean hasTableCatalog();
-    /**
-     * <pre>
-     * 表所属目录的名称。
-     * </pre>
-     *
-     * <code>required string tableCatalog = 1;</code>
-     */
-    java.lang.String getTableCatalog();
-    /**
-     * <pre>
-     * 表所属目录的名称。
-     * </pre>
-     *
-     * <code>required string tableCatalog = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 表所属目录的名称。
+         * </pre>
+         *
+         * <code>required string tableCatalog = 1;</code>
+         */
+        com.google.protobuf.ByteString
         getTableCatalogBytes();
 
-    /**
-     * <pre>
-     * 表所属的模式（数据库）的名称。
-     * </pre>
-     *
-     * <code>required string tableSchema = 2;</code>
-     */
-    boolean hasTableSchema();
-    /**
-     * <pre>
-     * 表所属的模式（数据库）的名称。
-     * </pre>
-     *
-     * <code>required string tableSchema = 2;</code>
-     */
-    java.lang.String getTableSchema();
-    /**
-     * <pre>
-     * 表所属的模式（数据库）的名称。
-     * </pre>
-     *
-     * <code>required string tableSchema = 2;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 表所属的模式（数据库）的名称。
+         * </pre>
+         *
+         * <code>required string tableSchema = 2;</code>
+         */
+        boolean hasTableSchema();
+
+        /**
+         * <pre>
+         * 表所属的模式（数据库）的名称。
+         * </pre>
+         *
+         * <code>required string tableSchema = 2;</code>
+         */
+        String getTableSchema();
+
+        /**
+         * <pre>
+         * 表所属的模式（数据库）的名称。
+         * </pre>
+         *
+         * <code>required string tableSchema = 2;</code>
+         */
+        com.google.protobuf.ByteString
         getTableSchemaBytes();
 
-    /**
-     * <pre>
-     * 表名称
-     * </pre>
-     *
-     * <code>required string tableName = 3;</code>
-     */
-    boolean hasTableName();
-    /**
-     * <pre>
-     * 表名称
-     * </pre>
-     *
-     * <code>required string tableName = 3;</code>
-     */
-    java.lang.String getTableName();
-    /**
-     * <pre>
-     * 表名称
-     * </pre>
-     *
-     * <code>required string tableName = 3;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 表名称
+         * </pre>
+         *
+         * <code>required string tableName = 3;</code>
+         */
+        boolean hasTableName();
+
+        /**
+         * <pre>
+         * 表名称
+         * </pre>
+         *
+         * <code>required string tableName = 3;</code>
+         */
+        String getTableName();
+
+        /**
+         * <pre>
+         * 表名称
+         * </pre>
+         *
+         * <code>required string tableName = 3;</code>
+         */
+        com.google.protobuf.ByteString
         getTableNameBytes();
 
-    /**
-     * <pre>
-     * 表类型[system view|base table]
-     * </pre>
-     *
-     * <code>required string tableType = 4;</code>
-     */
-    boolean hasTableType();
-    /**
-     * <pre>
-     * 表类型[system view|base table]
-     * </pre>
-     *
-     * <code>required string tableType = 4;</code>
-     */
-    java.lang.String getTableType();
-    /**
-     * <pre>
-     * 表类型[system view|base table]
-     * </pre>
-     *
-     * <code>required string tableType = 4;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 表类型[system view|base table]
+         * </pre>
+         *
+         * <code>required string tableType = 4;</code>
+         */
+        boolean hasTableType();
+
+        /**
+         * <pre>
+         * 表类型[system view|base table]
+         * </pre>
+         *
+         * <code>required string tableType = 4;</code>
+         */
+        String getTableType();
+
+        /**
+         * <pre>
+         * 表类型[system view|base table]
+         * </pre>
+         *
+         * <code>required string tableType = 4;</code>
+         */
+        com.google.protobuf.ByteString
         getTableTypeBytes();
 
-    /**
-     * <pre>
-     *使用的数据库引擎[MyISAM|CSV|InnoDB]
-     * </pre>
-     *
-     * <code>required string engine = 5;</code>
-     */
-    boolean hasEngine();
-    /**
-     * <pre>
-     *使用的数据库引擎[MyISAM|CSV|InnoDB]
-     * </pre>
-     *
-     * <code>required string engine = 5;</code>
-     */
-    java.lang.String getEngine();
-    /**
-     * <pre>
-     *使用的数据库引擎[MyISAM|CSV|InnoDB]
-     * </pre>
-     *
-     * <code>required string engine = 5;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 使用的数据库引擎[MyISAM|CSV|InnoDB]
+         * </pre>
+         *
+         * <code>required string engine = 5;</code>
+         */
+        boolean hasEngine();
+
+        /**
+         * <pre>
+         * 使用的数据库引擎[MyISAM|CSV|InnoDB]
+         * </pre>
+         *
+         * <code>required string engine = 5;</code>
+         */
+        String getEngine();
+
+        /**
+         * <pre>
+         * 使用的数据库引擎[MyISAM|CSV|InnoDB]
+         * </pre>
+         *
+         * <code>required string engine = 5;</code>
+         */
+        com.google.protobuf.ByteString
         getEngineBytes();
 
-    /**
-     * <pre>
-     *版本，默认值10
-     * </pre>
-     *
-     * <code>required int64 version = 6;</code>
-     */
-    boolean hasVersion();
-    /**
-     * <pre>
-     *版本，默认值10
-     * </pre>
-     *
-     * <code>required int64 version = 6;</code>
-     */
-    long getVersion();
+        /**
+         * <pre>
+         * 版本，默认值10
+         * </pre>
+         *
+         * <code>required int64 version = 6;</code>
+         */
+        boolean hasVersion();
 
-    /**
-     * <pre>
-     *行格式[Compact|Dynamic|Fixed]
-     * </pre>
-     *
-     * <code>required string rowFormat = 7;</code>
-     */
-    boolean hasRowFormat();
-    /**
-     * <pre>
-     *行格式[Compact|Dynamic|Fixed]
-     * </pre>
-     *
-     * <code>required string rowFormat = 7;</code>
-     */
-    java.lang.String getRowFormat();
-    /**
-     * <pre>
-     *行格式[Compact|Dynamic|Fixed]
-     * </pre>
-     *
-     * <code>required string rowFormat = 7;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 版本，默认值10
+         * </pre>
+         *
+         * <code>required int64 version = 6;</code>
+         */
+        long getVersion();
+
+        /**
+         * <pre>
+         * 行格式[Compact|Dynamic|Fixed]
+         * </pre>
+         *
+         * <code>required string rowFormat = 7;</code>
+         */
+        boolean hasRowFormat();
+
+        /**
+         * <pre>
+         * 行格式[Compact|Dynamic|Fixed]
+         * </pre>
+         *
+         * <code>required string rowFormat = 7;</code>
+         */
+        String getRowFormat();
+
+        /**
+         * <pre>
+         * 行格式[Compact|Dynamic|Fixed]
+         * </pre>
+         *
+         * <code>required string rowFormat = 7;</code>
+         */
+        com.google.protobuf.ByteString
         getRowFormatBytes();
 
-    /**
-     * <pre>
-     *表里所存多少行数据
-     * </pre>
-     *
-     * <code>required int64 tableRows = 8;</code>
-     */
-    boolean hasTableRows();
-    /**
-     * <pre>
-     *表里所存多少行数据
-     * </pre>
-     *
-     * <code>required int64 tableRows = 8;</code>
-     */
-    long getTableRows();
+        /**
+         * <pre>
+         * 表里所存多少行数据
+         * </pre>
+         *
+         * <code>required int64 tableRows = 8;</code>
+         */
+        boolean hasTableRows();
 
-    /**
-     * <pre>
-     *平均行长度
-     * </pre>
-     *
-     * <code>required int64 avgRowLength = 9;</code>
-     */
-    boolean hasAvgRowLength();
-    /**
-     * <pre>
-     *平均行长度
-     * </pre>
-     *
-     * <code>required int64 avgRowLength = 9;</code>
-     */
-    long getAvgRowLength();
+        /**
+         * <pre>
+         * 表里所存多少行数据
+         * </pre>
+         *
+         * <code>required int64 tableRows = 8;</code>
+         */
+        long getTableRows();
 
-    /**
-     * <pre>
-     *数据长度(byte)
-     * </pre>
-     *
-     * <code>required int64 dataLength = 10;</code>
-     */
-    boolean hasDataLength();
-    /**
-     * <pre>
-     *数据长度(byte)
-     * </pre>
-     *
-     * <code>required int64 dataLength = 10;</code>
-     */
-    long getDataLength();
+        /**
+         * <pre>
+         * 平均行长度
+         * </pre>
+         *
+         * <code>required int64 avgRowLength = 9;</code>
+         */
+        boolean hasAvgRowLength();
 
-    /**
-     * <pre>
-     *最大数据长度
-     * </pre>
-     *
-     * <code>required int64 maxDataLength = 11;</code>
-     */
-    boolean hasMaxDataLength();
-    /**
-     * <pre>
-     *最大数据长度
-     * </pre>
-     *
-     * <code>required int64 maxDataLength = 11;</code>
-     */
-    long getMaxDataLength();
+        /**
+         * <pre>
+         * 平均行长度
+         * </pre>
+         *
+         * <code>required int64 avgRowLength = 9;</code>
+         */
+        long getAvgRowLength();
 
-    /**
-     * <pre>
-     *索引长度
-     * </pre>
-     *
-     * <code>required int64 indexLength = 12;</code>
-     */
-    boolean hasIndexLength();
-    /**
-     * <pre>
-     *索引长度
-     * </pre>
-     *
-     * <code>required int64 indexLength = 12;</code>
-     */
-    long getIndexLength();
+        /**
+         * <pre>
+         * 数据长度(byte)
+         * </pre>
+         *
+         * <code>required int64 dataLength = 10;</code>
+         */
+        boolean hasDataLength();
 
-    /**
-     * <pre>
-     *空间碎片
-     * </pre>
-     *
-     * <code>required int64 dataFree = 13;</code>
-     */
-    boolean hasDataFree();
-    /**
-     * <pre>
-     *空间碎片
-     * </pre>
-     *
-     * <code>required int64 dataFree = 13;</code>
-     */
-    long getDataFree();
+        /**
+         * <pre>
+         * 数据长度(byte)
+         * </pre>
+         *
+         * <code>required int64 dataLength = 10;</code>
+         */
+        long getDataLength();
 
-    /**
-     * <pre>
-     *做自增主键的自动增量当前值
-     * </pre>
-     *
-     * <code>required int64 autoIncrement = 14;</code>
-     */
-    boolean hasAutoIncrement();
-    /**
-     * <pre>
-     *做自增主键的自动增量当前值
-     * </pre>
-     *
-     * <code>required int64 autoIncrement = 14;</code>
-     */
-    long getAutoIncrement();
+        /**
+         * <pre>
+         * 最大数据长度
+         * </pre>
+         *
+         * <code>required int64 maxDataLength = 11;</code>
+         */
+        boolean hasMaxDataLength();
 
-    /**
-     * <pre>
-     *表的创建时间
-     * </pre>
-     *
-     * <code>required int64 createTime = 15;</code>
-     */
-    boolean hasCreateTime();
-    /**
-     * <pre>
-     *表的创建时间
-     * </pre>
-     *
-     * <code>required int64 createTime = 15;</code>
-     */
-    long getCreateTime();
+        /**
+         * <pre>
+         * 最大数据长度
+         * </pre>
+         *
+         * <code>required int64 maxDataLength = 11;</code>
+         */
+        long getMaxDataLength();
 
-    /**
-     * <pre>
-     *表的更新时间
-     * </pre>
-     *
-     * <code>required int64 updateTime = 16;</code>
-     */
-    boolean hasUpdateTime();
-    /**
-     * <pre>
-     *表的更新时间
-     * </pre>
-     *
-     * <code>required int64 updateTime = 16;</code>
-     */
-    long getUpdateTime();
+        /**
+         * <pre>
+         * 索引长度
+         * </pre>
+         *
+         * <code>required int64 indexLength = 12;</code>
+         */
+        boolean hasIndexLength();
 
-    /**
-     * <pre>
-     *表的检查时间
-     * </pre>
-     *
-     * <code>optional int64 checkTime = 17;</code>
-     */
-    boolean hasCheckTime();
-    /**
-     * <pre>
-     *表的检查时间
-     * </pre>
-     *
-     * <code>optional int64 checkTime = 17;</code>
-     */
-    long getCheckTime();
+        /**
+         * <pre>
+         * 索引长度
+         * </pre>
+         *
+         * <code>required int64 indexLength = 12;</code>
+         */
+        long getIndexLength();
 
-    /**
-     * <pre>
-     *表的字符校验编码集
-     * </pre>
-     *
-     * <code>required string tableCollation = 18;</code>
-     */
-    boolean hasTableCollation();
-    /**
-     * <pre>
-     *表的字符校验编码集
-     * </pre>
-     *
-     * <code>required string tableCollation = 18;</code>
-     */
-    java.lang.String getTableCollation();
-    /**
-     * <pre>
-     *表的字符校验编码集
-     * </pre>
-     *
-     * <code>required string tableCollation = 18;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 空间碎片
+         * </pre>
+         *
+         * <code>required int64 dataFree = 13;</code>
+         */
+        boolean hasDataFree();
+
+        /**
+         * <pre>
+         * 空间碎片
+         * </pre>
+         *
+         * <code>required int64 dataFree = 13;</code>
+         */
+        long getDataFree();
+
+        /**
+         * <pre>
+         * 做自增主键的自动增量当前值
+         * </pre>
+         *
+         * <code>required int64 autoIncrement = 14;</code>
+         */
+        boolean hasAutoIncrement();
+
+        /**
+         * <pre>
+         * 做自增主键的自动增量当前值
+         * </pre>
+         *
+         * <code>required int64 autoIncrement = 14;</code>
+         */
+        long getAutoIncrement();
+
+        /**
+         * <pre>
+         * 表的创建时间
+         * </pre>
+         *
+         * <code>required int64 createTime = 15;</code>
+         */
+        boolean hasCreateTime();
+
+        /**
+         * <pre>
+         * 表的创建时间
+         * </pre>
+         *
+         * <code>required int64 createTime = 15;</code>
+         */
+        long getCreateTime();
+
+        /**
+         * <pre>
+         * 表的更新时间
+         * </pre>
+         *
+         * <code>required int64 updateTime = 16;</code>
+         */
+        boolean hasUpdateTime();
+
+        /**
+         * <pre>
+         * 表的更新时间
+         * </pre>
+         *
+         * <code>required int64 updateTime = 16;</code>
+         */
+        long getUpdateTime();
+
+        /**
+         * <pre>
+         * 表的检查时间
+         * </pre>
+         *
+         * <code>optional int64 checkTime = 17;</code>
+         */
+        boolean hasCheckTime();
+
+        /**
+         * <pre>
+         * 表的检查时间
+         * </pre>
+         *
+         * <code>optional int64 checkTime = 17;</code>
+         */
+        long getCheckTime();
+
+        /**
+         * <pre>
+         * 表的字符校验编码集
+         * </pre>
+         *
+         * <code>required string tableCollation = 18;</code>
+         */
+        boolean hasTableCollation();
+
+        /**
+         * <pre>
+         * 表的字符校验编码集
+         * </pre>
+         *
+         * <code>required string tableCollation = 18;</code>
+         */
+        String getTableCollation();
+
+        /**
+         * <pre>
+         * 表的字符校验编码集
+         * </pre>
+         *
+         * <code>required string tableCollation = 18;</code>
+         */
+        com.google.protobuf.ByteString
         getTableCollationBytes();
 
-    /**
-     * <pre>
-     *校验和
-     * </pre>
-     *
-     * <code>optional int64 checksum = 19;</code>
-     */
-    boolean hasChecksum();
-    /**
-     * <pre>
-     *校验和
-     * </pre>
-     *
-     * <code>optional int64 checksum = 19;</code>
-     */
-    long getChecksum();
+        /**
+         * <pre>
+         * 校验和
+         * </pre>
+         *
+         * <code>optional int64 checksum = 19;</code>
+         */
+        boolean hasChecksum();
 
-    /**
-     * <pre>
-     *创建选项
-     * </pre>
-     *
-     * <code>optional string createOptions = 20;</code>
-     */
-    boolean hasCreateOptions();
-    /**
-     * <pre>
-     *创建选项
-     * </pre>
-     *
-     * <code>optional string createOptions = 20;</code>
-     */
-    java.lang.String getCreateOptions();
-    /**
-     * <pre>
-     *创建选项
-     * </pre>
-     *
-     * <code>optional string createOptions = 20;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 校验和
+         * </pre>
+         *
+         * <code>optional int64 checksum = 19;</code>
+         */
+        long getChecksum();
+
+        /**
+         * <pre>
+         * 创建选项
+         * </pre>
+         *
+         * <code>optional string createOptions = 20;</code>
+         */
+        boolean hasCreateOptions();
+
+        /**
+         * <pre>
+         * 创建选项
+         * </pre>
+         *
+         * <code>optional string createOptions = 20;</code>
+         */
+        String getCreateOptions();
+
+        /**
+         * <pre>
+         * 创建选项
+         * </pre>
+         *
+         * <code>optional string createOptions = 20;</code>
+         */
+        com.google.protobuf.ByteString
         getCreateOptionsBytes();
 
-    /**
-     * <pre>
-     *表的注释、备注
-     * </pre>
-     *
-     * <code>optional string tableComment = 21;</code>
-     */
-    boolean hasTableComment();
-    /**
-     * <pre>
-     *表的注释、备注
-     * </pre>
-     *
-     * <code>optional string tableComment = 21;</code>
-     */
-    java.lang.String getTableComment();
-    /**
-     * <pre>
-     *表的注释、备注
-     * </pre>
-     *
-     * <code>optional string tableComment = 21;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 表的注释、备注
+         * </pre>
+         *
+         * <code>optional string tableComment = 21;</code>
+         */
+        boolean hasTableComment();
+
+        /**
+         * <pre>
+         * 表的注释、备注
+         * </pre>
+         *
+         * <code>optional string tableComment = 21;</code>
+         */
+        String getTableComment();
+
+        /**
+         * <pre>
+         * 表的注释、备注
+         * </pre>
+         *
+         * <code>optional string tableComment = 21;</code>
+         */
+        com.google.protobuf.ByteString
         getTableCommentBytes();
-  }
-  /**
-   * <pre>
-   *数据库中的表的信息
-   * </pre>
-   *
-   * Protobuf type {@code com.netty.test.pojo.proto.InformationSchemaTables}
-   */
-  public  static final class InformationSchemaTables extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.netty.test.pojo.proto.InformationSchemaTables)
-      InformationSchemaTablesOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use InformationSchemaTables.newBuilder() to construct.
-    private InformationSchemaTables(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private InformationSchemaTables() {
-      tableCatalog_ = "";
-      tableSchema_ = "";
-      tableName_ = "";
-      tableType_ = "";
-      engine_ = "";
-      version_ = 0L;
-      rowFormat_ = "";
-      tableRows_ = 0L;
-      avgRowLength_ = 0L;
-      dataLength_ = 0L;
-      maxDataLength_ = 0L;
-      indexLength_ = 0L;
-      dataFree_ = 0L;
-      autoIncrement_ = 0L;
-      createTime_ = 0L;
-      updateTime_ = 0L;
-      checkTime_ = 0L;
-      tableCollation_ = "";
-      checksum_ = 0L;
-      createOptions_ = "";
-      tableComment_ = "";
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private InformationSchemaTables(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              tableCatalog_ = bs;
-              break;
-            }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000002;
-              tableSchema_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
-              tableName_ = bs;
-              break;
-            }
-            case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000008;
-              tableType_ = bs;
-              break;
-            }
-            case 42: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000010;
-              engine_ = bs;
-              break;
-            }
-            case 48: {
-              bitField0_ |= 0x00000020;
-              version_ = input.readInt64();
-              break;
-            }
-            case 58: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000040;
-              rowFormat_ = bs;
-              break;
-            }
-            case 64: {
-              bitField0_ |= 0x00000080;
-              tableRows_ = input.readInt64();
-              break;
-            }
-            case 72: {
-              bitField0_ |= 0x00000100;
-              avgRowLength_ = input.readInt64();
-              break;
-            }
-            case 80: {
-              bitField0_ |= 0x00000200;
-              dataLength_ = input.readInt64();
-              break;
-            }
-            case 88: {
-              bitField0_ |= 0x00000400;
-              maxDataLength_ = input.readInt64();
-              break;
-            }
-            case 96: {
-              bitField0_ |= 0x00000800;
-              indexLength_ = input.readInt64();
-              break;
-            }
-            case 104: {
-              bitField0_ |= 0x00001000;
-              dataFree_ = input.readInt64();
-              break;
-            }
-            case 112: {
-              bitField0_ |= 0x00002000;
-              autoIncrement_ = input.readInt64();
-              break;
-            }
-            case 120: {
-              bitField0_ |= 0x00004000;
-              createTime_ = input.readInt64();
-              break;
-            }
-            case 128: {
-              bitField0_ |= 0x00008000;
-              updateTime_ = input.readInt64();
-              break;
-            }
-            case 136: {
-              bitField0_ |= 0x00010000;
-              checkTime_ = input.readInt64();
-              break;
-            }
-            case 146: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00020000;
-              tableCollation_ = bs;
-              break;
-            }
-            case 152: {
-              bitField0_ |= 0x00040000;
-              checksum_ = input.readInt64();
-              break;
-            }
-            case 162: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00080000;
-              createOptions_ = bs;
-              break;
-            }
-            case 170: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00100000;
-              tableComment_ = bs;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_InformationSchemaTables_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_InformationSchemaTables_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.class, com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int TABLECATALOG_FIELD_NUMBER = 1;
-    private volatile java.lang.Object tableCatalog_;
     /**
      * <pre>
-     * 表所属目录的名称。
+     * 数据库中的表的信息
      * </pre>
-     *
-     * <code>required string tableCatalog = 1;</code>
-     */
-    public boolean hasTableCatalog() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <pre>
-     * 表所属目录的名称。
-     * </pre>
-     *
-     * <code>required string tableCatalog = 1;</code>
-     */
-    public java.lang.String getTableCatalog() {
-      java.lang.Object ref = tableCatalog_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          tableCatalog_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 表所属目录的名称。
-     * </pre>
-     *
-     * <code>required string tableCatalog = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTableCatalogBytes() {
-      java.lang.Object ref = tableCatalog_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tableCatalog_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TABLESCHEMA_FIELD_NUMBER = 2;
-    private volatile java.lang.Object tableSchema_;
-    /**
-     * <pre>
-     * 表所属的模式（数据库）的名称。
-     * </pre>
-     *
-     * <code>required string tableSchema = 2;</code>
-     */
-    public boolean hasTableSchema() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <pre>
-     * 表所属的模式（数据库）的名称。
-     * </pre>
-     *
-     * <code>required string tableSchema = 2;</code>
-     */
-    public java.lang.String getTableSchema() {
-      java.lang.Object ref = tableSchema_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          tableSchema_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 表所属的模式（数据库）的名称。
-     * </pre>
-     *
-     * <code>required string tableSchema = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTableSchemaBytes() {
-      java.lang.Object ref = tableSchema_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tableSchema_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TABLENAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object tableName_;
-    /**
-     * <pre>
-     * 表名称
-     * </pre>
-     *
-     * <code>required string tableName = 3;</code>
-     */
-    public boolean hasTableName() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <pre>
-     * 表名称
-     * </pre>
-     *
-     * <code>required string tableName = 3;</code>
-     */
-    public java.lang.String getTableName() {
-      java.lang.Object ref = tableName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          tableName_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 表名称
-     * </pre>
-     *
-     * <code>required string tableName = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTableNameBytes() {
-      java.lang.Object ref = tableName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tableName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TABLETYPE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object tableType_;
-    /**
-     * <pre>
-     * 表类型[system view|base table]
-     * </pre>
-     *
-     * <code>required string tableType = 4;</code>
-     */
-    public boolean hasTableType() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <pre>
-     * 表类型[system view|base table]
-     * </pre>
-     *
-     * <code>required string tableType = 4;</code>
-     */
-    public java.lang.String getTableType() {
-      java.lang.Object ref = tableType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          tableType_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 表类型[system view|base table]
-     * </pre>
-     *
-     * <code>required string tableType = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTableTypeBytes() {
-      java.lang.Object ref = tableType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tableType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENGINE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object engine_;
-    /**
-     * <pre>
-     *使用的数据库引擎[MyISAM|CSV|InnoDB]
-     * </pre>
-     *
-     * <code>required string engine = 5;</code>
-     */
-    public boolean hasEngine() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <pre>
-     *使用的数据库引擎[MyISAM|CSV|InnoDB]
-     * </pre>
-     *
-     * <code>required string engine = 5;</code>
-     */
-    public java.lang.String getEngine() {
-      java.lang.Object ref = engine_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          engine_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *使用的数据库引擎[MyISAM|CSV|InnoDB]
-     * </pre>
-     *
-     * <code>required string engine = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getEngineBytes() {
-      java.lang.Object ref = engine_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        engine_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VERSION_FIELD_NUMBER = 6;
-    private long version_;
-    /**
-     * <pre>
-     *版本，默认值10
-     * </pre>
-     *
-     * <code>required int64 version = 6;</code>
-     */
-    public boolean hasVersion() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <pre>
-     *版本，默认值10
-     * </pre>
-     *
-     * <code>required int64 version = 6;</code>
-     */
-    public long getVersion() {
-      return version_;
-    }
-
-    public static final int ROWFORMAT_FIELD_NUMBER = 7;
-    private volatile java.lang.Object rowFormat_;
-    /**
-     * <pre>
-     *行格式[Compact|Dynamic|Fixed]
-     * </pre>
-     *
-     * <code>required string rowFormat = 7;</code>
-     */
-    public boolean hasRowFormat() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    /**
-     * <pre>
-     *行格式[Compact|Dynamic|Fixed]
-     * </pre>
-     *
-     * <code>required string rowFormat = 7;</code>
-     */
-    public java.lang.String getRowFormat() {
-      java.lang.Object ref = rowFormat_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          rowFormat_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *行格式[Compact|Dynamic|Fixed]
-     * </pre>
-     *
-     * <code>required string rowFormat = 7;</code>
-     */
-    public com.google.protobuf.ByteString
-        getRowFormatBytes() {
-      java.lang.Object ref = rowFormat_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        rowFormat_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TABLEROWS_FIELD_NUMBER = 8;
-    private long tableRows_;
-    /**
-     * <pre>
-     *表里所存多少行数据
-     * </pre>
-     *
-     * <code>required int64 tableRows = 8;</code>
-     */
-    public boolean hasTableRows() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
-    }
-    /**
-     * <pre>
-     *表里所存多少行数据
-     * </pre>
-     *
-     * <code>required int64 tableRows = 8;</code>
-     */
-    public long getTableRows() {
-      return tableRows_;
-    }
-
-    public static final int AVGROWLENGTH_FIELD_NUMBER = 9;
-    private long avgRowLength_;
-    /**
-     * <pre>
-     *平均行长度
-     * </pre>
-     *
-     * <code>required int64 avgRowLength = 9;</code>
-     */
-    public boolean hasAvgRowLength() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
-    }
-    /**
-     * <pre>
-     *平均行长度
-     * </pre>
-     *
-     * <code>required int64 avgRowLength = 9;</code>
-     */
-    public long getAvgRowLength() {
-      return avgRowLength_;
-    }
-
-    public static final int DATALENGTH_FIELD_NUMBER = 10;
-    private long dataLength_;
-    /**
-     * <pre>
-     *数据长度(byte)
-     * </pre>
-     *
-     * <code>required int64 dataLength = 10;</code>
-     */
-    public boolean hasDataLength() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
-    }
-    /**
-     * <pre>
-     *数据长度(byte)
-     * </pre>
-     *
-     * <code>required int64 dataLength = 10;</code>
-     */
-    public long getDataLength() {
-      return dataLength_;
-    }
-
-    public static final int MAXDATALENGTH_FIELD_NUMBER = 11;
-    private long maxDataLength_;
-    /**
-     * <pre>
-     *最大数据长度
-     * </pre>
-     *
-     * <code>required int64 maxDataLength = 11;</code>
-     */
-    public boolean hasMaxDataLength() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
-    }
-    /**
-     * <pre>
-     *最大数据长度
-     * </pre>
-     *
-     * <code>required int64 maxDataLength = 11;</code>
-     */
-    public long getMaxDataLength() {
-      return maxDataLength_;
-    }
-
-    public static final int INDEXLENGTH_FIELD_NUMBER = 12;
-    private long indexLength_;
-    /**
-     * <pre>
-     *索引长度
-     * </pre>
-     *
-     * <code>required int64 indexLength = 12;</code>
-     */
-    public boolean hasIndexLength() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
-    }
-    /**
-     * <pre>
-     *索引长度
-     * </pre>
-     *
-     * <code>required int64 indexLength = 12;</code>
-     */
-    public long getIndexLength() {
-      return indexLength_;
-    }
-
-    public static final int DATAFREE_FIELD_NUMBER = 13;
-    private long dataFree_;
-    /**
-     * <pre>
-     *空间碎片
-     * </pre>
-     *
-     * <code>required int64 dataFree = 13;</code>
-     */
-    public boolean hasDataFree() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
-    }
-    /**
-     * <pre>
-     *空间碎片
-     * </pre>
-     *
-     * <code>required int64 dataFree = 13;</code>
-     */
-    public long getDataFree() {
-      return dataFree_;
-    }
-
-    public static final int AUTOINCREMENT_FIELD_NUMBER = 14;
-    private long autoIncrement_;
-    /**
-     * <pre>
-     *做自增主键的自动增量当前值
-     * </pre>
-     *
-     * <code>required int64 autoIncrement = 14;</code>
-     */
-    public boolean hasAutoIncrement() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
-    }
-    /**
-     * <pre>
-     *做自增主键的自动增量当前值
-     * </pre>
-     *
-     * <code>required int64 autoIncrement = 14;</code>
-     */
-    public long getAutoIncrement() {
-      return autoIncrement_;
-    }
-
-    public static final int CREATETIME_FIELD_NUMBER = 15;
-    private long createTime_;
-    /**
-     * <pre>
-     *表的创建时间
-     * </pre>
-     *
-     * <code>required int64 createTime = 15;</code>
-     */
-    public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
-    }
-    /**
-     * <pre>
-     *表的创建时间
-     * </pre>
-     *
-     * <code>required int64 createTime = 15;</code>
-     */
-    public long getCreateTime() {
-      return createTime_;
-    }
-
-    public static final int UPDATETIME_FIELD_NUMBER = 16;
-    private long updateTime_;
-    /**
-     * <pre>
-     *表的更新时间
-     * </pre>
-     *
-     * <code>required int64 updateTime = 16;</code>
-     */
-    public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
-    }
-    /**
-     * <pre>
-     *表的更新时间
-     * </pre>
-     *
-     * <code>required int64 updateTime = 16;</code>
-     */
-    public long getUpdateTime() {
-      return updateTime_;
-    }
-
-    public static final int CHECKTIME_FIELD_NUMBER = 17;
-    private long checkTime_;
-    /**
-     * <pre>
-     *表的检查时间
-     * </pre>
-     *
-     * <code>optional int64 checkTime = 17;</code>
-     */
-    public boolean hasCheckTime() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
-    }
-    /**
-     * <pre>
-     *表的检查时间
-     * </pre>
-     *
-     * <code>optional int64 checkTime = 17;</code>
-     */
-    public long getCheckTime() {
-      return checkTime_;
-    }
-
-    public static final int TABLECOLLATION_FIELD_NUMBER = 18;
-    private volatile java.lang.Object tableCollation_;
-    /**
-     * <pre>
-     *表的字符校验编码集
-     * </pre>
-     *
-     * <code>required string tableCollation = 18;</code>
-     */
-    public boolean hasTableCollation() {
-      return ((bitField0_ & 0x00020000) == 0x00020000);
-    }
-    /**
-     * <pre>
-     *表的字符校验编码集
-     * </pre>
-     *
-     * <code>required string tableCollation = 18;</code>
-     */
-    public java.lang.String getTableCollation() {
-      java.lang.Object ref = tableCollation_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          tableCollation_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *表的字符校验编码集
-     * </pre>
-     *
-     * <code>required string tableCollation = 18;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTableCollationBytes() {
-      java.lang.Object ref = tableCollation_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tableCollation_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CHECKSUM_FIELD_NUMBER = 19;
-    private long checksum_;
-    /**
-     * <pre>
-     *校验和
-     * </pre>
-     *
-     * <code>optional int64 checksum = 19;</code>
-     */
-    public boolean hasChecksum() {
-      return ((bitField0_ & 0x00040000) == 0x00040000);
-    }
-    /**
-     * <pre>
-     *校验和
-     * </pre>
-     *
-     * <code>optional int64 checksum = 19;</code>
-     */
-    public long getChecksum() {
-      return checksum_;
-    }
-
-    public static final int CREATEOPTIONS_FIELD_NUMBER = 20;
-    private volatile java.lang.Object createOptions_;
-    /**
-     * <pre>
-     *创建选项
-     * </pre>
-     *
-     * <code>optional string createOptions = 20;</code>
-     */
-    public boolean hasCreateOptions() {
-      return ((bitField0_ & 0x00080000) == 0x00080000);
-    }
-    /**
-     * <pre>
-     *创建选项
-     * </pre>
-     *
-     * <code>optional string createOptions = 20;</code>
-     */
-    public java.lang.String getCreateOptions() {
-      java.lang.Object ref = createOptions_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          createOptions_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *创建选项
-     * </pre>
-     *
-     * <code>optional string createOptions = 20;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCreateOptionsBytes() {
-      java.lang.Object ref = createOptions_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        createOptions_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TABLECOMMENT_FIELD_NUMBER = 21;
-    private volatile java.lang.Object tableComment_;
-    /**
-     * <pre>
-     *表的注释、备注
-     * </pre>
-     *
-     * <code>optional string tableComment = 21;</code>
-     */
-    public boolean hasTableComment() {
-      return ((bitField0_ & 0x00100000) == 0x00100000);
-    }
-    /**
-     * <pre>
-     *表的注释、备注
-     * </pre>
-     *
-     * <code>optional string tableComment = 21;</code>
-     */
-    public java.lang.String getTableComment() {
-      java.lang.Object ref = tableComment_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          tableComment_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *表的注释、备注
-     * </pre>
-     *
-     * <code>optional string tableComment = 21;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTableCommentBytes() {
-      java.lang.Object ref = tableComment_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tableComment_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (!hasTableCatalog()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTableSchema()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTableName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTableType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasEngine()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasVersion()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasRowFormat()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTableRows()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasAvgRowLength()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasDataLength()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasMaxDataLength()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasIndexLength()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasDataFree()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasAutoIncrement()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasCreateTime()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasUpdateTime()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTableCollation()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableCatalog_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableSchema_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tableName_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tableType_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, engine_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeInt64(6, version_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, rowFormat_);
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeInt64(8, tableRows_);
-      }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeInt64(9, avgRowLength_);
-      }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeInt64(10, dataLength_);
-      }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeInt64(11, maxDataLength_);
-      }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        output.writeInt64(12, indexLength_);
-      }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        output.writeInt64(13, dataFree_);
-      }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        output.writeInt64(14, autoIncrement_);
-      }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        output.writeInt64(15, createTime_);
-      }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
-        output.writeInt64(16, updateTime_);
-      }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        output.writeInt64(17, checkTime_);
-      }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, tableCollation_);
-      }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
-        output.writeInt64(19, checksum_);
-      }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 20, createOptions_);
-      }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 21, tableComment_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableCatalog_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableSchema_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tableName_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tableType_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, engine_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, version_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, rowFormat_);
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(8, tableRows_);
-      }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(9, avgRowLength_);
-      }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(10, dataLength_);
-      }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(11, maxDataLength_);
-      }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(12, indexLength_);
-      }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(13, dataFree_);
-      }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(14, autoIncrement_);
-      }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(15, createTime_);
-      }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(16, updateTime_);
-      }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(17, checkTime_);
-      }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, tableCollation_);
-      }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(19, checksum_);
-      }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, createOptions_);
-      }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, tableComment_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.netty.test.pojo.proto.NettyTest.InformationSchemaTables)) {
-        return super.equals(obj);
-      }
-      com.netty.test.pojo.proto.NettyTest.InformationSchemaTables other = (com.netty.test.pojo.proto.NettyTest.InformationSchemaTables) obj;
-
-      boolean result = true;
-      result = result && (hasTableCatalog() == other.hasTableCatalog());
-      if (hasTableCatalog()) {
-        result = result && getTableCatalog()
-            .equals(other.getTableCatalog());
-      }
-      result = result && (hasTableSchema() == other.hasTableSchema());
-      if (hasTableSchema()) {
-        result = result && getTableSchema()
-            .equals(other.getTableSchema());
-      }
-      result = result && (hasTableName() == other.hasTableName());
-      if (hasTableName()) {
-        result = result && getTableName()
-            .equals(other.getTableName());
-      }
-      result = result && (hasTableType() == other.hasTableType());
-      if (hasTableType()) {
-        result = result && getTableType()
-            .equals(other.getTableType());
-      }
-      result = result && (hasEngine() == other.hasEngine());
-      if (hasEngine()) {
-        result = result && getEngine()
-            .equals(other.getEngine());
-      }
-      result = result && (hasVersion() == other.hasVersion());
-      if (hasVersion()) {
-        result = result && (getVersion()
-            == other.getVersion());
-      }
-      result = result && (hasRowFormat() == other.hasRowFormat());
-      if (hasRowFormat()) {
-        result = result && getRowFormat()
-            .equals(other.getRowFormat());
-      }
-      result = result && (hasTableRows() == other.hasTableRows());
-      if (hasTableRows()) {
-        result = result && (getTableRows()
-            == other.getTableRows());
-      }
-      result = result && (hasAvgRowLength() == other.hasAvgRowLength());
-      if (hasAvgRowLength()) {
-        result = result && (getAvgRowLength()
-            == other.getAvgRowLength());
-      }
-      result = result && (hasDataLength() == other.hasDataLength());
-      if (hasDataLength()) {
-        result = result && (getDataLength()
-            == other.getDataLength());
-      }
-      result = result && (hasMaxDataLength() == other.hasMaxDataLength());
-      if (hasMaxDataLength()) {
-        result = result && (getMaxDataLength()
-            == other.getMaxDataLength());
-      }
-      result = result && (hasIndexLength() == other.hasIndexLength());
-      if (hasIndexLength()) {
-        result = result && (getIndexLength()
-            == other.getIndexLength());
-      }
-      result = result && (hasDataFree() == other.hasDataFree());
-      if (hasDataFree()) {
-        result = result && (getDataFree()
-            == other.getDataFree());
-      }
-      result = result && (hasAutoIncrement() == other.hasAutoIncrement());
-      if (hasAutoIncrement()) {
-        result = result && (getAutoIncrement()
-            == other.getAutoIncrement());
-      }
-      result = result && (hasCreateTime() == other.hasCreateTime());
-      if (hasCreateTime()) {
-        result = result && (getCreateTime()
-            == other.getCreateTime());
-      }
-      result = result && (hasUpdateTime() == other.hasUpdateTime());
-      if (hasUpdateTime()) {
-        result = result && (getUpdateTime()
-            == other.getUpdateTime());
-      }
-      result = result && (hasCheckTime() == other.hasCheckTime());
-      if (hasCheckTime()) {
-        result = result && (getCheckTime()
-            == other.getCheckTime());
-      }
-      result = result && (hasTableCollation() == other.hasTableCollation());
-      if (hasTableCollation()) {
-        result = result && getTableCollation()
-            .equals(other.getTableCollation());
-      }
-      result = result && (hasChecksum() == other.hasChecksum());
-      if (hasChecksum()) {
-        result = result && (getChecksum()
-            == other.getChecksum());
-      }
-      result = result && (hasCreateOptions() == other.hasCreateOptions());
-      if (hasCreateOptions()) {
-        result = result && getCreateOptions()
-            .equals(other.getCreateOptions());
-      }
-      result = result && (hasTableComment() == other.hasTableComment());
-      if (hasTableComment()) {
-        result = result && getTableComment()
-            .equals(other.getTableComment());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasTableCatalog()) {
-        hash = (37 * hash) + TABLECATALOG_FIELD_NUMBER;
-        hash = (53 * hash) + getTableCatalog().hashCode();
-      }
-      if (hasTableSchema()) {
-        hash = (37 * hash) + TABLESCHEMA_FIELD_NUMBER;
-        hash = (53 * hash) + getTableSchema().hashCode();
-      }
-      if (hasTableName()) {
-        hash = (37 * hash) + TABLENAME_FIELD_NUMBER;
-        hash = (53 * hash) + getTableName().hashCode();
-      }
-      if (hasTableType()) {
-        hash = (37 * hash) + TABLETYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getTableType().hashCode();
-      }
-      if (hasEngine()) {
-        hash = (37 * hash) + ENGINE_FIELD_NUMBER;
-        hash = (53 * hash) + getEngine().hashCode();
-      }
-      if (hasVersion()) {
-        hash = (37 * hash) + VERSION_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getVersion());
-      }
-      if (hasRowFormat()) {
-        hash = (37 * hash) + ROWFORMAT_FIELD_NUMBER;
-        hash = (53 * hash) + getRowFormat().hashCode();
-      }
-      if (hasTableRows()) {
-        hash = (37 * hash) + TABLEROWS_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getTableRows());
-      }
-      if (hasAvgRowLength()) {
-        hash = (37 * hash) + AVGROWLENGTH_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getAvgRowLength());
-      }
-      if (hasDataLength()) {
-        hash = (37 * hash) + DATALENGTH_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getDataLength());
-      }
-      if (hasMaxDataLength()) {
-        hash = (37 * hash) + MAXDATALENGTH_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getMaxDataLength());
-      }
-      if (hasIndexLength()) {
-        hash = (37 * hash) + INDEXLENGTH_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getIndexLength());
-      }
-      if (hasDataFree()) {
-        hash = (37 * hash) + DATAFREE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getDataFree());
-      }
-      if (hasAutoIncrement()) {
-        hash = (37 * hash) + AUTOINCREMENT_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getAutoIncrement());
-      }
-      if (hasCreateTime()) {
-        hash = (37 * hash) + CREATETIME_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getCreateTime());
-      }
-      if (hasUpdateTime()) {
-        hash = (37 * hash) + UPDATETIME_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getUpdateTime());
-      }
-      if (hasCheckTime()) {
-        hash = (37 * hash) + CHECKTIME_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getCheckTime());
-      }
-      if (hasTableCollation()) {
-        hash = (37 * hash) + TABLECOLLATION_FIELD_NUMBER;
-        hash = (53 * hash) + getTableCollation().hashCode();
-      }
-      if (hasChecksum()) {
-        hash = (37 * hash) + CHECKSUM_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getChecksum());
-      }
-      if (hasCreateOptions()) {
-        hash = (37 * hash) + CREATEOPTIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getCreateOptions().hashCode();
-      }
-      if (hasTableComment()) {
-        hash = (37 * hash) + TABLECOMMENT_FIELD_NUMBER;
-        hash = (53 * hash) + getTableComment().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.netty.test.pojo.proto.NettyTest.InformationSchemaTables parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.InformationSchemaTables parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.InformationSchemaTables parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.InformationSchemaTables parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.InformationSchemaTables parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.InformationSchemaTables parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.InformationSchemaTables parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.InformationSchemaTables parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.InformationSchemaTables parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.InformationSchemaTables parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.InformationSchemaTables parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.netty.test.pojo.proto.NettyTest.InformationSchemaTables parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.netty.test.pojo.proto.NettyTest.InformationSchemaTables prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     *数据库中的表的信息
-     * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.netty.test.pojo.proto.InformationSchemaTables}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.netty.test.pojo.proto.InformationSchemaTables)
-        com.netty.test.pojo.proto.NettyTest.InformationSchemaTablesOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_InformationSchemaTables_descriptor;
-      }
+    public static final class InformationSchemaTables extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.netty.test.pojo.proto.InformationSchemaTables)
+            InformationSchemaTablesOrBuilder {
+        private static final long serialVersionUID = 0L;
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_InformationSchemaTables_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.class, com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.Builder.class);
-      }
+        // Use InformationSchemaTables.newBuilder() to construct.
+        private InformationSchemaTables(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
 
-      // Construct using com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+        private InformationSchemaTables() {
+            tableCatalog_ = "";
+            tableSchema_ = "";
+            tableName_ = "";
+            tableType_ = "";
+            engine_ = "";
+            version_ = 0L;
+            rowFormat_ = "";
+            tableRows_ = 0L;
+            avgRowLength_ = 0L;
+            dataLength_ = 0L;
+            maxDataLength_ = 0L;
+            indexLength_ = 0L;
+            dataFree_ = 0L;
+            autoIncrement_ = 0L;
+            createTime_ = 0L;
+            updateTime_ = 0L;
+            checkTime_ = 0L;
+            tableCollation_ = "";
+            checksum_ = 0L;
+            createOptions_ = "";
+            tableComment_ = "";
+        }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        tableCatalog_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        tableSchema_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        tableName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        tableType_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
-        engine_ = "";
-        bitField0_ = (bitField0_ & ~0x00000010);
-        version_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        rowFormat_ = "";
-        bitField0_ = (bitField0_ & ~0x00000040);
-        tableRows_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000080);
-        avgRowLength_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000100);
-        dataLength_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000200);
-        maxDataLength_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000400);
-        indexLength_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000800);
-        dataFree_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00001000);
-        autoIncrement_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00002000);
-        createTime_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00004000);
-        updateTime_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00008000);
-        checkTime_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00010000);
-        tableCollation_ = "";
-        bitField0_ = (bitField0_ & ~0x00020000);
-        checksum_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00040000);
-        createOptions_ = "";
-        bitField0_ = (bitField0_ & ~0x00080000);
-        tableComment_ = "";
-        bitField0_ = (bitField0_ & ~0x00100000);
-        return this;
-      }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.netty.test.pojo.proto.NettyTest.internal_static_com_netty_test_pojo_proto_InformationSchemaTables_descriptor;
-      }
+        private InformationSchemaTables(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            tableCatalog_ = bs;
+                            break;
+                        }
+                        case 18: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000002;
+                            tableSchema_ = bs;
+                            break;
+                        }
+                        case 26: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000004;
+                            tableName_ = bs;
+                            break;
+                        }
+                        case 34: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000008;
+                            tableType_ = bs;
+                            break;
+                        }
+                        case 42: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000010;
+                            engine_ = bs;
+                            break;
+                        }
+                        case 48: {
+                            bitField0_ |= 0x00000020;
+                            version_ = input.readInt64();
+                            break;
+                        }
+                        case 58: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000040;
+                            rowFormat_ = bs;
+                            break;
+                        }
+                        case 64: {
+                            bitField0_ |= 0x00000080;
+                            tableRows_ = input.readInt64();
+                            break;
+                        }
+                        case 72: {
+                            bitField0_ |= 0x00000100;
+                            avgRowLength_ = input.readInt64();
+                            break;
+                        }
+                        case 80: {
+                            bitField0_ |= 0x00000200;
+                            dataLength_ = input.readInt64();
+                            break;
+                        }
+                        case 88: {
+                            bitField0_ |= 0x00000400;
+                            maxDataLength_ = input.readInt64();
+                            break;
+                        }
+                        case 96: {
+                            bitField0_ |= 0x00000800;
+                            indexLength_ = input.readInt64();
+                            break;
+                        }
+                        case 104: {
+                            bitField0_ |= 0x00001000;
+                            dataFree_ = input.readInt64();
+                            break;
+                        }
+                        case 112: {
+                            bitField0_ |= 0x00002000;
+                            autoIncrement_ = input.readInt64();
+                            break;
+                        }
+                        case 120: {
+                            bitField0_ |= 0x00004000;
+                            createTime_ = input.readInt64();
+                            break;
+                        }
+                        case 128: {
+                            bitField0_ |= 0x00008000;
+                            updateTime_ = input.readInt64();
+                            break;
+                        }
+                        case 136: {
+                            bitField0_ |= 0x00010000;
+                            checkTime_ = input.readInt64();
+                            break;
+                        }
+                        case 146: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00020000;
+                            tableCollation_ = bs;
+                            break;
+                        }
+                        case 152: {
+                            bitField0_ |= 0x00040000;
+                            checksum_ = input.readInt64();
+                            break;
+                        }
+                        case 162: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00080000;
+                            createOptions_ = bs;
+                            break;
+                        }
+                        case 170: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00100000;
+                            tableComment_ = bs;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
 
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.InformationSchemaTables getDefaultInstanceForType() {
-        return com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.getDefaultInstance();
-      }
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return NettyTest.internal_static_com_netty_test_pojo_proto_InformationSchemaTables_descriptor;
+        }
 
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.InformationSchemaTables build() {
-        com.netty.test.pojo.proto.NettyTest.InformationSchemaTables result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        @Override
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return NettyTest.internal_static_com_netty_test_pojo_proto_InformationSchemaTables_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            InformationSchemaTables.class, Builder.class);
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public com.netty.test.pojo.proto.NettyTest.InformationSchemaTables buildPartial() {
-        com.netty.test.pojo.proto.NettyTest.InformationSchemaTables result = new com.netty.test.pojo.proto.NettyTest.InformationSchemaTables(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.tableCatalog_ = tableCatalog_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.tableSchema_ = tableSchema_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.tableName_ = tableName_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.tableType_ = tableType_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.engine_ = engine_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.version_ = version_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000040;
-        }
-        result.rowFormat_ = rowFormat_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000080;
-        }
-        result.tableRows_ = tableRows_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
-          to_bitField0_ |= 0x00000100;
-        }
-        result.avgRowLength_ = avgRowLength_;
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
-          to_bitField0_ |= 0x00000200;
-        }
-        result.dataLength_ = dataLength_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
-          to_bitField0_ |= 0x00000400;
-        }
-        result.maxDataLength_ = maxDataLength_;
-        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
-          to_bitField0_ |= 0x00000800;
-        }
-        result.indexLength_ = indexLength_;
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
-          to_bitField0_ |= 0x00001000;
-        }
-        result.dataFree_ = dataFree_;
-        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
-          to_bitField0_ |= 0x00002000;
-        }
-        result.autoIncrement_ = autoIncrement_;
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
-          to_bitField0_ |= 0x00004000;
-        }
-        result.createTime_ = createTime_;
-        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
-          to_bitField0_ |= 0x00008000;
-        }
-        result.updateTime_ = updateTime_;
-        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
-          to_bitField0_ |= 0x00010000;
-        }
-        result.checkTime_ = checkTime_;
-        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
-          to_bitField0_ |= 0x00020000;
-        }
-        result.tableCollation_ = tableCollation_;
-        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
-          to_bitField0_ |= 0x00040000;
-        }
-        result.checksum_ = checksum_;
-        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
-          to_bitField0_ |= 0x00080000;
-        }
-        result.createOptions_ = createOptions_;
-        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
-          to_bitField0_ |= 0x00100000;
-        }
-        result.tableComment_ = tableComment_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
+        private int bitField0_;
+        public static final int TABLECATALOG_FIELD_NUMBER = 1;
+        private volatile Object tableCatalog_;
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.netty.test.pojo.proto.NettyTest.InformationSchemaTables) {
-          return mergeFrom((com.netty.test.pojo.proto.NettyTest.InformationSchemaTables)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        /**
+         * <pre>
+         * 表所属目录的名称。
+         * </pre>
+         *
+         * <code>required string tableCatalog = 1;</code>
+         */
+        public boolean hasTableCatalog() {
+            return ((bitField0_ & 0x00000001) == 0x00000001);
         }
-      }
 
-      public Builder mergeFrom(com.netty.test.pojo.proto.NettyTest.InformationSchemaTables other) {
-        if (other == com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.getDefaultInstance()) return this;
-        if (other.hasTableCatalog()) {
-          bitField0_ |= 0x00000001;
-          tableCatalog_ = other.tableCatalog_;
-          onChanged();
+        /**
+         * <pre>
+         * 表所属目录的名称。
+         * </pre>
+         *
+         * <code>required string tableCatalog = 1;</code>
+         */
+        public String getTableCatalog() {
+            Object ref = tableCatalog_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    tableCatalog_ = s;
+                }
+                return s;
+            }
         }
-        if (other.hasTableSchema()) {
-          bitField0_ |= 0x00000002;
-          tableSchema_ = other.tableSchema_;
-          onChanged();
-        }
-        if (other.hasTableName()) {
-          bitField0_ |= 0x00000004;
-          tableName_ = other.tableName_;
-          onChanged();
-        }
-        if (other.hasTableType()) {
-          bitField0_ |= 0x00000008;
-          tableType_ = other.tableType_;
-          onChanged();
-        }
-        if (other.hasEngine()) {
-          bitField0_ |= 0x00000010;
-          engine_ = other.engine_;
-          onChanged();
-        }
-        if (other.hasVersion()) {
-          setVersion(other.getVersion());
-        }
-        if (other.hasRowFormat()) {
-          bitField0_ |= 0x00000040;
-          rowFormat_ = other.rowFormat_;
-          onChanged();
-        }
-        if (other.hasTableRows()) {
-          setTableRows(other.getTableRows());
-        }
-        if (other.hasAvgRowLength()) {
-          setAvgRowLength(other.getAvgRowLength());
-        }
-        if (other.hasDataLength()) {
-          setDataLength(other.getDataLength());
-        }
-        if (other.hasMaxDataLength()) {
-          setMaxDataLength(other.getMaxDataLength());
-        }
-        if (other.hasIndexLength()) {
-          setIndexLength(other.getIndexLength());
-        }
-        if (other.hasDataFree()) {
-          setDataFree(other.getDataFree());
-        }
-        if (other.hasAutoIncrement()) {
-          setAutoIncrement(other.getAutoIncrement());
-        }
-        if (other.hasCreateTime()) {
-          setCreateTime(other.getCreateTime());
-        }
-        if (other.hasUpdateTime()) {
-          setUpdateTime(other.getUpdateTime());
-        }
-        if (other.hasCheckTime()) {
-          setCheckTime(other.getCheckTime());
-        }
-        if (other.hasTableCollation()) {
-          bitField0_ |= 0x00020000;
-          tableCollation_ = other.tableCollation_;
-          onChanged();
-        }
-        if (other.hasChecksum()) {
-          setChecksum(other.getChecksum());
-        }
-        if (other.hasCreateOptions()) {
-          bitField0_ |= 0x00080000;
-          createOptions_ = other.createOptions_;
-          onChanged();
-        }
-        if (other.hasTableComment()) {
-          bitField0_ |= 0x00100000;
-          tableComment_ = other.tableComment_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        if (!hasTableCatalog()) {
-          return false;
+        /**
+         * <pre>
+         * 表所属目录的名称。
+         * </pre>
+         *
+         * <code>required string tableCatalog = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getTableCatalogBytes() {
+            Object ref = tableCatalog_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                tableCatalog_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-        if (!hasTableSchema()) {
-          return false;
-        }
-        if (!hasTableName()) {
-          return false;
-        }
-        if (!hasTableType()) {
-          return false;
-        }
-        if (!hasEngine()) {
-          return false;
-        }
-        if (!hasVersion()) {
-          return false;
-        }
-        if (!hasRowFormat()) {
-          return false;
-        }
-        if (!hasTableRows()) {
-          return false;
-        }
-        if (!hasAvgRowLength()) {
-          return false;
-        }
-        if (!hasDataLength()) {
-          return false;
-        }
-        if (!hasMaxDataLength()) {
-          return false;
-        }
-        if (!hasIndexLength()) {
-          return false;
-        }
-        if (!hasDataFree()) {
-          return false;
-        }
-        if (!hasAutoIncrement()) {
-          return false;
-        }
-        if (!hasCreateTime()) {
-          return false;
-        }
-        if (!hasUpdateTime()) {
-          return false;
-        }
-        if (!hasTableCollation()) {
-          return false;
-        }
-        return true;
-      }
 
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.netty.test.pojo.proto.NettyTest.InformationSchemaTables parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.netty.test.pojo.proto.NettyTest.InformationSchemaTables) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        public static final int TABLESCHEMA_FIELD_NUMBER = 2;
+        private volatile Object tableSchema_;
+
+        /**
+         * <pre>
+         * 表所属的模式（数据库）的名称。
+         * </pre>
+         *
+         * <code>required string tableSchema = 2;</code>
+         */
+        public boolean hasTableSchema() {
+            return ((bitField0_ & 0x00000002) == 0x00000002);
         }
-        return this;
-      }
-      private int bitField0_;
 
-      private java.lang.Object tableCatalog_ = "";
-      /**
-       * <pre>
-       * 表所属目录的名称。
-       * </pre>
-       *
-       * <code>required string tableCatalog = 1;</code>
-       */
-      public boolean hasTableCatalog() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <pre>
-       * 表所属目录的名称。
-       * </pre>
-       *
-       * <code>required string tableCatalog = 1;</code>
-       */
-      public java.lang.String getTableCatalog() {
-        java.lang.Object ref = tableCatalog_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            tableCatalog_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <pre>
+         * 表所属的模式（数据库）的名称。
+         * </pre>
+         *
+         * <code>required string tableSchema = 2;</code>
+         */
+        public String getTableSchema() {
+            Object ref = tableSchema_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    tableSchema_ = s;
+                }
+                return s;
+            }
         }
-      }
-      /**
-       * <pre>
-       * 表所属目录的名称。
-       * </pre>
-       *
-       * <code>required string tableCatalog = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTableCatalogBytes() {
-        java.lang.Object ref = tableCatalog_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tableCatalog_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <pre>
+         * 表所属的模式（数据库）的名称。
+         * </pre>
+         *
+         * <code>required string tableSchema = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+        getTableSchemaBytes() {
+            Object ref = tableSchema_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                tableSchema_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <pre>
-       * 表所属目录的名称。
-       * </pre>
-       *
-       * <code>required string tableCatalog = 1;</code>
-       */
-      public Builder setTableCatalog(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        tableCatalog_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 表所属目录的名称。
-       * </pre>
-       *
-       * <code>required string tableCatalog = 1;</code>
-       */
-      public Builder clearTableCatalog() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        tableCatalog_ = getDefaultInstance().getTableCatalog();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 表所属目录的名称。
-       * </pre>
-       *
-       * <code>required string tableCatalog = 1;</code>
-       */
-      public Builder setTableCatalogBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        tableCatalog_ = value;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object tableSchema_ = "";
-      /**
-       * <pre>
-       * 表所属的模式（数据库）的名称。
-       * </pre>
-       *
-       * <code>required string tableSchema = 2;</code>
-       */
-      public boolean hasTableSchema() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <pre>
-       * 表所属的模式（数据库）的名称。
-       * </pre>
-       *
-       * <code>required string tableSchema = 2;</code>
-       */
-      public java.lang.String getTableSchema() {
-        java.lang.Object ref = tableSchema_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            tableSchema_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        public static final int TABLENAME_FIELD_NUMBER = 3;
+        private volatile Object tableName_;
+
+        /**
+         * <pre>
+         * 表名称
+         * </pre>
+         *
+         * <code>required string tableName = 3;</code>
+         */
+        public boolean hasTableName() {
+            return ((bitField0_ & 0x00000004) == 0x00000004);
         }
-      }
-      /**
-       * <pre>
-       * 表所属的模式（数据库）的名称。
-       * </pre>
-       *
-       * <code>required string tableSchema = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTableSchemaBytes() {
-        java.lang.Object ref = tableSchema_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tableSchema_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <pre>
+         * 表名称
+         * </pre>
+         *
+         * <code>required string tableName = 3;</code>
+         */
+        public String getTableName() {
+            Object ref = tableName_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    tableName_ = s;
+                }
+                return s;
+            }
         }
-      }
-      /**
-       * <pre>
-       * 表所属的模式（数据库）的名称。
-       * </pre>
-       *
-       * <code>required string tableSchema = 2;</code>
-       */
-      public Builder setTableSchema(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        tableSchema_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 表所属的模式（数据库）的名称。
-       * </pre>
-       *
-       * <code>required string tableSchema = 2;</code>
-       */
-      public Builder clearTableSchema() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        tableSchema_ = getDefaultInstance().getTableSchema();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 表所属的模式（数据库）的名称。
-       * </pre>
-       *
-       * <code>required string tableSchema = 2;</code>
-       */
-      public Builder setTableSchemaBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        tableSchema_ = value;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object tableName_ = "";
-      /**
-       * <pre>
-       * 表名称
-       * </pre>
-       *
-       * <code>required string tableName = 3;</code>
-       */
-      public boolean hasTableName() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <pre>
-       * 表名称
-       * </pre>
-       *
-       * <code>required string tableName = 3;</code>
-       */
-      public java.lang.String getTableName() {
-        java.lang.Object ref = tableName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            tableName_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <pre>
+         * 表名称
+         * </pre>
+         *
+         * <code>required string tableName = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+        getTableNameBytes() {
+            Object ref = tableName_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                tableName_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <pre>
-       * 表名称
-       * </pre>
-       *
-       * <code>required string tableName = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTableNameBytes() {
-        java.lang.Object ref = tableName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tableName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        public static final int TABLETYPE_FIELD_NUMBER = 4;
+        private volatile Object tableType_;
+
+        /**
+         * <pre>
+         * 表类型[system view|base table]
+         * </pre>
+         *
+         * <code>required string tableType = 4;</code>
+         */
+        public boolean hasTableType() {
+            return ((bitField0_ & 0x00000008) == 0x00000008);
         }
-      }
-      /**
-       * <pre>
-       * 表名称
-       * </pre>
-       *
-       * <code>required string tableName = 3;</code>
-       */
-      public Builder setTableName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        tableName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 表名称
-       * </pre>
-       *
-       * <code>required string tableName = 3;</code>
-       */
-      public Builder clearTableName() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        tableName_ = getDefaultInstance().getTableName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 表名称
-       * </pre>
-       *
-       * <code>required string tableName = 3;</code>
-       */
-      public Builder setTableNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        tableName_ = value;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object tableType_ = "";
-      /**
-       * <pre>
-       * 表类型[system view|base table]
-       * </pre>
-       *
-       * <code>required string tableType = 4;</code>
-       */
-      public boolean hasTableType() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <pre>
-       * 表类型[system view|base table]
-       * </pre>
-       *
-       * <code>required string tableType = 4;</code>
-       */
-      public java.lang.String getTableType() {
-        java.lang.Object ref = tableType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            tableType_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <pre>
+         * 表类型[system view|base table]
+         * </pre>
+         *
+         * <code>required string tableType = 4;</code>
+         */
+        public String getTableType() {
+            Object ref = tableType_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    tableType_ = s;
+                }
+                return s;
+            }
         }
-      }
-      /**
-       * <pre>
-       * 表类型[system view|base table]
-       * </pre>
-       *
-       * <code>required string tableType = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTableTypeBytes() {
-        java.lang.Object ref = tableType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tableType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <pre>
+         * 表类型[system view|base table]
+         * </pre>
+         *
+         * <code>required string tableType = 4;</code>
+         */
+        public com.google.protobuf.ByteString
+        getTableTypeBytes() {
+            Object ref = tableType_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                tableType_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <pre>
-       * 表类型[system view|base table]
-       * </pre>
-       *
-       * <code>required string tableType = 4;</code>
-       */
-      public Builder setTableType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        tableType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 表类型[system view|base table]
-       * </pre>
-       *
-       * <code>required string tableType = 4;</code>
-       */
-      public Builder clearTableType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        tableType_ = getDefaultInstance().getTableType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 表类型[system view|base table]
-       * </pre>
-       *
-       * <code>required string tableType = 4;</code>
-       */
-      public Builder setTableTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        tableType_ = value;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object engine_ = "";
-      /**
-       * <pre>
-       *使用的数据库引擎[MyISAM|CSV|InnoDB]
-       * </pre>
-       *
-       * <code>required string engine = 5;</code>
-       */
-      public boolean hasEngine() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <pre>
-       *使用的数据库引擎[MyISAM|CSV|InnoDB]
-       * </pre>
-       *
-       * <code>required string engine = 5;</code>
-       */
-      public java.lang.String getEngine() {
-        java.lang.Object ref = engine_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            engine_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        public static final int ENGINE_FIELD_NUMBER = 5;
+        private volatile Object engine_;
+
+        /**
+         * <pre>
+         * 使用的数据库引擎[MyISAM|CSV|InnoDB]
+         * </pre>
+         *
+         * <code>required string engine = 5;</code>
+         */
+        public boolean hasEngine() {
+            return ((bitField0_ & 0x00000010) == 0x00000010);
         }
-      }
-      /**
-       * <pre>
-       *使用的数据库引擎[MyISAM|CSV|InnoDB]
-       * </pre>
-       *
-       * <code>required string engine = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getEngineBytes() {
-        java.lang.Object ref = engine_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          engine_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <pre>
+         * 使用的数据库引擎[MyISAM|CSV|InnoDB]
+         * </pre>
+         *
+         * <code>required string engine = 5;</code>
+         */
+        public String getEngine() {
+            Object ref = engine_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    engine_ = s;
+                }
+                return s;
+            }
         }
-      }
-      /**
-       * <pre>
-       *使用的数据库引擎[MyISAM|CSV|InnoDB]
-       * </pre>
-       *
-       * <code>required string engine = 5;</code>
-       */
-      public Builder setEngine(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        engine_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *使用的数据库引擎[MyISAM|CSV|InnoDB]
-       * </pre>
-       *
-       * <code>required string engine = 5;</code>
-       */
-      public Builder clearEngine() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        engine_ = getDefaultInstance().getEngine();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *使用的数据库引擎[MyISAM|CSV|InnoDB]
-       * </pre>
-       *
-       * <code>required string engine = 5;</code>
-       */
-      public Builder setEngineBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        engine_ = value;
-        onChanged();
-        return this;
-      }
 
-      private long version_ ;
-      /**
-       * <pre>
-       *版本，默认值10
-       * </pre>
-       *
-       * <code>required int64 version = 6;</code>
-       */
-      public boolean hasVersion() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <pre>
-       *版本，默认值10
-       * </pre>
-       *
-       * <code>required int64 version = 6;</code>
-       */
-      public long getVersion() {
-        return version_;
-      }
-      /**
-       * <pre>
-       *版本，默认值10
-       * </pre>
-       *
-       * <code>required int64 version = 6;</code>
-       */
-      public Builder setVersion(long value) {
-        bitField0_ |= 0x00000020;
-        version_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *版本，默认值10
-       * </pre>
-       *
-       * <code>required int64 version = 6;</code>
-       */
-      public Builder clearVersion() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        version_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object rowFormat_ = "";
-      /**
-       * <pre>
-       *行格式[Compact|Dynamic|Fixed]
-       * </pre>
-       *
-       * <code>required string rowFormat = 7;</code>
-       */
-      public boolean hasRowFormat() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
-      }
-      /**
-       * <pre>
-       *行格式[Compact|Dynamic|Fixed]
-       * </pre>
-       *
-       * <code>required string rowFormat = 7;</code>
-       */
-      public java.lang.String getRowFormat() {
-        java.lang.Object ref = rowFormat_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            rowFormat_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <pre>
+         * 使用的数据库引擎[MyISAM|CSV|InnoDB]
+         * </pre>
+         *
+         * <code>required string engine = 5;</code>
+         */
+        public com.google.protobuf.ByteString
+        getEngineBytes() {
+            Object ref = engine_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                engine_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <pre>
-       *行格式[Compact|Dynamic|Fixed]
-       * </pre>
-       *
-       * <code>required string rowFormat = 7;</code>
-       */
-      public com.google.protobuf.ByteString
-          getRowFormatBytes() {
-        java.lang.Object ref = rowFormat_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          rowFormat_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        public static final int VERSION_FIELD_NUMBER = 6;
+        private long version_;
+
+        /**
+         * <pre>
+         * 版本，默认值10
+         * </pre>
+         *
+         * <code>required int64 version = 6;</code>
+         */
+        public boolean hasVersion() {
+            return ((bitField0_ & 0x00000020) == 0x00000020);
         }
-      }
-      /**
-       * <pre>
-       *行格式[Compact|Dynamic|Fixed]
-       * </pre>
-       *
-       * <code>required string rowFormat = 7;</code>
-       */
-      public Builder setRowFormat(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000040;
-        rowFormat_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *行格式[Compact|Dynamic|Fixed]
-       * </pre>
-       *
-       * <code>required string rowFormat = 7;</code>
-       */
-      public Builder clearRowFormat() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        rowFormat_ = getDefaultInstance().getRowFormat();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *行格式[Compact|Dynamic|Fixed]
-       * </pre>
-       *
-       * <code>required string rowFormat = 7;</code>
-       */
-      public Builder setRowFormatBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000040;
-        rowFormat_ = value;
-        onChanged();
-        return this;
-      }
 
-      private long tableRows_ ;
-      /**
-       * <pre>
-       *表里所存多少行数据
-       * </pre>
-       *
-       * <code>required int64 tableRows = 8;</code>
-       */
-      public boolean hasTableRows() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
-      }
-      /**
-       * <pre>
-       *表里所存多少行数据
-       * </pre>
-       *
-       * <code>required int64 tableRows = 8;</code>
-       */
-      public long getTableRows() {
-        return tableRows_;
-      }
-      /**
-       * <pre>
-       *表里所存多少行数据
-       * </pre>
-       *
-       * <code>required int64 tableRows = 8;</code>
-       */
-      public Builder setTableRows(long value) {
-        bitField0_ |= 0x00000080;
-        tableRows_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *表里所存多少行数据
-       * </pre>
-       *
-       * <code>required int64 tableRows = 8;</code>
-       */
-      public Builder clearTableRows() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        tableRows_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long avgRowLength_ ;
-      /**
-       * <pre>
-       *平均行长度
-       * </pre>
-       *
-       * <code>required int64 avgRowLength = 9;</code>
-       */
-      public boolean hasAvgRowLength() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
-      }
-      /**
-       * <pre>
-       *平均行长度
-       * </pre>
-       *
-       * <code>required int64 avgRowLength = 9;</code>
-       */
-      public long getAvgRowLength() {
-        return avgRowLength_;
-      }
-      /**
-       * <pre>
-       *平均行长度
-       * </pre>
-       *
-       * <code>required int64 avgRowLength = 9;</code>
-       */
-      public Builder setAvgRowLength(long value) {
-        bitField0_ |= 0x00000100;
-        avgRowLength_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *平均行长度
-       * </pre>
-       *
-       * <code>required int64 avgRowLength = 9;</code>
-       */
-      public Builder clearAvgRowLength() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        avgRowLength_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long dataLength_ ;
-      /**
-       * <pre>
-       *数据长度(byte)
-       * </pre>
-       *
-       * <code>required int64 dataLength = 10;</code>
-       */
-      public boolean hasDataLength() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
-      }
-      /**
-       * <pre>
-       *数据长度(byte)
-       * </pre>
-       *
-       * <code>required int64 dataLength = 10;</code>
-       */
-      public long getDataLength() {
-        return dataLength_;
-      }
-      /**
-       * <pre>
-       *数据长度(byte)
-       * </pre>
-       *
-       * <code>required int64 dataLength = 10;</code>
-       */
-      public Builder setDataLength(long value) {
-        bitField0_ |= 0x00000200;
-        dataLength_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *数据长度(byte)
-       * </pre>
-       *
-       * <code>required int64 dataLength = 10;</code>
-       */
-      public Builder clearDataLength() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        dataLength_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long maxDataLength_ ;
-      /**
-       * <pre>
-       *最大数据长度
-       * </pre>
-       *
-       * <code>required int64 maxDataLength = 11;</code>
-       */
-      public boolean hasMaxDataLength() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
-      }
-      /**
-       * <pre>
-       *最大数据长度
-       * </pre>
-       *
-       * <code>required int64 maxDataLength = 11;</code>
-       */
-      public long getMaxDataLength() {
-        return maxDataLength_;
-      }
-      /**
-       * <pre>
-       *最大数据长度
-       * </pre>
-       *
-       * <code>required int64 maxDataLength = 11;</code>
-       */
-      public Builder setMaxDataLength(long value) {
-        bitField0_ |= 0x00000400;
-        maxDataLength_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *最大数据长度
-       * </pre>
-       *
-       * <code>required int64 maxDataLength = 11;</code>
-       */
-      public Builder clearMaxDataLength() {
-        bitField0_ = (bitField0_ & ~0x00000400);
-        maxDataLength_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long indexLength_ ;
-      /**
-       * <pre>
-       *索引长度
-       * </pre>
-       *
-       * <code>required int64 indexLength = 12;</code>
-       */
-      public boolean hasIndexLength() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
-      }
-      /**
-       * <pre>
-       *索引长度
-       * </pre>
-       *
-       * <code>required int64 indexLength = 12;</code>
-       */
-      public long getIndexLength() {
-        return indexLength_;
-      }
-      /**
-       * <pre>
-       *索引长度
-       * </pre>
-       *
-       * <code>required int64 indexLength = 12;</code>
-       */
-      public Builder setIndexLength(long value) {
-        bitField0_ |= 0x00000800;
-        indexLength_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *索引长度
-       * </pre>
-       *
-       * <code>required int64 indexLength = 12;</code>
-       */
-      public Builder clearIndexLength() {
-        bitField0_ = (bitField0_ & ~0x00000800);
-        indexLength_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long dataFree_ ;
-      /**
-       * <pre>
-       *空间碎片
-       * </pre>
-       *
-       * <code>required int64 dataFree = 13;</code>
-       */
-      public boolean hasDataFree() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
-      }
-      /**
-       * <pre>
-       *空间碎片
-       * </pre>
-       *
-       * <code>required int64 dataFree = 13;</code>
-       */
-      public long getDataFree() {
-        return dataFree_;
-      }
-      /**
-       * <pre>
-       *空间碎片
-       * </pre>
-       *
-       * <code>required int64 dataFree = 13;</code>
-       */
-      public Builder setDataFree(long value) {
-        bitField0_ |= 0x00001000;
-        dataFree_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *空间碎片
-       * </pre>
-       *
-       * <code>required int64 dataFree = 13;</code>
-       */
-      public Builder clearDataFree() {
-        bitField0_ = (bitField0_ & ~0x00001000);
-        dataFree_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long autoIncrement_ ;
-      /**
-       * <pre>
-       *做自增主键的自动增量当前值
-       * </pre>
-       *
-       * <code>required int64 autoIncrement = 14;</code>
-       */
-      public boolean hasAutoIncrement() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
-      }
-      /**
-       * <pre>
-       *做自增主键的自动增量当前值
-       * </pre>
-       *
-       * <code>required int64 autoIncrement = 14;</code>
-       */
-      public long getAutoIncrement() {
-        return autoIncrement_;
-      }
-      /**
-       * <pre>
-       *做自增主键的自动增量当前值
-       * </pre>
-       *
-       * <code>required int64 autoIncrement = 14;</code>
-       */
-      public Builder setAutoIncrement(long value) {
-        bitField0_ |= 0x00002000;
-        autoIncrement_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *做自增主键的自动增量当前值
-       * </pre>
-       *
-       * <code>required int64 autoIncrement = 14;</code>
-       */
-      public Builder clearAutoIncrement() {
-        bitField0_ = (bitField0_ & ~0x00002000);
-        autoIncrement_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long createTime_ ;
-      /**
-       * <pre>
-       *表的创建时间
-       * </pre>
-       *
-       * <code>required int64 createTime = 15;</code>
-       */
-      public boolean hasCreateTime() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
-      }
-      /**
-       * <pre>
-       *表的创建时间
-       * </pre>
-       *
-       * <code>required int64 createTime = 15;</code>
-       */
-      public long getCreateTime() {
-        return createTime_;
-      }
-      /**
-       * <pre>
-       *表的创建时间
-       * </pre>
-       *
-       * <code>required int64 createTime = 15;</code>
-       */
-      public Builder setCreateTime(long value) {
-        bitField0_ |= 0x00004000;
-        createTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *表的创建时间
-       * </pre>
-       *
-       * <code>required int64 createTime = 15;</code>
-       */
-      public Builder clearCreateTime() {
-        bitField0_ = (bitField0_ & ~0x00004000);
-        createTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long updateTime_ ;
-      /**
-       * <pre>
-       *表的更新时间
-       * </pre>
-       *
-       * <code>required int64 updateTime = 16;</code>
-       */
-      public boolean hasUpdateTime() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
-      }
-      /**
-       * <pre>
-       *表的更新时间
-       * </pre>
-       *
-       * <code>required int64 updateTime = 16;</code>
-       */
-      public long getUpdateTime() {
-        return updateTime_;
-      }
-      /**
-       * <pre>
-       *表的更新时间
-       * </pre>
-       *
-       * <code>required int64 updateTime = 16;</code>
-       */
-      public Builder setUpdateTime(long value) {
-        bitField0_ |= 0x00008000;
-        updateTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *表的更新时间
-       * </pre>
-       *
-       * <code>required int64 updateTime = 16;</code>
-       */
-      public Builder clearUpdateTime() {
-        bitField0_ = (bitField0_ & ~0x00008000);
-        updateTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long checkTime_ ;
-      /**
-       * <pre>
-       *表的检查时间
-       * </pre>
-       *
-       * <code>optional int64 checkTime = 17;</code>
-       */
-      public boolean hasCheckTime() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
-      }
-      /**
-       * <pre>
-       *表的检查时间
-       * </pre>
-       *
-       * <code>optional int64 checkTime = 17;</code>
-       */
-      public long getCheckTime() {
-        return checkTime_;
-      }
-      /**
-       * <pre>
-       *表的检查时间
-       * </pre>
-       *
-       * <code>optional int64 checkTime = 17;</code>
-       */
-      public Builder setCheckTime(long value) {
-        bitField0_ |= 0x00010000;
-        checkTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *表的检查时间
-       * </pre>
-       *
-       * <code>optional int64 checkTime = 17;</code>
-       */
-      public Builder clearCheckTime() {
-        bitField0_ = (bitField0_ & ~0x00010000);
-        checkTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object tableCollation_ = "";
-      /**
-       * <pre>
-       *表的字符校验编码集
-       * </pre>
-       *
-       * <code>required string tableCollation = 18;</code>
-       */
-      public boolean hasTableCollation() {
-        return ((bitField0_ & 0x00020000) == 0x00020000);
-      }
-      /**
-       * <pre>
-       *表的字符校验编码集
-       * </pre>
-       *
-       * <code>required string tableCollation = 18;</code>
-       */
-      public java.lang.String getTableCollation() {
-        java.lang.Object ref = tableCollation_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            tableCollation_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <pre>
+         * 版本，默认值10
+         * </pre>
+         *
+         * <code>required int64 version = 6;</code>
+         */
+        public long getVersion() {
+            return version_;
         }
-      }
-      /**
-       * <pre>
-       *表的字符校验编码集
-       * </pre>
-       *
-       * <code>required string tableCollation = 18;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTableCollationBytes() {
-        java.lang.Object ref = tableCollation_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tableCollation_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        public static final int ROWFORMAT_FIELD_NUMBER = 7;
+        private volatile Object rowFormat_;
+
+        /**
+         * <pre>
+         * 行格式[Compact|Dynamic|Fixed]
+         * </pre>
+         *
+         * <code>required string rowFormat = 7;</code>
+         */
+        public boolean hasRowFormat() {
+            return ((bitField0_ & 0x00000040) == 0x00000040);
         }
-      }
-      /**
-       * <pre>
-       *表的字符校验编码集
-       * </pre>
-       *
-       * <code>required string tableCollation = 18;</code>
-       */
-      public Builder setTableCollation(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00020000;
-        tableCollation_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *表的字符校验编码集
-       * </pre>
-       *
-       * <code>required string tableCollation = 18;</code>
-       */
-      public Builder clearTableCollation() {
-        bitField0_ = (bitField0_ & ~0x00020000);
-        tableCollation_ = getDefaultInstance().getTableCollation();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *表的字符校验编码集
-       * </pre>
-       *
-       * <code>required string tableCollation = 18;</code>
-       */
-      public Builder setTableCollationBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00020000;
-        tableCollation_ = value;
-        onChanged();
-        return this;
-      }
 
-      private long checksum_ ;
-      /**
-       * <pre>
-       *校验和
-       * </pre>
-       *
-       * <code>optional int64 checksum = 19;</code>
-       */
-      public boolean hasChecksum() {
-        return ((bitField0_ & 0x00040000) == 0x00040000);
-      }
-      /**
-       * <pre>
-       *校验和
-       * </pre>
-       *
-       * <code>optional int64 checksum = 19;</code>
-       */
-      public long getChecksum() {
-        return checksum_;
-      }
-      /**
-       * <pre>
-       *校验和
-       * </pre>
-       *
-       * <code>optional int64 checksum = 19;</code>
-       */
-      public Builder setChecksum(long value) {
-        bitField0_ |= 0x00040000;
-        checksum_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *校验和
-       * </pre>
-       *
-       * <code>optional int64 checksum = 19;</code>
-       */
-      public Builder clearChecksum() {
-        bitField0_ = (bitField0_ & ~0x00040000);
-        checksum_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object createOptions_ = "";
-      /**
-       * <pre>
-       *创建选项
-       * </pre>
-       *
-       * <code>optional string createOptions = 20;</code>
-       */
-      public boolean hasCreateOptions() {
-        return ((bitField0_ & 0x00080000) == 0x00080000);
-      }
-      /**
-       * <pre>
-       *创建选项
-       * </pre>
-       *
-       * <code>optional string createOptions = 20;</code>
-       */
-      public java.lang.String getCreateOptions() {
-        java.lang.Object ref = createOptions_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            createOptions_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <pre>
+         * 行格式[Compact|Dynamic|Fixed]
+         * </pre>
+         *
+         * <code>required string rowFormat = 7;</code>
+         */
+        public String getRowFormat() {
+            Object ref = rowFormat_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    rowFormat_ = s;
+                }
+                return s;
+            }
         }
-      }
-      /**
-       * <pre>
-       *创建选项
-       * </pre>
-       *
-       * <code>optional string createOptions = 20;</code>
-       */
-      public com.google.protobuf.ByteString
-          getCreateOptionsBytes() {
-        java.lang.Object ref = createOptions_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          createOptions_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <pre>
+         * 行格式[Compact|Dynamic|Fixed]
+         * </pre>
+         *
+         * <code>required string rowFormat = 7;</code>
+         */
+        public com.google.protobuf.ByteString
+        getRowFormatBytes() {
+            Object ref = rowFormat_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                rowFormat_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <pre>
-       *创建选项
-       * </pre>
-       *
-       * <code>optional string createOptions = 20;</code>
-       */
-      public Builder setCreateOptions(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00080000;
-        createOptions_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *创建选项
-       * </pre>
-       *
-       * <code>optional string createOptions = 20;</code>
-       */
-      public Builder clearCreateOptions() {
-        bitField0_ = (bitField0_ & ~0x00080000);
-        createOptions_ = getDefaultInstance().getCreateOptions();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *创建选项
-       * </pre>
-       *
-       * <code>optional string createOptions = 20;</code>
-       */
-      public Builder setCreateOptionsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00080000;
-        createOptions_ = value;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object tableComment_ = "";
-      /**
-       * <pre>
-       *表的注释、备注
-       * </pre>
-       *
-       * <code>optional string tableComment = 21;</code>
-       */
-      public boolean hasTableComment() {
-        return ((bitField0_ & 0x00100000) == 0x00100000);
-      }
-      /**
-       * <pre>
-       *表的注释、备注
-       * </pre>
-       *
-       * <code>optional string tableComment = 21;</code>
-       */
-      public java.lang.String getTableComment() {
-        java.lang.Object ref = tableComment_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            tableComment_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        public static final int TABLEROWS_FIELD_NUMBER = 8;
+        private long tableRows_;
+
+        /**
+         * <pre>
+         * 表里所存多少行数据
+         * </pre>
+         *
+         * <code>required int64 tableRows = 8;</code>
+         */
+        public boolean hasTableRows() {
+            return ((bitField0_ & 0x00000080) == 0x00000080);
         }
-      }
-      /**
-       * <pre>
-       *表的注释、备注
-       * </pre>
-       *
-       * <code>optional string tableComment = 21;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTableCommentBytes() {
-        java.lang.Object ref = tableComment_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tableComment_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <pre>
+         * 表里所存多少行数据
+         * </pre>
+         *
+         * <code>required int64 tableRows = 8;</code>
+         */
+        public long getTableRows() {
+            return tableRows_;
         }
-      }
-      /**
-       * <pre>
-       *表的注释、备注
-       * </pre>
-       *
-       * <code>optional string tableComment = 21;</code>
-       */
-      public Builder setTableComment(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00100000;
-        tableComment_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *表的注释、备注
-       * </pre>
-       *
-       * <code>optional string tableComment = 21;</code>
-       */
-      public Builder clearTableComment() {
-        bitField0_ = (bitField0_ & ~0x00100000);
-        tableComment_ = getDefaultInstance().getTableComment();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *表的注释、备注
-       * </pre>
-       *
-       * <code>optional string tableComment = 21;</code>
-       */
-      public Builder setTableCommentBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00100000;
-        tableComment_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        public static final int AVGROWLENGTH_FIELD_NUMBER = 9;
+        private long avgRowLength_;
+
+        /**
+         * <pre>
+         * 平均行长度
+         * </pre>
+         *
+         * <code>required int64 avgRowLength = 9;</code>
+         */
+        public boolean hasAvgRowLength() {
+            return ((bitField0_ & 0x00000100) == 0x00000100);
+        }
+
+        /**
+         * <pre>
+         * 平均行长度
+         * </pre>
+         *
+         * <code>required int64 avgRowLength = 9;</code>
+         */
+        public long getAvgRowLength() {
+            return avgRowLength_;
+        }
+
+        public static final int DATALENGTH_FIELD_NUMBER = 10;
+        private long dataLength_;
+
+        /**
+         * <pre>
+         * 数据长度(byte)
+         * </pre>
+         *
+         * <code>required int64 dataLength = 10;</code>
+         */
+        public boolean hasDataLength() {
+            return ((bitField0_ & 0x00000200) == 0x00000200);
+        }
+
+        /**
+         * <pre>
+         * 数据长度(byte)
+         * </pre>
+         *
+         * <code>required int64 dataLength = 10;</code>
+         */
+        public long getDataLength() {
+            return dataLength_;
+        }
+
+        public static final int MAXDATALENGTH_FIELD_NUMBER = 11;
+        private long maxDataLength_;
+
+        /**
+         * <pre>
+         * 最大数据长度
+         * </pre>
+         *
+         * <code>required int64 maxDataLength = 11;</code>
+         */
+        public boolean hasMaxDataLength() {
+            return ((bitField0_ & 0x00000400) == 0x00000400);
+        }
+
+        /**
+         * <pre>
+         * 最大数据长度
+         * </pre>
+         *
+         * <code>required int64 maxDataLength = 11;</code>
+         */
+        public long getMaxDataLength() {
+            return maxDataLength_;
+        }
+
+        public static final int INDEXLENGTH_FIELD_NUMBER = 12;
+        private long indexLength_;
+
+        /**
+         * <pre>
+         * 索引长度
+         * </pre>
+         *
+         * <code>required int64 indexLength = 12;</code>
+         */
+        public boolean hasIndexLength() {
+            return ((bitField0_ & 0x00000800) == 0x00000800);
+        }
+
+        /**
+         * <pre>
+         * 索引长度
+         * </pre>
+         *
+         * <code>required int64 indexLength = 12;</code>
+         */
+        public long getIndexLength() {
+            return indexLength_;
+        }
+
+        public static final int DATAFREE_FIELD_NUMBER = 13;
+        private long dataFree_;
+
+        /**
+         * <pre>
+         * 空间碎片
+         * </pre>
+         *
+         * <code>required int64 dataFree = 13;</code>
+         */
+        public boolean hasDataFree() {
+            return ((bitField0_ & 0x00001000) == 0x00001000);
+        }
+
+        /**
+         * <pre>
+         * 空间碎片
+         * </pre>
+         *
+         * <code>required int64 dataFree = 13;</code>
+         */
+        public long getDataFree() {
+            return dataFree_;
+        }
+
+        public static final int AUTOINCREMENT_FIELD_NUMBER = 14;
+        private long autoIncrement_;
+
+        /**
+         * <pre>
+         * 做自增主键的自动增量当前值
+         * </pre>
+         *
+         * <code>required int64 autoIncrement = 14;</code>
+         */
+        public boolean hasAutoIncrement() {
+            return ((bitField0_ & 0x00002000) == 0x00002000);
+        }
+
+        /**
+         * <pre>
+         * 做自增主键的自动增量当前值
+         * </pre>
+         *
+         * <code>required int64 autoIncrement = 14;</code>
+         */
+        public long getAutoIncrement() {
+            return autoIncrement_;
+        }
+
+        public static final int CREATETIME_FIELD_NUMBER = 15;
+        private long createTime_;
+
+        /**
+         * <pre>
+         * 表的创建时间
+         * </pre>
+         *
+         * <code>required int64 createTime = 15;</code>
+         */
+        public boolean hasCreateTime() {
+            return ((bitField0_ & 0x00004000) == 0x00004000);
+        }
+
+        /**
+         * <pre>
+         * 表的创建时间
+         * </pre>
+         *
+         * <code>required int64 createTime = 15;</code>
+         */
+        public long getCreateTime() {
+            return createTime_;
+        }
+
+        public static final int UPDATETIME_FIELD_NUMBER = 16;
+        private long updateTime_;
+
+        /**
+         * <pre>
+         * 表的更新时间
+         * </pre>
+         *
+         * <code>required int64 updateTime = 16;</code>
+         */
+        public boolean hasUpdateTime() {
+            return ((bitField0_ & 0x00008000) == 0x00008000);
+        }
+
+        /**
+         * <pre>
+         * 表的更新时间
+         * </pre>
+         *
+         * <code>required int64 updateTime = 16;</code>
+         */
+        public long getUpdateTime() {
+            return updateTime_;
+        }
+
+        public static final int CHECKTIME_FIELD_NUMBER = 17;
+        private long checkTime_;
+
+        /**
+         * <pre>
+         * 表的检查时间
+         * </pre>
+         *
+         * <code>optional int64 checkTime = 17;</code>
+         */
+        public boolean hasCheckTime() {
+            return ((bitField0_ & 0x00010000) == 0x00010000);
+        }
+
+        /**
+         * <pre>
+         * 表的检查时间
+         * </pre>
+         *
+         * <code>optional int64 checkTime = 17;</code>
+         */
+        public long getCheckTime() {
+            return checkTime_;
+        }
+
+        public static final int TABLECOLLATION_FIELD_NUMBER = 18;
+        private volatile Object tableCollation_;
+
+        /**
+         * <pre>
+         * 表的字符校验编码集
+         * </pre>
+         *
+         * <code>required string tableCollation = 18;</code>
+         */
+        public boolean hasTableCollation() {
+            return ((bitField0_ & 0x00020000) == 0x00020000);
+        }
+
+        /**
+         * <pre>
+         * 表的字符校验编码集
+         * </pre>
+         *
+         * <code>required string tableCollation = 18;</code>
+         */
+        public String getTableCollation() {
+            Object ref = tableCollation_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    tableCollation_ = s;
+                }
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 表的字符校验编码集
+         * </pre>
+         *
+         * <code>required string tableCollation = 18;</code>
+         */
+        public com.google.protobuf.ByteString
+        getTableCollationBytes() {
+            Object ref = tableCollation_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                tableCollation_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int CHECKSUM_FIELD_NUMBER = 19;
+        private long checksum_;
+
+        /**
+         * <pre>
+         * 校验和
+         * </pre>
+         *
+         * <code>optional int64 checksum = 19;</code>
+         */
+        public boolean hasChecksum() {
+            return ((bitField0_ & 0x00040000) == 0x00040000);
+        }
+
+        /**
+         * <pre>
+         * 校验和
+         * </pre>
+         *
+         * <code>optional int64 checksum = 19;</code>
+         */
+        public long getChecksum() {
+            return checksum_;
+        }
+
+        public static final int CREATEOPTIONS_FIELD_NUMBER = 20;
+        private volatile Object createOptions_;
+
+        /**
+         * <pre>
+         * 创建选项
+         * </pre>
+         *
+         * <code>optional string createOptions = 20;</code>
+         */
+        public boolean hasCreateOptions() {
+            return ((bitField0_ & 0x00080000) == 0x00080000);
+        }
+
+        /**
+         * <pre>
+         * 创建选项
+         * </pre>
+         *
+         * <code>optional string createOptions = 20;</code>
+         */
+        public String getCreateOptions() {
+            Object ref = createOptions_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    createOptions_ = s;
+                }
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 创建选项
+         * </pre>
+         *
+         * <code>optional string createOptions = 20;</code>
+         */
+        public com.google.protobuf.ByteString
+        getCreateOptionsBytes() {
+            Object ref = createOptions_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                createOptions_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int TABLECOMMENT_FIELD_NUMBER = 21;
+        private volatile Object tableComment_;
+
+        /**
+         * <pre>
+         * 表的注释、备注
+         * </pre>
+         *
+         * <code>optional string tableComment = 21;</code>
+         */
+        public boolean hasTableComment() {
+            return ((bitField0_ & 0x00100000) == 0x00100000);
+        }
+
+        /**
+         * <pre>
+         * 表的注释、备注
+         * </pre>
+         *
+         * <code>optional string tableComment = 21;</code>
+         */
+        public String getTableComment() {
+            Object ref = tableComment_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    tableComment_ = s;
+                }
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 表的注释、备注
+         * </pre>
+         *
+         * <code>optional string tableComment = 21;</code>
+         */
+        public com.google.protobuf.ByteString
+        getTableCommentBytes() {
+            Object ref = tableComment_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                tableComment_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            if (!hasTableCatalog()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasTableSchema()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasTableName()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasTableType()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasEngine()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasVersion()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasRowFormat()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasTableRows()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasAvgRowLength()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasDataLength()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasMaxDataLength()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasIndexLength()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasDataFree()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasAutoIncrement()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasCreateTime()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasUpdateTime()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasTableCollation()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableCatalog_);
+            }
+            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableSchema_);
+            }
+            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tableName_);
+            }
+            if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tableType_);
+            }
+            if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 5, engine_);
+            }
+            if (((bitField0_ & 0x00000020) == 0x00000020)) {
+                output.writeInt64(6, version_);
+            }
+            if (((bitField0_ & 0x00000040) == 0x00000040)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 7, rowFormat_);
+            }
+            if (((bitField0_ & 0x00000080) == 0x00000080)) {
+                output.writeInt64(8, tableRows_);
+            }
+            if (((bitField0_ & 0x00000100) == 0x00000100)) {
+                output.writeInt64(9, avgRowLength_);
+            }
+            if (((bitField0_ & 0x00000200) == 0x00000200)) {
+                output.writeInt64(10, dataLength_);
+            }
+            if (((bitField0_ & 0x00000400) == 0x00000400)) {
+                output.writeInt64(11, maxDataLength_);
+            }
+            if (((bitField0_ & 0x00000800) == 0x00000800)) {
+                output.writeInt64(12, indexLength_);
+            }
+            if (((bitField0_ & 0x00001000) == 0x00001000)) {
+                output.writeInt64(13, dataFree_);
+            }
+            if (((bitField0_ & 0x00002000) == 0x00002000)) {
+                output.writeInt64(14, autoIncrement_);
+            }
+            if (((bitField0_ & 0x00004000) == 0x00004000)) {
+                output.writeInt64(15, createTime_);
+            }
+            if (((bitField0_ & 0x00008000) == 0x00008000)) {
+                output.writeInt64(16, updateTime_);
+            }
+            if (((bitField0_ & 0x00010000) == 0x00010000)) {
+                output.writeInt64(17, checkTime_);
+            }
+            if (((bitField0_ & 0x00020000) == 0x00020000)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 18, tableCollation_);
+            }
+            if (((bitField0_ & 0x00040000) == 0x00040000)) {
+                output.writeInt64(19, checksum_);
+            }
+            if (((bitField0_ & 0x00080000) == 0x00080000)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 20, createOptions_);
+            }
+            if (((bitField0_ & 0x00100000) == 0x00100000)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 21, tableComment_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableCatalog_);
+            }
+            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableSchema_);
+            }
+            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tableName_);
+            }
+            if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tableType_);
+            }
+            if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, engine_);
+            }
+            if (((bitField0_ & 0x00000020) == 0x00000020)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(6, version_);
+            }
+            if (((bitField0_ & 0x00000040) == 0x00000040)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, rowFormat_);
+            }
+            if (((bitField0_ & 0x00000080) == 0x00000080)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(8, tableRows_);
+            }
+            if (((bitField0_ & 0x00000100) == 0x00000100)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(9, avgRowLength_);
+            }
+            if (((bitField0_ & 0x00000200) == 0x00000200)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(10, dataLength_);
+            }
+            if (((bitField0_ & 0x00000400) == 0x00000400)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(11, maxDataLength_);
+            }
+            if (((bitField0_ & 0x00000800) == 0x00000800)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(12, indexLength_);
+            }
+            if (((bitField0_ & 0x00001000) == 0x00001000)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(13, dataFree_);
+            }
+            if (((bitField0_ & 0x00002000) == 0x00002000)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(14, autoIncrement_);
+            }
+            if (((bitField0_ & 0x00004000) == 0x00004000)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(15, createTime_);
+            }
+            if (((bitField0_ & 0x00008000) == 0x00008000)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(16, updateTime_);
+            }
+            if (((bitField0_ & 0x00010000) == 0x00010000)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(17, checkTime_);
+            }
+            if (((bitField0_ & 0x00020000) == 0x00020000)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, tableCollation_);
+            }
+            if (((bitField0_ & 0x00040000) == 0x00040000)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(19, checksum_);
+            }
+            if (((bitField0_ & 0x00080000) == 0x00080000)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, createOptions_);
+            }
+            if (((bitField0_ & 0x00100000) == 0x00100000)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, tableComment_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof InformationSchemaTables)) {
+                return super.equals(obj);
+            }
+            InformationSchemaTables other = (InformationSchemaTables) obj;
+
+            boolean result = true;
+            result = result && (hasTableCatalog() == other.hasTableCatalog());
+            if (hasTableCatalog()) {
+                result = result && getTableCatalog()
+                        .equals(other.getTableCatalog());
+            }
+            result = result && (hasTableSchema() == other.hasTableSchema());
+            if (hasTableSchema()) {
+                result = result && getTableSchema()
+                        .equals(other.getTableSchema());
+            }
+            result = result && (hasTableName() == other.hasTableName());
+            if (hasTableName()) {
+                result = result && getTableName()
+                        .equals(other.getTableName());
+            }
+            result = result && (hasTableType() == other.hasTableType());
+            if (hasTableType()) {
+                result = result && getTableType()
+                        .equals(other.getTableType());
+            }
+            result = result && (hasEngine() == other.hasEngine());
+            if (hasEngine()) {
+                result = result && getEngine()
+                        .equals(other.getEngine());
+            }
+            result = result && (hasVersion() == other.hasVersion());
+            if (hasVersion()) {
+                result = result && (getVersion()
+                        == other.getVersion());
+            }
+            result = result && (hasRowFormat() == other.hasRowFormat());
+            if (hasRowFormat()) {
+                result = result && getRowFormat()
+                        .equals(other.getRowFormat());
+            }
+            result = result && (hasTableRows() == other.hasTableRows());
+            if (hasTableRows()) {
+                result = result && (getTableRows()
+                        == other.getTableRows());
+            }
+            result = result && (hasAvgRowLength() == other.hasAvgRowLength());
+            if (hasAvgRowLength()) {
+                result = result && (getAvgRowLength()
+                        == other.getAvgRowLength());
+            }
+            result = result && (hasDataLength() == other.hasDataLength());
+            if (hasDataLength()) {
+                result = result && (getDataLength()
+                        == other.getDataLength());
+            }
+            result = result && (hasMaxDataLength() == other.hasMaxDataLength());
+            if (hasMaxDataLength()) {
+                result = result && (getMaxDataLength()
+                        == other.getMaxDataLength());
+            }
+            result = result && (hasIndexLength() == other.hasIndexLength());
+            if (hasIndexLength()) {
+                result = result && (getIndexLength()
+                        == other.getIndexLength());
+            }
+            result = result && (hasDataFree() == other.hasDataFree());
+            if (hasDataFree()) {
+                result = result && (getDataFree()
+                        == other.getDataFree());
+            }
+            result = result && (hasAutoIncrement() == other.hasAutoIncrement());
+            if (hasAutoIncrement()) {
+                result = result && (getAutoIncrement()
+                        == other.getAutoIncrement());
+            }
+            result = result && (hasCreateTime() == other.hasCreateTime());
+            if (hasCreateTime()) {
+                result = result && (getCreateTime()
+                        == other.getCreateTime());
+            }
+            result = result && (hasUpdateTime() == other.hasUpdateTime());
+            if (hasUpdateTime()) {
+                result = result && (getUpdateTime()
+                        == other.getUpdateTime());
+            }
+            result = result && (hasCheckTime() == other.hasCheckTime());
+            if (hasCheckTime()) {
+                result = result && (getCheckTime()
+                        == other.getCheckTime());
+            }
+            result = result && (hasTableCollation() == other.hasTableCollation());
+            if (hasTableCollation()) {
+                result = result && getTableCollation()
+                        .equals(other.getTableCollation());
+            }
+            result = result && (hasChecksum() == other.hasChecksum());
+            if (hasChecksum()) {
+                result = result && (getChecksum()
+                        == other.getChecksum());
+            }
+            result = result && (hasCreateOptions() == other.hasCreateOptions());
+            if (hasCreateOptions()) {
+                result = result && getCreateOptions()
+                        .equals(other.getCreateOptions());
+            }
+            result = result && (hasTableComment() == other.hasTableComment());
+            if (hasTableComment()) {
+                result = result && getTableComment()
+                        .equals(other.getTableComment());
+            }
+            result = result && unknownFields.equals(other.unknownFields);
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasTableCatalog()) {
+                hash = (37 * hash) + TABLECATALOG_FIELD_NUMBER;
+                hash = (53 * hash) + getTableCatalog().hashCode();
+            }
+            if (hasTableSchema()) {
+                hash = (37 * hash) + TABLESCHEMA_FIELD_NUMBER;
+                hash = (53 * hash) + getTableSchema().hashCode();
+            }
+            if (hasTableName()) {
+                hash = (37 * hash) + TABLENAME_FIELD_NUMBER;
+                hash = (53 * hash) + getTableName().hashCode();
+            }
+            if (hasTableType()) {
+                hash = (37 * hash) + TABLETYPE_FIELD_NUMBER;
+                hash = (53 * hash) + getTableType().hashCode();
+            }
+            if (hasEngine()) {
+                hash = (37 * hash) + ENGINE_FIELD_NUMBER;
+                hash = (53 * hash) + getEngine().hashCode();
+            }
+            if (hasVersion()) {
+                hash = (37 * hash) + VERSION_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                        getVersion());
+            }
+            if (hasRowFormat()) {
+                hash = (37 * hash) + ROWFORMAT_FIELD_NUMBER;
+                hash = (53 * hash) + getRowFormat().hashCode();
+            }
+            if (hasTableRows()) {
+                hash = (37 * hash) + TABLEROWS_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                        getTableRows());
+            }
+            if (hasAvgRowLength()) {
+                hash = (37 * hash) + AVGROWLENGTH_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                        getAvgRowLength());
+            }
+            if (hasDataLength()) {
+                hash = (37 * hash) + DATALENGTH_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                        getDataLength());
+            }
+            if (hasMaxDataLength()) {
+                hash = (37 * hash) + MAXDATALENGTH_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                        getMaxDataLength());
+            }
+            if (hasIndexLength()) {
+                hash = (37 * hash) + INDEXLENGTH_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                        getIndexLength());
+            }
+            if (hasDataFree()) {
+                hash = (37 * hash) + DATAFREE_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                        getDataFree());
+            }
+            if (hasAutoIncrement()) {
+                hash = (37 * hash) + AUTOINCREMENT_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                        getAutoIncrement());
+            }
+            if (hasCreateTime()) {
+                hash = (37 * hash) + CREATETIME_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                        getCreateTime());
+            }
+            if (hasUpdateTime()) {
+                hash = (37 * hash) + UPDATETIME_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                        getUpdateTime());
+            }
+            if (hasCheckTime()) {
+                hash = (37 * hash) + CHECKTIME_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                        getCheckTime());
+            }
+            if (hasTableCollation()) {
+                hash = (37 * hash) + TABLECOLLATION_FIELD_NUMBER;
+                hash = (53 * hash) + getTableCollation().hashCode();
+            }
+            if (hasChecksum()) {
+                hash = (37 * hash) + CHECKSUM_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                        getChecksum());
+            }
+            if (hasCreateOptions()) {
+                hash = (37 * hash) + CREATEOPTIONS_FIELD_NUMBER;
+                hash = (53 * hash) + getCreateOptions().hashCode();
+            }
+            if (hasTableComment()) {
+                hash = (37 * hash) + TABLECOMMENT_FIELD_NUMBER;
+                hash = (53 * hash) + getTableComment().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static InformationSchemaTables parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static InformationSchemaTables parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static InformationSchemaTables parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static InformationSchemaTables parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static InformationSchemaTables parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static InformationSchemaTables parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static InformationSchemaTables parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static InformationSchemaTables parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static InformationSchemaTables parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static InformationSchemaTables parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static InformationSchemaTables parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static InformationSchemaTables parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(InformationSchemaTables prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * <pre>
+         * 数据库中的表的信息
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.netty.test.pojo.proto.InformationSchemaTables}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.netty.test.pojo.proto.InformationSchemaTables)
+                InformationSchemaTablesOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_InformationSchemaTables_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_InformationSchemaTables_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                InformationSchemaTables.class, Builder.class);
+            }
+
+            // Construct using com.netty.test.pojo.proto.NettyTest.InformationSchemaTables.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                tableCatalog_ = "";
+                bitField0_ = (bitField0_ & ~0x00000001);
+                tableSchema_ = "";
+                bitField0_ = (bitField0_ & ~0x00000002);
+                tableName_ = "";
+                bitField0_ = (bitField0_ & ~0x00000004);
+                tableType_ = "";
+                bitField0_ = (bitField0_ & ~0x00000008);
+                engine_ = "";
+                bitField0_ = (bitField0_ & ~0x00000010);
+                version_ = 0L;
+                bitField0_ = (bitField0_ & ~0x00000020);
+                rowFormat_ = "";
+                bitField0_ = (bitField0_ & ~0x00000040);
+                tableRows_ = 0L;
+                bitField0_ = (bitField0_ & ~0x00000080);
+                avgRowLength_ = 0L;
+                bitField0_ = (bitField0_ & ~0x00000100);
+                dataLength_ = 0L;
+                bitField0_ = (bitField0_ & ~0x00000200);
+                maxDataLength_ = 0L;
+                bitField0_ = (bitField0_ & ~0x00000400);
+                indexLength_ = 0L;
+                bitField0_ = (bitField0_ & ~0x00000800);
+                dataFree_ = 0L;
+                bitField0_ = (bitField0_ & ~0x00001000);
+                autoIncrement_ = 0L;
+                bitField0_ = (bitField0_ & ~0x00002000);
+                createTime_ = 0L;
+                bitField0_ = (bitField0_ & ~0x00004000);
+                updateTime_ = 0L;
+                bitField0_ = (bitField0_ & ~0x00008000);
+                checkTime_ = 0L;
+                bitField0_ = (bitField0_ & ~0x00010000);
+                tableCollation_ = "";
+                bitField0_ = (bitField0_ & ~0x00020000);
+                checksum_ = 0L;
+                bitField0_ = (bitField0_ & ~0x00040000);
+                createOptions_ = "";
+                bitField0_ = (bitField0_ & ~0x00080000);
+                tableComment_ = "";
+                bitField0_ = (bitField0_ & ~0x00100000);
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return NettyTest.internal_static_com_netty_test_pojo_proto_InformationSchemaTables_descriptor;
+            }
+
+            @Override
+            public InformationSchemaTables getDefaultInstanceForType() {
+                return InformationSchemaTables.getDefaultInstance();
+            }
+
+            @Override
+            public InformationSchemaTables build() {
+                InformationSchemaTables result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public InformationSchemaTables buildPartial() {
+                InformationSchemaTables result = new InformationSchemaTables(this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+                    to_bitField0_ |= 0x00000001;
+                }
+                result.tableCatalog_ = tableCatalog_;
+                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+                    to_bitField0_ |= 0x00000002;
+                }
+                result.tableSchema_ = tableSchema_;
+                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+                    to_bitField0_ |= 0x00000004;
+                }
+                result.tableName_ = tableName_;
+                if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+                    to_bitField0_ |= 0x00000008;
+                }
+                result.tableType_ = tableType_;
+                if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+                    to_bitField0_ |= 0x00000010;
+                }
+                result.engine_ = engine_;
+                if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+                    to_bitField0_ |= 0x00000020;
+                }
+                result.version_ = version_;
+                if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+                    to_bitField0_ |= 0x00000040;
+                }
+                result.rowFormat_ = rowFormat_;
+                if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+                    to_bitField0_ |= 0x00000080;
+                }
+                result.tableRows_ = tableRows_;
+                if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+                    to_bitField0_ |= 0x00000100;
+                }
+                result.avgRowLength_ = avgRowLength_;
+                if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+                    to_bitField0_ |= 0x00000200;
+                }
+                result.dataLength_ = dataLength_;
+                if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+                    to_bitField0_ |= 0x00000400;
+                }
+                result.maxDataLength_ = maxDataLength_;
+                if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+                    to_bitField0_ |= 0x00000800;
+                }
+                result.indexLength_ = indexLength_;
+                if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+                    to_bitField0_ |= 0x00001000;
+                }
+                result.dataFree_ = dataFree_;
+                if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+                    to_bitField0_ |= 0x00002000;
+                }
+                result.autoIncrement_ = autoIncrement_;
+                if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+                    to_bitField0_ |= 0x00004000;
+                }
+                result.createTime_ = createTime_;
+                if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+                    to_bitField0_ |= 0x00008000;
+                }
+                result.updateTime_ = updateTime_;
+                if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+                    to_bitField0_ |= 0x00010000;
+                }
+                result.checkTime_ = checkTime_;
+                if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
+                    to_bitField0_ |= 0x00020000;
+                }
+                result.tableCollation_ = tableCollation_;
+                if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
+                    to_bitField0_ |= 0x00040000;
+                }
+                result.checksum_ = checksum_;
+                if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
+                    to_bitField0_ |= 0x00080000;
+                }
+                result.createOptions_ = createOptions_;
+                if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
+                    to_bitField0_ |= 0x00100000;
+                }
+                result.tableComment_ = tableComment_;
+                result.bitField0_ = to_bitField0_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof InformationSchemaTables) {
+                    return mergeFrom((InformationSchemaTables) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(InformationSchemaTables other) {
+                if (other == InformationSchemaTables.getDefaultInstance()) return this;
+                if (other.hasTableCatalog()) {
+                    bitField0_ |= 0x00000001;
+                    tableCatalog_ = other.tableCatalog_;
+                    onChanged();
+                }
+                if (other.hasTableSchema()) {
+                    bitField0_ |= 0x00000002;
+                    tableSchema_ = other.tableSchema_;
+                    onChanged();
+                }
+                if (other.hasTableName()) {
+                    bitField0_ |= 0x00000004;
+                    tableName_ = other.tableName_;
+                    onChanged();
+                }
+                if (other.hasTableType()) {
+                    bitField0_ |= 0x00000008;
+                    tableType_ = other.tableType_;
+                    onChanged();
+                }
+                if (other.hasEngine()) {
+                    bitField0_ |= 0x00000010;
+                    engine_ = other.engine_;
+                    onChanged();
+                }
+                if (other.hasVersion()) {
+                    setVersion(other.getVersion());
+                }
+                if (other.hasRowFormat()) {
+                    bitField0_ |= 0x00000040;
+                    rowFormat_ = other.rowFormat_;
+                    onChanged();
+                }
+                if (other.hasTableRows()) {
+                    setTableRows(other.getTableRows());
+                }
+                if (other.hasAvgRowLength()) {
+                    setAvgRowLength(other.getAvgRowLength());
+                }
+                if (other.hasDataLength()) {
+                    setDataLength(other.getDataLength());
+                }
+                if (other.hasMaxDataLength()) {
+                    setMaxDataLength(other.getMaxDataLength());
+                }
+                if (other.hasIndexLength()) {
+                    setIndexLength(other.getIndexLength());
+                }
+                if (other.hasDataFree()) {
+                    setDataFree(other.getDataFree());
+                }
+                if (other.hasAutoIncrement()) {
+                    setAutoIncrement(other.getAutoIncrement());
+                }
+                if (other.hasCreateTime()) {
+                    setCreateTime(other.getCreateTime());
+                }
+                if (other.hasUpdateTime()) {
+                    setUpdateTime(other.getUpdateTime());
+                }
+                if (other.hasCheckTime()) {
+                    setCheckTime(other.getCheckTime());
+                }
+                if (other.hasTableCollation()) {
+                    bitField0_ |= 0x00020000;
+                    tableCollation_ = other.tableCollation_;
+                    onChanged();
+                }
+                if (other.hasChecksum()) {
+                    setChecksum(other.getChecksum());
+                }
+                if (other.hasCreateOptions()) {
+                    bitField0_ |= 0x00080000;
+                    createOptions_ = other.createOptions_;
+                    onChanged();
+                }
+                if (other.hasTableComment()) {
+                    bitField0_ |= 0x00100000;
+                    tableComment_ = other.tableComment_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                if (!hasTableCatalog()) {
+                    return false;
+                }
+                if (!hasTableSchema()) {
+                    return false;
+                }
+                if (!hasTableName()) {
+                    return false;
+                }
+                if (!hasTableType()) {
+                    return false;
+                }
+                if (!hasEngine()) {
+                    return false;
+                }
+                if (!hasVersion()) {
+                    return false;
+                }
+                if (!hasRowFormat()) {
+                    return false;
+                }
+                if (!hasTableRows()) {
+                    return false;
+                }
+                if (!hasAvgRowLength()) {
+                    return false;
+                }
+                if (!hasDataLength()) {
+                    return false;
+                }
+                if (!hasMaxDataLength()) {
+                    return false;
+                }
+                if (!hasIndexLength()) {
+                    return false;
+                }
+                if (!hasDataFree()) {
+                    return false;
+                }
+                if (!hasAutoIncrement()) {
+                    return false;
+                }
+                if (!hasCreateTime()) {
+                    return false;
+                }
+                if (!hasUpdateTime()) {
+                    return false;
+                }
+                if (!hasTableCollation()) {
+                    return false;
+                }
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                InformationSchemaTables parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (InformationSchemaTables) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private Object tableCatalog_ = "";
+
+            /**
+             * <pre>
+             * 表所属目录的名称。
+             * </pre>
+             *
+             * <code>required string tableCatalog = 1;</code>
+             */
+            public boolean hasTableCatalog() {
+                return ((bitField0_ & 0x00000001) == 0x00000001);
+            }
+
+            /**
+             * <pre>
+             * 表所属目录的名称。
+             * </pre>
+             *
+             * <code>required string tableCatalog = 1;</code>
+             */
+            public String getTableCatalog() {
+                Object ref = tableCatalog_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        tableCatalog_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表所属目录的名称。
+             * </pre>
+             *
+             * <code>required string tableCatalog = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getTableCatalogBytes() {
+                Object ref = tableCatalog_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    tableCatalog_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表所属目录的名称。
+             * </pre>
+             *
+             * <code>required string tableCatalog = 1;</code>
+             */
+            public Builder setTableCatalog(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                tableCatalog_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表所属目录的名称。
+             * </pre>
+             *
+             * <code>required string tableCatalog = 1;</code>
+             */
+            public Builder clearTableCatalog() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                tableCatalog_ = getDefaultInstance().getTableCatalog();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表所属目录的名称。
+             * </pre>
+             *
+             * <code>required string tableCatalog = 1;</code>
+             */
+            public Builder setTableCatalogBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                tableCatalog_ = value;
+                onChanged();
+                return this;
+            }
+
+            private Object tableSchema_ = "";
+
+            /**
+             * <pre>
+             * 表所属的模式（数据库）的名称。
+             * </pre>
+             *
+             * <code>required string tableSchema = 2;</code>
+             */
+            public boolean hasTableSchema() {
+                return ((bitField0_ & 0x00000002) == 0x00000002);
+            }
+
+            /**
+             * <pre>
+             * 表所属的模式（数据库）的名称。
+             * </pre>
+             *
+             * <code>required string tableSchema = 2;</code>
+             */
+            public String getTableSchema() {
+                Object ref = tableSchema_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        tableSchema_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表所属的模式（数据库）的名称。
+             * </pre>
+             *
+             * <code>required string tableSchema = 2;</code>
+             */
+            public com.google.protobuf.ByteString
+            getTableSchemaBytes() {
+                Object ref = tableSchema_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    tableSchema_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表所属的模式（数据库）的名称。
+             * </pre>
+             *
+             * <code>required string tableSchema = 2;</code>
+             */
+            public Builder setTableSchema(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000002;
+                tableSchema_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表所属的模式（数据库）的名称。
+             * </pre>
+             *
+             * <code>required string tableSchema = 2;</code>
+             */
+            public Builder clearTableSchema() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                tableSchema_ = getDefaultInstance().getTableSchema();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表所属的模式（数据库）的名称。
+             * </pre>
+             *
+             * <code>required string tableSchema = 2;</code>
+             */
+            public Builder setTableSchemaBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000002;
+                tableSchema_ = value;
+                onChanged();
+                return this;
+            }
+
+            private Object tableName_ = "";
+
+            /**
+             * <pre>
+             * 表名称
+             * </pre>
+             *
+             * <code>required string tableName = 3;</code>
+             */
+            public boolean hasTableName() {
+                return ((bitField0_ & 0x00000004) == 0x00000004);
+            }
+
+            /**
+             * <pre>
+             * 表名称
+             * </pre>
+             *
+             * <code>required string tableName = 3;</code>
+             */
+            public String getTableName() {
+                Object ref = tableName_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        tableName_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表名称
+             * </pre>
+             *
+             * <code>required string tableName = 3;</code>
+             */
+            public com.google.protobuf.ByteString
+            getTableNameBytes() {
+                Object ref = tableName_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    tableName_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表名称
+             * </pre>
+             *
+             * <code>required string tableName = 3;</code>
+             */
+            public Builder setTableName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000004;
+                tableName_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表名称
+             * </pre>
+             *
+             * <code>required string tableName = 3;</code>
+             */
+            public Builder clearTableName() {
+                bitField0_ = (bitField0_ & ~0x00000004);
+                tableName_ = getDefaultInstance().getTableName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表名称
+             * </pre>
+             *
+             * <code>required string tableName = 3;</code>
+             */
+            public Builder setTableNameBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000004;
+                tableName_ = value;
+                onChanged();
+                return this;
+            }
+
+            private Object tableType_ = "";
+
+            /**
+             * <pre>
+             * 表类型[system view|base table]
+             * </pre>
+             *
+             * <code>required string tableType = 4;</code>
+             */
+            public boolean hasTableType() {
+                return ((bitField0_ & 0x00000008) == 0x00000008);
+            }
+
+            /**
+             * <pre>
+             * 表类型[system view|base table]
+             * </pre>
+             *
+             * <code>required string tableType = 4;</code>
+             */
+            public String getTableType() {
+                Object ref = tableType_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        tableType_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表类型[system view|base table]
+             * </pre>
+             *
+             * <code>required string tableType = 4;</code>
+             */
+            public com.google.protobuf.ByteString
+            getTableTypeBytes() {
+                Object ref = tableType_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    tableType_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表类型[system view|base table]
+             * </pre>
+             *
+             * <code>required string tableType = 4;</code>
+             */
+            public Builder setTableType(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000008;
+                tableType_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表类型[system view|base table]
+             * </pre>
+             *
+             * <code>required string tableType = 4;</code>
+             */
+            public Builder clearTableType() {
+                bitField0_ = (bitField0_ & ~0x00000008);
+                tableType_ = getDefaultInstance().getTableType();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表类型[system view|base table]
+             * </pre>
+             *
+             * <code>required string tableType = 4;</code>
+             */
+            public Builder setTableTypeBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000008;
+                tableType_ = value;
+                onChanged();
+                return this;
+            }
+
+            private Object engine_ = "";
+
+            /**
+             * <pre>
+             * 使用的数据库引擎[MyISAM|CSV|InnoDB]
+             * </pre>
+             *
+             * <code>required string engine = 5;</code>
+             */
+            public boolean hasEngine() {
+                return ((bitField0_ & 0x00000010) == 0x00000010);
+            }
+
+            /**
+             * <pre>
+             * 使用的数据库引擎[MyISAM|CSV|InnoDB]
+             * </pre>
+             *
+             * <code>required string engine = 5;</code>
+             */
+            public String getEngine() {
+                Object ref = engine_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        engine_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 使用的数据库引擎[MyISAM|CSV|InnoDB]
+             * </pre>
+             *
+             * <code>required string engine = 5;</code>
+             */
+            public com.google.protobuf.ByteString
+            getEngineBytes() {
+                Object ref = engine_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    engine_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 使用的数据库引擎[MyISAM|CSV|InnoDB]
+             * </pre>
+             *
+             * <code>required string engine = 5;</code>
+             */
+            public Builder setEngine(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000010;
+                engine_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 使用的数据库引擎[MyISAM|CSV|InnoDB]
+             * </pre>
+             *
+             * <code>required string engine = 5;</code>
+             */
+            public Builder clearEngine() {
+                bitField0_ = (bitField0_ & ~0x00000010);
+                engine_ = getDefaultInstance().getEngine();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 使用的数据库引擎[MyISAM|CSV|InnoDB]
+             * </pre>
+             *
+             * <code>required string engine = 5;</code>
+             */
+            public Builder setEngineBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000010;
+                engine_ = value;
+                onChanged();
+                return this;
+            }
+
+            private long version_;
+
+            /**
+             * <pre>
+             * 版本，默认值10
+             * </pre>
+             *
+             * <code>required int64 version = 6;</code>
+             */
+            public boolean hasVersion() {
+                return ((bitField0_ & 0x00000020) == 0x00000020);
+            }
+
+            /**
+             * <pre>
+             * 版本，默认值10
+             * </pre>
+             *
+             * <code>required int64 version = 6;</code>
+             */
+            public long getVersion() {
+                return version_;
+            }
+
+            /**
+             * <pre>
+             * 版本，默认值10
+             * </pre>
+             *
+             * <code>required int64 version = 6;</code>
+             */
+            public Builder setVersion(long value) {
+                bitField0_ |= 0x00000020;
+                version_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 版本，默认值10
+             * </pre>
+             *
+             * <code>required int64 version = 6;</code>
+             */
+            public Builder clearVersion() {
+                bitField0_ = (bitField0_ & ~0x00000020);
+                version_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private Object rowFormat_ = "";
+
+            /**
+             * <pre>
+             * 行格式[Compact|Dynamic|Fixed]
+             * </pre>
+             *
+             * <code>required string rowFormat = 7;</code>
+             */
+            public boolean hasRowFormat() {
+                return ((bitField0_ & 0x00000040) == 0x00000040);
+            }
+
+            /**
+             * <pre>
+             * 行格式[Compact|Dynamic|Fixed]
+             * </pre>
+             *
+             * <code>required string rowFormat = 7;</code>
+             */
+            public String getRowFormat() {
+                Object ref = rowFormat_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        rowFormat_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 行格式[Compact|Dynamic|Fixed]
+             * </pre>
+             *
+             * <code>required string rowFormat = 7;</code>
+             */
+            public com.google.protobuf.ByteString
+            getRowFormatBytes() {
+                Object ref = rowFormat_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    rowFormat_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 行格式[Compact|Dynamic|Fixed]
+             * </pre>
+             *
+             * <code>required string rowFormat = 7;</code>
+             */
+            public Builder setRowFormat(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000040;
+                rowFormat_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 行格式[Compact|Dynamic|Fixed]
+             * </pre>
+             *
+             * <code>required string rowFormat = 7;</code>
+             */
+            public Builder clearRowFormat() {
+                bitField0_ = (bitField0_ & ~0x00000040);
+                rowFormat_ = getDefaultInstance().getRowFormat();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 行格式[Compact|Dynamic|Fixed]
+             * </pre>
+             *
+             * <code>required string rowFormat = 7;</code>
+             */
+            public Builder setRowFormatBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000040;
+                rowFormat_ = value;
+                onChanged();
+                return this;
+            }
+
+            private long tableRows_;
+
+            /**
+             * <pre>
+             * 表里所存多少行数据
+             * </pre>
+             *
+             * <code>required int64 tableRows = 8;</code>
+             */
+            public boolean hasTableRows() {
+                return ((bitField0_ & 0x00000080) == 0x00000080);
+            }
+
+            /**
+             * <pre>
+             * 表里所存多少行数据
+             * </pre>
+             *
+             * <code>required int64 tableRows = 8;</code>
+             */
+            public long getTableRows() {
+                return tableRows_;
+            }
+
+            /**
+             * <pre>
+             * 表里所存多少行数据
+             * </pre>
+             *
+             * <code>required int64 tableRows = 8;</code>
+             */
+            public Builder setTableRows(long value) {
+                bitField0_ |= 0x00000080;
+                tableRows_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表里所存多少行数据
+             * </pre>
+             *
+             * <code>required int64 tableRows = 8;</code>
+             */
+            public Builder clearTableRows() {
+                bitField0_ = (bitField0_ & ~0x00000080);
+                tableRows_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long avgRowLength_;
+
+            /**
+             * <pre>
+             * 平均行长度
+             * </pre>
+             *
+             * <code>required int64 avgRowLength = 9;</code>
+             */
+            public boolean hasAvgRowLength() {
+                return ((bitField0_ & 0x00000100) == 0x00000100);
+            }
+
+            /**
+             * <pre>
+             * 平均行长度
+             * </pre>
+             *
+             * <code>required int64 avgRowLength = 9;</code>
+             */
+            public long getAvgRowLength() {
+                return avgRowLength_;
+            }
+
+            /**
+             * <pre>
+             * 平均行长度
+             * </pre>
+             *
+             * <code>required int64 avgRowLength = 9;</code>
+             */
+            public Builder setAvgRowLength(long value) {
+                bitField0_ |= 0x00000100;
+                avgRowLength_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 平均行长度
+             * </pre>
+             *
+             * <code>required int64 avgRowLength = 9;</code>
+             */
+            public Builder clearAvgRowLength() {
+                bitField0_ = (bitField0_ & ~0x00000100);
+                avgRowLength_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long dataLength_;
+
+            /**
+             * <pre>
+             * 数据长度(byte)
+             * </pre>
+             *
+             * <code>required int64 dataLength = 10;</code>
+             */
+            public boolean hasDataLength() {
+                return ((bitField0_ & 0x00000200) == 0x00000200);
+            }
+
+            /**
+             * <pre>
+             * 数据长度(byte)
+             * </pre>
+             *
+             * <code>required int64 dataLength = 10;</code>
+             */
+            public long getDataLength() {
+                return dataLength_;
+            }
+
+            /**
+             * <pre>
+             * 数据长度(byte)
+             * </pre>
+             *
+             * <code>required int64 dataLength = 10;</code>
+             */
+            public Builder setDataLength(long value) {
+                bitField0_ |= 0x00000200;
+                dataLength_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 数据长度(byte)
+             * </pre>
+             *
+             * <code>required int64 dataLength = 10;</code>
+             */
+            public Builder clearDataLength() {
+                bitField0_ = (bitField0_ & ~0x00000200);
+                dataLength_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long maxDataLength_;
+
+            /**
+             * <pre>
+             * 最大数据长度
+             * </pre>
+             *
+             * <code>required int64 maxDataLength = 11;</code>
+             */
+            public boolean hasMaxDataLength() {
+                return ((bitField0_ & 0x00000400) == 0x00000400);
+            }
+
+            /**
+             * <pre>
+             * 最大数据长度
+             * </pre>
+             *
+             * <code>required int64 maxDataLength = 11;</code>
+             */
+            public long getMaxDataLength() {
+                return maxDataLength_;
+            }
+
+            /**
+             * <pre>
+             * 最大数据长度
+             * </pre>
+             *
+             * <code>required int64 maxDataLength = 11;</code>
+             */
+            public Builder setMaxDataLength(long value) {
+                bitField0_ |= 0x00000400;
+                maxDataLength_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 最大数据长度
+             * </pre>
+             *
+             * <code>required int64 maxDataLength = 11;</code>
+             */
+            public Builder clearMaxDataLength() {
+                bitField0_ = (bitField0_ & ~0x00000400);
+                maxDataLength_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long indexLength_;
+
+            /**
+             * <pre>
+             * 索引长度
+             * </pre>
+             *
+             * <code>required int64 indexLength = 12;</code>
+             */
+            public boolean hasIndexLength() {
+                return ((bitField0_ & 0x00000800) == 0x00000800);
+            }
+
+            /**
+             * <pre>
+             * 索引长度
+             * </pre>
+             *
+             * <code>required int64 indexLength = 12;</code>
+             */
+            public long getIndexLength() {
+                return indexLength_;
+            }
+
+            /**
+             * <pre>
+             * 索引长度
+             * </pre>
+             *
+             * <code>required int64 indexLength = 12;</code>
+             */
+            public Builder setIndexLength(long value) {
+                bitField0_ |= 0x00000800;
+                indexLength_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 索引长度
+             * </pre>
+             *
+             * <code>required int64 indexLength = 12;</code>
+             */
+            public Builder clearIndexLength() {
+                bitField0_ = (bitField0_ & ~0x00000800);
+                indexLength_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long dataFree_;
+
+            /**
+             * <pre>
+             * 空间碎片
+             * </pre>
+             *
+             * <code>required int64 dataFree = 13;</code>
+             */
+            public boolean hasDataFree() {
+                return ((bitField0_ & 0x00001000) == 0x00001000);
+            }
+
+            /**
+             * <pre>
+             * 空间碎片
+             * </pre>
+             *
+             * <code>required int64 dataFree = 13;</code>
+             */
+            public long getDataFree() {
+                return dataFree_;
+            }
+
+            /**
+             * <pre>
+             * 空间碎片
+             * </pre>
+             *
+             * <code>required int64 dataFree = 13;</code>
+             */
+            public Builder setDataFree(long value) {
+                bitField0_ |= 0x00001000;
+                dataFree_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 空间碎片
+             * </pre>
+             *
+             * <code>required int64 dataFree = 13;</code>
+             */
+            public Builder clearDataFree() {
+                bitField0_ = (bitField0_ & ~0x00001000);
+                dataFree_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long autoIncrement_;
+
+            /**
+             * <pre>
+             * 做自增主键的自动增量当前值
+             * </pre>
+             *
+             * <code>required int64 autoIncrement = 14;</code>
+             */
+            public boolean hasAutoIncrement() {
+                return ((bitField0_ & 0x00002000) == 0x00002000);
+            }
+
+            /**
+             * <pre>
+             * 做自增主键的自动增量当前值
+             * </pre>
+             *
+             * <code>required int64 autoIncrement = 14;</code>
+             */
+            public long getAutoIncrement() {
+                return autoIncrement_;
+            }
+
+            /**
+             * <pre>
+             * 做自增主键的自动增量当前值
+             * </pre>
+             *
+             * <code>required int64 autoIncrement = 14;</code>
+             */
+            public Builder setAutoIncrement(long value) {
+                bitField0_ |= 0x00002000;
+                autoIncrement_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 做自增主键的自动增量当前值
+             * </pre>
+             *
+             * <code>required int64 autoIncrement = 14;</code>
+             */
+            public Builder clearAutoIncrement() {
+                bitField0_ = (bitField0_ & ~0x00002000);
+                autoIncrement_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long createTime_;
+
+            /**
+             * <pre>
+             * 表的创建时间
+             * </pre>
+             *
+             * <code>required int64 createTime = 15;</code>
+             */
+            public boolean hasCreateTime() {
+                return ((bitField0_ & 0x00004000) == 0x00004000);
+            }
+
+            /**
+             * <pre>
+             * 表的创建时间
+             * </pre>
+             *
+             * <code>required int64 createTime = 15;</code>
+             */
+            public long getCreateTime() {
+                return createTime_;
+            }
+
+            /**
+             * <pre>
+             * 表的创建时间
+             * </pre>
+             *
+             * <code>required int64 createTime = 15;</code>
+             */
+            public Builder setCreateTime(long value) {
+                bitField0_ |= 0x00004000;
+                createTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表的创建时间
+             * </pre>
+             *
+             * <code>required int64 createTime = 15;</code>
+             */
+            public Builder clearCreateTime() {
+                bitField0_ = (bitField0_ & ~0x00004000);
+                createTime_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long updateTime_;
+
+            /**
+             * <pre>
+             * 表的更新时间
+             * </pre>
+             *
+             * <code>required int64 updateTime = 16;</code>
+             */
+            public boolean hasUpdateTime() {
+                return ((bitField0_ & 0x00008000) == 0x00008000);
+            }
+
+            /**
+             * <pre>
+             * 表的更新时间
+             * </pre>
+             *
+             * <code>required int64 updateTime = 16;</code>
+             */
+            public long getUpdateTime() {
+                return updateTime_;
+            }
+
+            /**
+             * <pre>
+             * 表的更新时间
+             * </pre>
+             *
+             * <code>required int64 updateTime = 16;</code>
+             */
+            public Builder setUpdateTime(long value) {
+                bitField0_ |= 0x00008000;
+                updateTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表的更新时间
+             * </pre>
+             *
+             * <code>required int64 updateTime = 16;</code>
+             */
+            public Builder clearUpdateTime() {
+                bitField0_ = (bitField0_ & ~0x00008000);
+                updateTime_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long checkTime_;
+
+            /**
+             * <pre>
+             * 表的检查时间
+             * </pre>
+             *
+             * <code>optional int64 checkTime = 17;</code>
+             */
+            public boolean hasCheckTime() {
+                return ((bitField0_ & 0x00010000) == 0x00010000);
+            }
+
+            /**
+             * <pre>
+             * 表的检查时间
+             * </pre>
+             *
+             * <code>optional int64 checkTime = 17;</code>
+             */
+            public long getCheckTime() {
+                return checkTime_;
+            }
+
+            /**
+             * <pre>
+             * 表的检查时间
+             * </pre>
+             *
+             * <code>optional int64 checkTime = 17;</code>
+             */
+            public Builder setCheckTime(long value) {
+                bitField0_ |= 0x00010000;
+                checkTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表的检查时间
+             * </pre>
+             *
+             * <code>optional int64 checkTime = 17;</code>
+             */
+            public Builder clearCheckTime() {
+                bitField0_ = (bitField0_ & ~0x00010000);
+                checkTime_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private Object tableCollation_ = "";
+
+            /**
+             * <pre>
+             * 表的字符校验编码集
+             * </pre>
+             *
+             * <code>required string tableCollation = 18;</code>
+             */
+            public boolean hasTableCollation() {
+                return ((bitField0_ & 0x00020000) == 0x00020000);
+            }
+
+            /**
+             * <pre>
+             * 表的字符校验编码集
+             * </pre>
+             *
+             * <code>required string tableCollation = 18;</code>
+             */
+            public String getTableCollation() {
+                Object ref = tableCollation_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        tableCollation_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表的字符校验编码集
+             * </pre>
+             *
+             * <code>required string tableCollation = 18;</code>
+             */
+            public com.google.protobuf.ByteString
+            getTableCollationBytes() {
+                Object ref = tableCollation_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    tableCollation_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表的字符校验编码集
+             * </pre>
+             *
+             * <code>required string tableCollation = 18;</code>
+             */
+            public Builder setTableCollation(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00020000;
+                tableCollation_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表的字符校验编码集
+             * </pre>
+             *
+             * <code>required string tableCollation = 18;</code>
+             */
+            public Builder clearTableCollation() {
+                bitField0_ = (bitField0_ & ~0x00020000);
+                tableCollation_ = getDefaultInstance().getTableCollation();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表的字符校验编码集
+             * </pre>
+             *
+             * <code>required string tableCollation = 18;</code>
+             */
+            public Builder setTableCollationBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00020000;
+                tableCollation_ = value;
+                onChanged();
+                return this;
+            }
+
+            private long checksum_;
+
+            /**
+             * <pre>
+             * 校验和
+             * </pre>
+             *
+             * <code>optional int64 checksum = 19;</code>
+             */
+            public boolean hasChecksum() {
+                return ((bitField0_ & 0x00040000) == 0x00040000);
+            }
+
+            /**
+             * <pre>
+             * 校验和
+             * </pre>
+             *
+             * <code>optional int64 checksum = 19;</code>
+             */
+            public long getChecksum() {
+                return checksum_;
+            }
+
+            /**
+             * <pre>
+             * 校验和
+             * </pre>
+             *
+             * <code>optional int64 checksum = 19;</code>
+             */
+            public Builder setChecksum(long value) {
+                bitField0_ |= 0x00040000;
+                checksum_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 校验和
+             * </pre>
+             *
+             * <code>optional int64 checksum = 19;</code>
+             */
+            public Builder clearChecksum() {
+                bitField0_ = (bitField0_ & ~0x00040000);
+                checksum_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private Object createOptions_ = "";
+
+            /**
+             * <pre>
+             * 创建选项
+             * </pre>
+             *
+             * <code>optional string createOptions = 20;</code>
+             */
+            public boolean hasCreateOptions() {
+                return ((bitField0_ & 0x00080000) == 0x00080000);
+            }
+
+            /**
+             * <pre>
+             * 创建选项
+             * </pre>
+             *
+             * <code>optional string createOptions = 20;</code>
+             */
+            public String getCreateOptions() {
+                Object ref = createOptions_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        createOptions_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 创建选项
+             * </pre>
+             *
+             * <code>optional string createOptions = 20;</code>
+             */
+            public com.google.protobuf.ByteString
+            getCreateOptionsBytes() {
+                Object ref = createOptions_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    createOptions_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 创建选项
+             * </pre>
+             *
+             * <code>optional string createOptions = 20;</code>
+             */
+            public Builder setCreateOptions(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00080000;
+                createOptions_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 创建选项
+             * </pre>
+             *
+             * <code>optional string createOptions = 20;</code>
+             */
+            public Builder clearCreateOptions() {
+                bitField0_ = (bitField0_ & ~0x00080000);
+                createOptions_ = getDefaultInstance().getCreateOptions();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 创建选项
+             * </pre>
+             *
+             * <code>optional string createOptions = 20;</code>
+             */
+            public Builder setCreateOptionsBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00080000;
+                createOptions_ = value;
+                onChanged();
+                return this;
+            }
+
+            private Object tableComment_ = "";
+
+            /**
+             * <pre>
+             * 表的注释、备注
+             * </pre>
+             *
+             * <code>optional string tableComment = 21;</code>
+             */
+            public boolean hasTableComment() {
+                return ((bitField0_ & 0x00100000) == 0x00100000);
+            }
+
+            /**
+             * <pre>
+             * 表的注释、备注
+             * </pre>
+             *
+             * <code>optional string tableComment = 21;</code>
+             */
+            public String getTableComment() {
+                Object ref = tableComment_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        tableComment_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表的注释、备注
+             * </pre>
+             *
+             * <code>optional string tableComment = 21;</code>
+             */
+            public com.google.protobuf.ByteString
+            getTableCommentBytes() {
+                Object ref = tableComment_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    tableComment_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 表的注释、备注
+             * </pre>
+             *
+             * <code>optional string tableComment = 21;</code>
+             */
+            public Builder setTableComment(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00100000;
+                tableComment_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表的注释、备注
+             * </pre>
+             *
+             * <code>optional string tableComment = 21;</code>
+             */
+            public Builder clearTableComment() {
+                bitField0_ = (bitField0_ & ~0x00100000);
+                tableComment_ = getDefaultInstance().getTableComment();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 表的注释、备注
+             * </pre>
+             *
+             * <code>optional string tableComment = 21;</code>
+             */
+            public Builder setTableCommentBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00100000;
+                tableComment_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
 
 
-      // @@protoc_insertion_point(builder_scope:com.netty.test.pojo.proto.InformationSchemaTables)
-    }
+            // @@protoc_insertion_point(builder_scope:com.netty.test.pojo.proto.InformationSchemaTables)
+        }
 
-    // @@protoc_insertion_point(class_scope:com.netty.test.pojo.proto.InformationSchemaTables)
-    private static final com.netty.test.pojo.proto.NettyTest.InformationSchemaTables DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.netty.test.pojo.proto.NettyTest.InformationSchemaTables();
-    }
+        // @@protoc_insertion_point(class_scope:com.netty.test.pojo.proto.InformationSchemaTables)
+        private static final InformationSchemaTables DEFAULT_INSTANCE;
 
-    public static com.netty.test.pojo.proto.NettyTest.InformationSchemaTables getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        static {
+            DEFAULT_INSTANCE = new InformationSchemaTables();
+        }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<InformationSchemaTables>
-        PARSER = new com.google.protobuf.AbstractParser<InformationSchemaTables>() {
-      @java.lang.Override
-      public InformationSchemaTables parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InformationSchemaTables(input, extensionRegistry);
-      }
-    };
+        public static InformationSchemaTables getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
 
-    public static com.google.protobuf.Parser<InformationSchemaTables> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<InformationSchemaTables> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.netty.test.pojo.proto.NettyTest.InformationSchemaTables getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_netty_test_pojo_proto_ReqLogin_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_netty_test_pojo_proto_ReqLogin_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_netty_test_pojo_proto_ResLogin_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_netty_test_pojo_proto_ResLogin_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_netty_test_pojo_proto_ReqQueryTableData_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_netty_test_pojo_proto_ReqQueryTableData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_netty_test_pojo_proto_ResQueryTableData_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_netty_test_pojo_proto_ResQueryTableData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_netty_test_pojo_proto_InformationSchemaTables_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_netty_test_pojo_proto_InformationSchemaTables_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\017NettyTest.proto\022\031com.netty.test.pojo.p" +
-      "roto\"g\n\010ReqLogin\022\014\n\004host\030\001 \002(\t\022\014\n\004port\030\002" +
-      " \002(\t\022\016\n\006dbName\030\003 \002(\t\022\020\n\010userName\030\004 \002(\t\022\020" +
-      "\n\010password\030\005 \002(\t\022\013\n\003url\030\006 \001(\t\"k\n\010ResLogi" +
-      "n\022\022\n\nloginState\030\001 \002(\005\022K\n\017schemaTableList" +
-      "\030\002 \003(\01322.com.netty.test.pojo.proto.Infor" +
-      "mationSchemaTables\"2\n\021ReqQueryTableData\022" +
-      "\021\n\ttableName\030\001 \002(\t\022\n\n\002id\030\002 \002(\003\"&\n\021ResQue" +
-      "ryTableData\022\021\n\ttableData\030\001 \002(\t\"\302\003\n\027Infor" +
-      "mationSchemaTables\022\024\n\014tableCatalog\030\001 \002(\t" +
-      "\022\023\n\013tableSchema\030\002 \002(\t\022\021\n\ttableName\030\003 \002(\t" +
-      "\022\021\n\ttableType\030\004 \002(\t\022\016\n\006engine\030\005 \002(\t\022\017\n\007v" +
-      "ersion\030\006 \002(\003\022\021\n\trowFormat\030\007 \002(\t\022\021\n\ttable" +
-      "Rows\030\010 \002(\003\022\024\n\014avgRowLength\030\t \002(\003\022\022\n\ndata" +
-      "Length\030\n \002(\003\022\025\n\rmaxDataLength\030\013 \002(\003\022\023\n\013i" +
-      "ndexLength\030\014 \002(\003\022\020\n\010dataFree\030\r \002(\003\022\025\n\rau" +
-      "toIncrement\030\016 \002(\003\022\022\n\ncreateTime\030\017 \002(\003\022\022\n" +
-      "\nupdateTime\030\020 \002(\003\022\021\n\tcheckTime\030\021 \001(\003\022\026\n\016" +
-      "tableCollation\030\022 \002(\t\022\020\n\010checksum\030\023 \001(\003\022\025" +
-      "\n\rcreateOptions\030\024 \001(\t\022\024\n\014tableComment\030\025 " +
-      "\001(\t*a\n\014MESSAGE_TYPE\022\r\n\tREQ_LOGIN\020e\022\r\n\tRE" +
-      "S_LOGIN\020f\022\031\n\024REQ_QUERY_TABLE_DATA\020\311\001\022\030\n\023" +
-      "RES_QUERY_TABLEDATA\020\312\001"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
+        @Deprecated
+        public static final com.google.protobuf.Parser<InformationSchemaTables>
+                PARSER = new com.google.protobuf.AbstractParser<InformationSchemaTables>() {
+            @Override
+            public InformationSchemaTables parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new InformationSchemaTables(input, extensionRegistry);
+            }
         };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
-    internal_static_com_netty_test_pojo_proto_ReqLogin_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_netty_test_pojo_proto_ReqLogin_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_netty_test_pojo_proto_ReqLogin_descriptor,
-        new java.lang.String[] { "Host", "Port", "DbName", "UserName", "Password", "Url", });
-    internal_static_com_netty_test_pojo_proto_ResLogin_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_netty_test_pojo_proto_ResLogin_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_netty_test_pojo_proto_ResLogin_descriptor,
-        new java.lang.String[] { "LoginState", "SchemaTableList", });
-    internal_static_com_netty_test_pojo_proto_ReqQueryTableData_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_com_netty_test_pojo_proto_ReqQueryTableData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_netty_test_pojo_proto_ReqQueryTableData_descriptor,
-        new java.lang.String[] { "TableName", "Id", });
-    internal_static_com_netty_test_pojo_proto_ResQueryTableData_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_com_netty_test_pojo_proto_ResQueryTableData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_netty_test_pojo_proto_ResQueryTableData_descriptor,
-        new java.lang.String[] { "TableData", });
-    internal_static_com_netty_test_pojo_proto_InformationSchemaTables_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_com_netty_test_pojo_proto_InformationSchemaTables_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_netty_test_pojo_proto_InformationSchemaTables_descriptor,
-        new java.lang.String[] { "TableCatalog", "TableSchema", "TableName", "TableType", "Engine", "Version", "RowFormat", "TableRows", "AvgRowLength", "DataLength", "MaxDataLength", "IndexLength", "DataFree", "AutoIncrement", "CreateTime", "UpdateTime", "CheckTime", "TableCollation", "Checksum", "CreateOptions", "TableComment", });
-  }
 
-  // @@protoc_insertion_point(outer_class_scope)
+        public static com.google.protobuf.Parser<InformationSchemaTables> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<InformationSchemaTables> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public InformationSchemaTables getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+    }
+
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_netty_test_pojo_proto_ReqLogin_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_netty_test_pojo_proto_ReqLogin_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_netty_test_pojo_proto_ResLogin_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_netty_test_pojo_proto_ResLogin_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_netty_test_pojo_proto_ReqQueryTableData_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_netty_test_pojo_proto_ReqQueryTableData_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_netty_test_pojo_proto_ResQueryTableData_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_netty_test_pojo_proto_ResQueryTableData_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_netty_test_pojo_proto_InformationSchemaTables_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_netty_test_pojo_proto_InformationSchemaTables_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor
+    getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor
+            descriptor;
+
+    static {
+        String[] descriptorData = {
+                "\n\017NettyTest.proto\022\031com.netty.test.pojo.p" +
+                        "roto\"g\n\010ReqLogin\022\014\n\004host\030\001 \001(\t\022\014\n\004port\030\002" +
+                        " \001(\t\022\016\n\006dbName\030\003 \001(\t\022\020\n\010userName\030\004 \002(\t\022\020" +
+                        "\n\010password\030\005 \002(\t\022\013\n\003url\030\006 \001(\t\"k\n\010ResLogi" +
+                        "n\022\022\n\nloginState\030\001 \002(\005\022K\n\017schemaTableList" +
+                        "\030\002 \003(\01322.com.netty.test.pojo.proto.Infor" +
+                        "mationSchemaTables\"2\n\021ReqQueryTableData\022" +
+                        "\021\n\ttableName\030\001 \002(\t\022\n\n\002id\030\002 \002(\003\"&\n\021ResQue" +
+                        "ryTableData\022\021\n\ttableData\030\001 \002(\t\"\302\003\n\027Infor" +
+                        "mationSchemaTables\022\024\n\014tableCatalog\030\001 \002(\t" +
+                        "\022\023\n\013tableSchema\030\002 \002(\t\022\021\n\ttableName\030\003 \002(\t" +
+                        "\022\021\n\ttableType\030\004 \002(\t\022\016\n\006engine\030\005 \002(\t\022\017\n\007v" +
+                        "ersion\030\006 \002(\003\022\021\n\trowFormat\030\007 \002(\t\022\021\n\ttable" +
+                        "Rows\030\010 \002(\003\022\024\n\014avgRowLength\030\t \002(\003\022\022\n\ndata" +
+                        "Length\030\n \002(\003\022\025\n\rmaxDataLength\030\013 \002(\003\022\023\n\013i" +
+                        "ndexLength\030\014 \002(\003\022\020\n\010dataFree\030\r \002(\003\022\025\n\rau" +
+                        "toIncrement\030\016 \002(\003\022\022\n\ncreateTime\030\017 \002(\003\022\022\n" +
+                        "\nupdateTime\030\020 \002(\003\022\021\n\tcheckTime\030\021 \001(\003\022\026\n\016" +
+                        "tableCollation\030\022 \002(\t\022\020\n\010checksum\030\023 \001(\003\022\025" +
+                        "\n\rcreateOptions\030\024 \001(\t\022\024\n\014tableComment\030\025 " +
+                        "\001(\t*~\n\014MESSAGE_TYPE\022\t\n\005LOGIN\020\n\022\r\n\tREQ_LO" +
+                        "GIN\020e\022\r\n\tRES_LOGIN\020f\022\017\n\013QUERY_TABLE\020\024\022\031\n" +
+                        "\024REQ_QUERY_TABLE_DATA\020\311\001\022\031\n\024RES_QUERY_TA" +
+                        "BLE_DATA\020\312\001"
+        };
+        com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+                new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+                    public com.google.protobuf.ExtensionRegistry assignDescriptors(
+                            com.google.protobuf.Descriptors.FileDescriptor root) {
+                        descriptor = root;
+                        return null;
+                    }
+                };
+        com.google.protobuf.Descriptors.FileDescriptor
+                .internalBuildGeneratedFileFrom(descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[]{
+                        }, assigner);
+        internal_static_com_netty_test_pojo_proto_ReqLogin_descriptor =
+                getDescriptor().getMessageTypes().get(0);
+        internal_static_com_netty_test_pojo_proto_ReqLogin_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_netty_test_pojo_proto_ReqLogin_descriptor,
+                new String[]{"Host", "Port", "DbName", "UserName", "Password", "Url",});
+        internal_static_com_netty_test_pojo_proto_ResLogin_descriptor =
+                getDescriptor().getMessageTypes().get(1);
+        internal_static_com_netty_test_pojo_proto_ResLogin_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_netty_test_pojo_proto_ResLogin_descriptor,
+                new String[]{"LoginState", "SchemaTableList",});
+        internal_static_com_netty_test_pojo_proto_ReqQueryTableData_descriptor =
+                getDescriptor().getMessageTypes().get(2);
+        internal_static_com_netty_test_pojo_proto_ReqQueryTableData_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_netty_test_pojo_proto_ReqQueryTableData_descriptor,
+                new String[]{"TableName", "Id",});
+        internal_static_com_netty_test_pojo_proto_ResQueryTableData_descriptor =
+                getDescriptor().getMessageTypes().get(3);
+        internal_static_com_netty_test_pojo_proto_ResQueryTableData_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_netty_test_pojo_proto_ResQueryTableData_descriptor,
+                new String[]{"TableData",});
+        internal_static_com_netty_test_pojo_proto_InformationSchemaTables_descriptor =
+                getDescriptor().getMessageTypes().get(4);
+        internal_static_com_netty_test_pojo_proto_InformationSchemaTables_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_netty_test_pojo_proto_InformationSchemaTables_descriptor,
+                new String[]{"TableCatalog", "TableSchema", "TableName", "TableType", "Engine", "Version", "RowFormat", "TableRows", "AvgRowLength", "DataLength", "MaxDataLength", "IndexLength", "DataFree", "AutoIncrement", "CreateTime", "UpdateTime", "CheckTime", "TableCollation", "Checksum", "CreateOptions", "TableComment",});
+    }
+
+    // @@protoc_insertion_point(outer_class_scope)
 }

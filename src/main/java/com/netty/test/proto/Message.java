@@ -1,5 +1,7 @@
 package com.netty.test.proto;
 
+import java.util.Arrays;
+
 /**
  * @author : chenmq
  * date : 2019-4-08
@@ -17,6 +19,11 @@ public class Message {
      * 模块id
      */
     private int moduleId;
+
+    /**
+     * 指定某个的子模块
+     */
+    private int cmdId;
 
     /**
      * 消息体
@@ -61,11 +68,21 @@ public class Message {
         this.moduleId = moduleId;
     }
 
+    public int getCmdId() {
+        return cmdId;
+    }
+
+    public void setCmdId(int cmdId) {
+        this.cmdId = cmdId;
+    }
+
     @Override
     public String toString() {
-        return "Header{" +
+        return "Message{" +
                 "magic=" + magic +
                 ", moduleId=" + moduleId +
+                ", cmdId=" + cmdId +
+                ", body=" + Arrays.toString(body) +
                 ", timestamp=" + timestamp +
                 '}';
     }

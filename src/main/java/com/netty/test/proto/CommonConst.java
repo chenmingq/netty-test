@@ -16,7 +16,7 @@ public class CommonConst {
     /**
      * 消息头长度
      */
-    public final static int HEAD_LENGTH = 0x14;
+    public final static int HEAD_LENGTH = 0x16;
 
 
 }

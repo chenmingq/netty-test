@@ -14,7 +14,7 @@ import java.util.Map;
 @SerializableTag
 @Data
 public class ListTest implements Serializable {
-
+    private static final long serialVersionUID = 0L;
     @Tag(1)
     private int id;
 

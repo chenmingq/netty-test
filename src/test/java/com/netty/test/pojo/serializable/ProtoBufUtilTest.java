@@ -1,11 +1,13 @@
 package com.netty.test.pojo.serializable;
 
 import com.alibaba.fastjson.JSON;
-import com.google.protobuf.InvalidProtocolBufferException;
-import com.netty.test.proto.serializer.factory.SerializableUtils;
 import com.netty.test.pojo.proto.NettyTest;
 import com.netty.test.pojo.test.ListTest;
 import com.netty.test.pojo.test.Student;
+import com.netty.test.proto.Message;
+import com.netty.test.proto.MessageProcessHelper;
+import com.netty.test.proto.serializer.factory.SerializableUtils;
+import com.netty.test.server.ServerMessagePool;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,15 +43,34 @@ public class ProtoBufUtilTest {
     }
 
 
-    private static void protoTest (ListTest listTest){
+    private static void protoTest(ListTest listTest) {
 
         String jsonString = JSON.toJSONString(listTest);
 
-        NettyTest.ResQueryTableData.Builder resQueryTableData = NettyTest.ResQueryTableData.newBuilder();
-        resQueryTableData.setTableData(jsonString);
-        NettyTest.ResQueryTableData build = resQueryTableData.build();
+        NettyTest.ReqQueryTableData.Builder req = NettyTest.ReqQueryTableData.newBuilder();
+        req.setId(111);
+        req.setTableName("test");
 
-        byte[] bytes = build.toByteArray();
+        ServerMessagePool.getInstance().registerMsgProto();
+        Message message = new Message();
+        message.setBody(req.build().toByteArray());
+        message.setCmdId(201);
+        MessageProcessHelper.getInstance().requestExecute(message);
+
+        /*Class<? extends NettyTest.ReqQueryTableData.Builder> aClass = req.getClass();
+
+        Field[] fields = aClass.getFields();
+        for (Field field : fields) {
+            System.out.println(field);
+        }
+
+        Method[] methods = aClass.getMethods();
+        for (Method method : methods) {
+            System.out.println(method);
+        }*/
+
+
+       /* byte[] bytes = build.toByteArray();
 
         System.out.println(build);
         System.out.println(Arrays.toString(bytes));
@@ -62,7 +83,7 @@ public class ProtoBufUtilTest {
             System.out.println(jsonString);
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 }

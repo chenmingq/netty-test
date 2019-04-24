@@ -1,6 +1,5 @@
 package com.netty.test.common.cache;
 
-import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -8,7 +7,7 @@ import java.util.Set;
  */
 public class ClassCache {
 
-    public static Set<Class<?>> reqMappingSet = null;
+    public  static Set<Class<?>> REQ_MAPPING_SET = null;
 
 
 

@@ -25,6 +25,7 @@ public class DeCoder extends ReplayingDecoder<Message> {
         }
 
         int moduleId = in.readInt();
+        int cmdId = in.readInt();
         int length = in.readInt();
         long timestamp = in.readLong();
         int bodyLength = length - CommonConst.HEAD_LENGTH;
@@ -38,6 +39,7 @@ public class DeCoder extends ReplayingDecoder<Message> {
         Message message = new Message();
         message.setBody(body);
         message.setModuleId(moduleId);
+        message.setCmdId(cmdId);
         message.setTimestamp(timestamp);
         message.setMagic(magic);
 
