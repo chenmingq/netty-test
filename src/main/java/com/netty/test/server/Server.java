@@ -11,6 +11,8 @@ import io.netty.channel.epoll.EpollServerSocketChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.ServerSocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 import lombok.extern.slf4j.Slf4j;
 
 import java.net.InetSocketAddress;
@@ -40,7 +42,7 @@ public class Server {
 
             @Override
             public Thread newThread(Runnable r) {
-                return new Thread(r, "NettyServerPublicExecutor_" + this.threadIndex.incrementAndGet());
+                return new Thread(r, "NettyMainServer-" + this.threadIndex.incrementAndGet());
             }
         });
     }
@@ -49,45 +51,8 @@ public class Server {
      * 初始化服务
      */
     public static void initServer() {
-       /* new Thread(() -> {
-            EventLoopGroup bossGroup = new NioEventLoopGroup();
-            EventLoopGroup workerGroup = new NioEventLoopGroup();
-
-            try {
-                ServerBootstrap bootstrap = new ServerBootstrap();
-                bootstrap.group(bossGroup, workerGroup)
-                        .channel(NioServerSocketChannel.class)
-                        //保持连接数
-                        .option(ChannelOption.SO_BACKLOG, 128)
-                        //有数据立即发送
-                        .option(ChannelOption.TCP_NODELAY, true)
-                        //保持连接
-                        .childOption(ChannelOption.SO_KEEPALIVE, true)
-                        .handler(new LoggingHandler(LogLevel.INFO))
-                        .childHandler(new ServerInitializer());
-
-                //绑定端口，同步等待成功
-                ChannelFuture future;
-                future = bootstrap.bind(ServerProperties.PORT).sync().channel().closeFuture().sync();
-
-                if (future.isSuccess()) {
-                    serverSocketChannel = (ServerSocketChannel) future.channel();
-                    System.out.println("服务端开启成功");
-                } else {
-                    System.out.println("服务端开启失败");
-                }
-
-                //等待服务监听端口关闭,就是由于这里会将线程阻塞,导致无法发送信息
-                future.channel().closeFuture().sync();
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } finally {
-                workerGroup.shutdownGracefully();
-                bossGroup.shutdownGracefully();
-            }
-        }).start();*/
-        new Thread(() -> tempoInitServer(),"mainServer").start();
+        publicExecutor.execute(Server::init);
+//        publicExecutor.execute(Server::oldInitServer);
     }
 
 
@@ -96,36 +61,85 @@ public class Server {
                 && Epoll.isAvailable();
     }
 
-    private static void tempoInitServer() {
+    private static void init() {
         ServerBootstrap serverBootstrap = new ServerBootstrap();
-        EventLoopGroup eventLoopGroupSelector = new NioEventLoopGroup();
-        EventLoopGroup eventLoopGroupBoss = new NioEventLoopGroup();
 
-        ServerBootstrap childHandler =
-                serverBootstrap.group(eventLoopGroupBoss, eventLoopGroupSelector)
-                        .channel(useEpoll() ? EpollServerSocketChannel.class : NioServerSocketChannel.class)
-                        //保持连接数
-                        .option(ChannelOption.SO_BACKLOG, 1024)
-                        .option(ChannelOption.SO_REUSEADDR, true)
-                        //保持连接
-                        .option(ChannelOption.SO_KEEPALIVE, false)
-                        //有数据立即发送
-                        .childOption(ChannelOption.TCP_NODELAY, true)
+        EventLoopGroup workerGroup = new NioEventLoopGroup();
+        EventLoopGroup bossGroup = new NioEventLoopGroup();
 
-                        .childOption(ChannelOption.SO_SNDBUF, 65535)
-                        .childOption(ChannelOption.SO_RCVBUF, 65535)
-                        .localAddress(new InetSocketAddress(ServerProperties.PORT))
-                        .childHandler(new ServerInitializer());
+        serverBootstrap.group(bossGroup, workerGroup)
+                .channel(useEpoll() ? EpollServerSocketChannel.class : NioServerSocketChannel.class)
+                //保持连接数
+                .option(ChannelOption.SO_BACKLOG, 1024)
+                .option(ChannelOption.SO_REUSEADDR, true)
+                //保持连接
+                .option(ChannelOption.SO_KEEPALIVE, false)
+                //有数据立即发送
+                .childOption(ChannelOption.TCP_NODELAY, true)
 
-        childHandler.childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT);
+                .childOption(ChannelOption.SO_SNDBUF, 65535)
+                .childOption(ChannelOption.SO_RCVBUF, 65535)
+                .localAddress(new InetSocketAddress(ServerProperties.PORT))
+                .childHandler(new ServerInitializer());
+
+        serverBootstrap.childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT);
 
         try {
             ChannelFuture sync = serverBootstrap.bind().sync();
-
+            boolean success = sync.isSuccess();
             InetSocketAddress addr = (InetSocketAddress) sync.channel().localAddress();
-            log.info("服务启动成功 -> {}", addr);
-        } catch (InterruptedException e1) {
-            throw new RuntimeException("this.serverBootstrap.bind().sync() InterruptedException", e1);
+            if (success) {
+                log.info("服务启动成功 -> {}", addr);
+            } else {
+                log.info("服务启动失败 -> {}", addr);
+            }
+            //等待服务监听端口关闭,就是由于这里会将线程阻塞,导致无法发送信息
+            sync.channel().closeFuture().sync();
+
+        } catch (InterruptedException e) {
+            throw new RuntimeException("this.serverBootstrap.bind().sync() InterruptedException", e);
+        } finally {
+            workerGroup.shutdownGracefully();
+            bossGroup.shutdownGracefully();
+        }
+    }
+
+    private static void oldInitServer() {
+        EventLoopGroup bossGroup = new NioEventLoopGroup();
+        EventLoopGroup workerGroup = new NioEventLoopGroup();
+
+        try {
+            ServerBootstrap bootstrap = new ServerBootstrap();
+            bootstrap.group(bossGroup, workerGroup)
+                    .channel(NioServerSocketChannel.class)
+                    //保持连接数
+                    .option(ChannelOption.SO_BACKLOG, 128)
+                    //有数据立即发送
+                    .option(ChannelOption.TCP_NODELAY, true)
+                    //保持连接
+                    .childOption(ChannelOption.SO_KEEPALIVE, true)
+                    .handler(new LoggingHandler(LogLevel.INFO))
+                    .childHandler(new ServerInitializer());
+
+            //绑定端口，同步等待成功
+            ChannelFuture future;
+            future = bootstrap.bind(ServerProperties.PORT).sync().channel().closeFuture().sync();
+
+            if (future.isSuccess()) {
+                serverSocketChannel = (ServerSocketChannel) future.channel();
+                System.out.println("服务端开启成功");
+            } else {
+                System.out.println("服务端开启失败");
+            }
+
+            //等待服务监听端口关闭,就是由于这里会将线程阻塞,导致无法发送信息
+            future.channel().closeFuture().sync();
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            workerGroup.shutdownGracefully();
+            bossGroup.shutdownGracefully();
         }
     }
 
