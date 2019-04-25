@@ -2,6 +2,7 @@ package com.netty.test.server;
 
 import com.netty.test.common.RemotingHelper;
 import com.netty.test.common.manager.SessionManager;
+import com.netty.test.proto.CommonConst;
 import com.netty.test.proto.Message;
 import com.netty.test.proto.MessageProcessHelper;
 import io.netty.channel.Channel;
@@ -10,6 +11,9 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.net.InetAddress;
+import java.util.Date;
 
 
 /**
@@ -47,6 +51,14 @@ public class ServerHandler extends SimpleChannelInboundHandler<Object> {
         session.setChannel(channel);
         SessionManager.getInstance().putSession(channelRemoteAddr, session);
 
+        String str = "Welcome to " + InetAddress.getLocalHost().getHostName() + "！\r\n It is " + new Date() + " now.\r\n";
+        Message message = new Message();
+        message.setBody(str.getBytes());
+        message.setModuleId(1);
+        message.setCmdId(1);
+        message.setMagic(CommonConst.MAGIC_CODE);
+        ctx.write(message);
+        ctx.flush();
     }
 
     /**
