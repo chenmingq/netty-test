@@ -1,14 +1,23 @@
 package com.netty.test.server;
 
+import com.netty.test.utils.RemotingUtil;
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
+import io.netty.channel.epoll.Epoll;
+import io.netty.channel.epoll.EpollServerSocketChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.ServerSocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.logging.LogLevel;
-import io.netty.handler.logging.LoggingHandler;
+import lombok.extern.slf4j.Slf4j;
+
+import java.net.InetSocketAddress;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
@@ -18,16 +27,29 @@ import io.netty.handler.logging.LoggingHandler;
  * Description： netty端口服务启动
  */
 
+@Slf4j
 public class Server {
 
     private static ServerSocketChannel serverSocketChannel;
 
+    private static ExecutorService publicExecutor;
+
+    static {
+        publicExecutor = Executors.newFixedThreadPool(4, new ThreadFactory() {
+            private AtomicInteger threadIndex = new AtomicInteger(0);
+
+            @Override
+            public Thread newThread(Runnable r) {
+                return new Thread(r, "NettyServerPublicExecutor_" + this.threadIndex.incrementAndGet());
+            }
+        });
+    }
 
     /**
      * 初始化服务
      */
     public static void initServer() {
-        new Thread(() -> {
+       /* new Thread(() -> {
             EventLoopGroup bossGroup = new NioEventLoopGroup();
             EventLoopGroup workerGroup = new NioEventLoopGroup();
 
@@ -64,6 +86,47 @@ public class Server {
                 workerGroup.shutdownGracefully();
                 bossGroup.shutdownGracefully();
             }
-        }).start();
+        }).start();*/
+        new Thread(() -> tempoInitServer(),"mainServer").start();
     }
+
+
+    private static boolean useEpoll() {
+        return RemotingUtil.isLinuxPlatform()
+                && Epoll.isAvailable();
+    }
+
+    private static void tempoInitServer() {
+        ServerBootstrap serverBootstrap = new ServerBootstrap();
+        EventLoopGroup eventLoopGroupSelector = new NioEventLoopGroup();
+        EventLoopGroup eventLoopGroupBoss = new NioEventLoopGroup();
+
+        ServerBootstrap childHandler =
+                serverBootstrap.group(eventLoopGroupBoss, eventLoopGroupSelector)
+                        .channel(useEpoll() ? EpollServerSocketChannel.class : NioServerSocketChannel.class)
+                        //保持连接数
+                        .option(ChannelOption.SO_BACKLOG, 1024)
+                        .option(ChannelOption.SO_REUSEADDR, true)
+                        //保持连接
+                        .option(ChannelOption.SO_KEEPALIVE, false)
+                        //有数据立即发送
+                        .childOption(ChannelOption.TCP_NODELAY, true)
+
+                        .childOption(ChannelOption.SO_SNDBUF, 65535)
+                        .childOption(ChannelOption.SO_RCVBUF, 65535)
+                        .localAddress(new InetSocketAddress(ServerProperties.PORT))
+                        .childHandler(new ServerInitializer());
+
+        childHandler.childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT);
+
+        try {
+            ChannelFuture sync = serverBootstrap.bind().sync();
+
+            InetSocketAddress addr = (InetSocketAddress) sync.channel().localAddress();
+            log.info("服务启动成功 -> {}", addr);
+        } catch (InterruptedException e1) {
+            throw new RuntimeException("this.serverBootstrap.bind().sync() InterruptedException", e1);
+        }
+    }
+
 }

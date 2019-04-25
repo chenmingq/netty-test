@@ -1,17 +1,14 @@
 package com.netty.test.proto;
 
 
-import com.google.protobuf.Descriptors;
-import com.google.protobuf.DynamicMessage;
 import com.netty.test.annotation.ParamName;
 import com.netty.test.annotation.ReqMapping;
+import com.netty.test.coder.msg.MsgCoder;
 import com.netty.test.common.cache.ClassCache;
-import com.netty.test.server.ServerMessagePool;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -48,18 +45,15 @@ public class MessageProcessHelper {
             if (!b) {
                 return;
             }
-
             int cmdId = message.getCmdId();
-            Descriptors.Descriptor descriptor = ServerMessagePool.getInstance().getMsg(cmdId);
-            DynamicMessage.Builder builder = DynamicMessage.parseFrom(descriptor, message.getBody()).toBuilder();
-            Map<String, Object> valueMap = new HashMap<>();
-
-            Map<Descriptors.FieldDescriptor, Object> allFields = builder.getAllFields();
-            for (Map.Entry<Descriptors.FieldDescriptor, Object> entry : allFields.entrySet()) {
-                valueMap.put(entry.getKey().getName(), entry.getValue());
+            MsgCoder msgCoder = (MsgCoder) Class.forName(CommonConst.SERIALIZER_IMPL_CLASS).newInstance();
+            Map<String, Object> valueMap = msgCoder.prosson(cmdId, message.getBody());
+            if (null == valueMap) {
+                return;
             }
             Class<?> aClass = reqMappingMap.get(message.getModuleId());
             Method[] methods = aClass.getMethods();
+            Object newInstance = aClass.newInstance();
 
             for (Method method : methods) {
                 ReqMapping methodAnnotation = method.getAnnotation(ReqMapping.class);
@@ -74,14 +68,14 @@ public class MessageProcessHelper {
                 Parameter[] parameters = method.getParameters();
 
                 if (parameters.length < 1) {
-                    method.invoke(aClass.newInstance());
+                    method.invoke(newInstance);
                 } else {
                     List<Object> parameterTypeList = new LinkedList<>();
 
                     for (Parameter parameter : parameters) {
-                        Class<?> typeClass = parameter.getType();
                         ParamName annotation = parameter.getAnnotation(ParamName.class);
                         if (null == annotation) {
+                            Class<?> typeClass = parameter.getType();
                             Object o = typeClass.newInstance();
 
                             Field[] declaredFields = typeClass.getDeclaredFields();
@@ -108,7 +102,7 @@ public class MessageProcessHelper {
                         objects[i] = parameterTypeList.get(i);
                     }
                     // todo 需要向下转型的处理
-                    method.invoke(aClass.newInstance(), objects);
+                    method.invoke(newInstance, objects);
                 }
                 return;
             }

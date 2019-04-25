@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import com.alibaba.druid.pool.DruidPooledConnection;
 import com.netty.test.pojo.db.DbParam;
+import com.netty.test.proto.CommonConst;
 import com.netty.test.utils.LordPropertiesUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -30,8 +31,6 @@ public class DbConnectionPool implements ConnectionPool {
     private final static Logger LOG = LoggerFactory.getLogger(DbConnectionPool.class);
 
     private DruidDataSource druidDataSource = null;
-
-    private static final String DB_SERVER_PROPERTIES = "db_server.properties";
 
     private static DbConnectionPool instance = new DbConnectionPool();
 
@@ -76,7 +75,7 @@ public class DbConnectionPool implements ConnectionPool {
     @Override
     public void loginDb(DbParam dbParam, boolean dev) {
 
-        Properties properties = LordPropertiesUtils.lordProperties(DB_SERVER_PROPERTIES);
+        Properties properties = LordPropertiesUtils.lordProperties(CommonConst.DB_SERVER_PROPERTIES);
         if (null == properties) {
             throw new RuntimeException("the source is not");
         }

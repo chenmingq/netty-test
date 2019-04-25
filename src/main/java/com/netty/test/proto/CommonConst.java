@@ -18,5 +18,20 @@ public class CommonConst {
      */
     public final static int HEAD_LENGTH = 0x16;
 
+    /**
+     * 消息序列化实现类
+     */
+    public static String SERIALIZER_IMPL_CLASS;
+
+    /**
+     * 配置文件名称
+     */
+    public static final String PROPERTIES_NAME = "application.properties";
+
+    /**
+     * 数据库连接池配置文件名称
+     */
+    public static final String DB_SERVER_PROPERTIES = "db_server.properties";
+
 
 }

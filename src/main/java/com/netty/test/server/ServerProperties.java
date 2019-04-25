@@ -1,5 +1,6 @@
 package com.netty.test.server;
 
+import com.netty.test.proto.CommonConst;
 import com.netty.test.utils.ClassUtil;
 import com.netty.test.utils.LordPropertiesUtils;
 import org.slf4j.Logger;
@@ -36,14 +37,14 @@ public class ServerProperties {
      */
     public static int PORT;
 
-    private static final String PROPERTIES_NAME = "application.properties";
+
 
 
     /**
      * 初始化系统服务配置
      */
     public void initSysProperties() {
-        Properties properties = LordPropertiesUtils.lordProperties(PROPERTIES_NAME);
+        Properties properties = LordPropertiesUtils.lordProperties(CommonConst.PROPERTIES_NAME);
         if (null == properties) {
             LOG.error("{}", "初始化配置为空");
             return;
@@ -62,6 +63,9 @@ public class ServerProperties {
                     break;
                 case "scan.mapping":
                     ClassUtil.lordClazz(value);
+                    break;
+                case "serializer.impl.class":
+                    CommonConst.SERIALIZER_IMPL_CLASS = value;
                     break;
                 default:
                     break;

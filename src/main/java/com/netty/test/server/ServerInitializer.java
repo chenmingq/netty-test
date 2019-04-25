@@ -5,6 +5,7 @@ import com.netty.test.coder.EnCoder;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
+import io.netty.handler.timeout.IdleStateHandler;
 
 /**
  * @author : chenmq
@@ -20,6 +21,6 @@ public class ServerInitializer extends ChannelInitializer<SocketChannel> {
         pipeline.addLast(new DeCoder());
         pipeline.addLast(new EnCoder());
         pipeline.addLast(new ServerHandler());
-
+        pipeline.addLast(new IdleStateHandler(0, 0, 120));
     }
 }

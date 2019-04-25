@@ -8,6 +8,7 @@ import com.netty.test.proto.Message;
 import com.netty.test.proto.MessageProcessHelper;
 import com.netty.test.proto.serializer.factory.SerializableUtils;
 import com.netty.test.server.ServerMessagePool;
+import com.netty.test.server.ServerProperties;
 import com.netty.test.utils.ClassUtil;
 
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ public class ProtoBufUtilTest {
         req.setId(111);
         req.setTableName("test");
 
-        ClassUtil.lordClazz("com.netty.test");
+        ServerProperties.getInstance().initSysProperties();
         ServerMessagePool.getInstance().registerMsgProto();
         Message message = new Message();
         message.setBody(req.build().toByteArray());
