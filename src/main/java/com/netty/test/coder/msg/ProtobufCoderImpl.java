@@ -18,6 +18,9 @@ public class ProtobufCoderImpl implements MsgCoder {
     public Map<String, Object> prossonRequest(int cmdId, byte[] body) {
         Map<String, Object> resultMap = new HashMap<>();
         Descriptors.Descriptor descriptor = ServerMessagePool.getInstance().getReqMsg(cmdId);
+        if (null == descriptor) {
+            return null;
+        }
         DynamicMessage.Builder builder = null;
         try {
             builder = DynamicMessage.parseFrom(descriptor, body).toBuilder();
