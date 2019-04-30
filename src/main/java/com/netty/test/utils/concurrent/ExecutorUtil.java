@@ -1,45 +1,24 @@
 package com.netty.test.utils.concurrent;
 
-import javax.annotation.processing.Processor;
-import javax.tools.JavaCompiler;
-import java.util.Locale;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 执行管理器
- *
  */
 public class ExecutorUtil {
 
+    private static final int CORE_POOL_SIZE = 1;
+    private static final int MAXIMUM_POOL_SIZE = 1;
+    private static final long KEEP_ALIVE_TIME = 1000;
+
     public static void main(String[] args) {
-        ExecutorService executorService = new ThreadPoolExecutor(1,1,1000,TimeUnit.MINUTES,new LinkedBlockingDeque<>());
-        Ri ri = new Ri();
-
-        try {
-            Cc c = new Cc();
-            Object call = c.call();
-
-            Future<Cc> submit = executorService.submit(ri, c);
-            System.out.println(submit.get());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    static class Ri implements Runnable{
-        @Override
-        public void run() {
-
-        }
-    }
-
-    static class Cc implements  Callable{
-
-        @Override
-        public Object call() throws Exception {
-            return null;
-        }
+        ExecutorService executorService = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE_TIME, TimeUnit.MINUTES, new LinkedBlockingDeque<>());
+        executorService.shutdown();
+        boolean shutdown = executorService.isShutdown();
+        System.out.println(shutdown);
     }
 
 
