@@ -1,5 +1,6 @@
 package com.netty.test.common.db;
 
+import com.netty.test.proto.CommonConst;
 import com.netty.test.proto.serializer.factory.SerializableFactory;
 import com.netty.test.utils.ObjectUtils;
 import org.slf4j.Logger;
@@ -29,6 +30,23 @@ public class JdbcTemplateImpl {
     public JdbcTemplateImpl(ConnectionPool connectionPool) {
         this.connectionPool = connectionPool;
     }
+
+
+    private MapperInter newMapperInterInstance() {
+        String mapperImplementsClassName = CommonConst.MAPPER_IMPLEMENTS_CLASS_NAME;
+        MapperInter mapperInter = null;
+        try {
+            Class<?> aClass = Class.forName(mapperImplementsClassName);
+            mapperInter = (MapperInter) aClass.newInstance();
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
+            e.printStackTrace();
+        }
+        if (null == mapperInter) {
+            throw new RuntimeException("CLASS FOR_NAME IS NULL");
+        }
+        return mapperInter;
+    }
+
 
     /**
      * 添加数据
@@ -107,7 +125,7 @@ public class JdbcTemplateImpl {
                 }
             }
             resultSet = ps.executeQuery();
-            MapperInter mapperInter = new MapperImpl();
+            MapperInter mapperInter = newMapperInterInstance();
             while (resultSet.next()) {
                 Object o = mapperInter.mappingObj(resultSet, serializerType, clazz);
                 return (T) o;
@@ -149,7 +167,7 @@ public class JdbcTemplateImpl {
                 }
             }
             resultSet = ps.executeQuery();
-            MapperInter mapperInter = new MapperImpl();
+            MapperInter mapperInter = newMapperInterInstance();
             while (resultSet.next()) {
                 T t = (T) mapperInter.mappingObj(resultSet, serializerType, clazz);
                 list.add(t);

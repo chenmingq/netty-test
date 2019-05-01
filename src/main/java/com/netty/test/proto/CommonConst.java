@@ -33,5 +33,10 @@ public class CommonConst {
      */
     public static final String DB_SERVER_PROPERTIES = "db_server.properties";
 
+    /**
+     *  mapper 操作对象对象地址
+     */
+    public static final String MAPPER_IMPLEMENTS_CLASS_NAME = "com.netty.test.common.db.MapperImpl";
+
 
 }
