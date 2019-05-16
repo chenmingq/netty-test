@@ -1,6 +1,7 @@
 package com.netty.test.server;
 
 import com.google.protobuf.Descriptors;
+import com.google.protobuf.GeneratedMessageV3;
 import com.netty.test.pojo.proto.NettyTest;
 
 import java.util.HashMap;
@@ -18,7 +19,7 @@ public class ServerMessagePool {
     }
 
     private static Map<Integer, Descriptors.Descriptor> registerRequestMsgPoolMap = new HashMap<>();
-    private static Map<Integer, Descriptors.Descriptor> registerResponseMsgPoolMap = new HashMap<>();
+    private static Map<Integer, GeneratedMessageV3> registerResponseMsgPoolMap = new HashMap<>();
 
     /**
      * request消息注册
@@ -32,8 +33,8 @@ public class ServerMessagePool {
      * response消息注册
      */
     public void registerResponseMsgProto() {
-        registerResponseMsgPoolMap.put(NettyTest.MESSAGE_TYPE.RES_LOGIN_VALUE, NettyTest.ResLogin.getDescriptor());
-        registerResponseMsgPoolMap.put(NettyTest.MESSAGE_TYPE.RES_QUERY_TABLE_DATA_VALUE, NettyTest.ResQueryTableData.getDescriptor());
+        registerResponseMsgPoolMap.put(NettyTest.MESSAGE_TYPE.RES_LOGIN_VALUE, NettyTest.ResLogin.getDefaultInstance());
+        registerResponseMsgPoolMap.put(NettyTest.MESSAGE_TYPE.RES_QUERY_TABLE_DATA_VALUE, NettyTest.ResQueryTableData.getDefaultInstance());
     }
 
     /**
@@ -55,7 +56,7 @@ public class ServerMessagePool {
      * @param msgId
      * @return
      */
-    public Descriptors.Descriptor getResMsg(int msgId) {
+    public GeneratedMessageV3 getResMsg(int msgId) {
         if (!registerResponseMsgPoolMap.containsKey(msgId)) {
             return null;
         }
