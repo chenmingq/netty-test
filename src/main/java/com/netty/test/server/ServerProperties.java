@@ -1,5 +1,6 @@
 package com.netty.test.server;
 
+import com.netty.test.annotation.ScanMapping;
 import com.netty.test.proto.CommonConst;
 import com.netty.test.utils.ClassUtil;
 import com.netty.test.utils.LordPropertiesUtils;
@@ -35,15 +36,13 @@ public class ServerProperties {
     /**
      * 端口
      */
-    public static int PORT;
-
-
+    public static Integer PORT = null;
 
 
     /**
      * 初始化系统服务配置
      */
-    public void initSysProperties() {
+    public void initSysProperties(Class<?> clazz) {
         Properties properties = LordPropertiesUtils.lordProperties(CommonConst.PROPERTIES_NAME);
         if (null == properties) {
             LOG.error("{}", "初始化配置为空");
@@ -61,9 +60,6 @@ public class ServerProperties {
                 case "server.port":
                     PORT = Integer.parseInt(value);
                     break;
-                case "scan.mapping":
-                    ClassUtil.initReqMappingClazz(value);
-                    break;
                 case "serializer.impl.class":
                     CommonConst.SERIALIZER_IMPL_CLASS = value;
                     break;
@@ -71,7 +67,25 @@ public class ServerProperties {
                     break;
             }
         }
+        scanMapping(clazz);
         LOG.info("{}", "加载服务配置成功");
+    }
+
+    /**
+     * 扫描包路径
+     *
+     * @param clazz
+     */
+    private void scanMapping(Class<?> clazz) {
+        ScanMapping scanMapping = clazz.getAnnotation(ScanMapping.class);
+        String name;
+        if (null != scanMapping) {
+            name = scanMapping.name();
+        } else {
+            Package aPackage = clazz.getPackage();
+            name = aPackage.getName();
+        }
+        ClassUtil.initReqMappingClazz(name);
     }
 
 }

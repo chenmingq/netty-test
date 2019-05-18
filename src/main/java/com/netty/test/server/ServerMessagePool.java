@@ -1,7 +1,7 @@
 package com.netty.test.server;
 
 import com.google.protobuf.Descriptors;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.Message;
 import com.netty.test.pojo.proto.NettyTest;
 
 import java.util.HashMap;
@@ -19,7 +19,7 @@ public class ServerMessagePool {
     }
 
     private static Map<Integer, Descriptors.Descriptor> registerRequestMsgPoolMap = new HashMap<>();
-    private static Map<Integer, GeneratedMessageV3> registerResponseMsgPoolMap = new HashMap<>();
+    private static Map<Integer, Message> registerResponseMsgPoolMap = new HashMap<>();
 
     /**
      * request消息注册
@@ -56,7 +56,7 @@ public class ServerMessagePool {
      * @param msgId
      * @return
      */
-    public GeneratedMessageV3 getResMsg(int msgId) {
+    public Message getResMsg(int msgId) {
         if (!registerResponseMsgPoolMap.containsKey(msgId)) {
             return null;
         }

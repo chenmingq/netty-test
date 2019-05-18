@@ -1,6 +1,7 @@
 package com.netty.test.pojo.serializable;
 
 import com.alibaba.fastjson.JSON;
+import com.netty.test.ServerStart;
 import com.netty.test.pojo.proto.NettyTest;
 import com.netty.test.pojo.test.ListTest;
 import com.netty.test.pojo.test.Student;
@@ -51,9 +52,9 @@ public class ProtoBufUtilTest {
 
         NettyTest.ReqQueryTableData.Builder req = NettyTest.ReqQueryTableData.newBuilder();
         req.setId(111);
-        req.setTableName("test");
+        req.setTableName(jsonString);
 
-        ServerProperties.getInstance().initSysProperties();
+        ServerProperties.getInstance().initSysProperties(ServerStart.class);
         ServerMessagePool.getInstance().registerRequestMsgProto();
         ServerMessagePool.getInstance().registerResponseMsgProto();
         Message message = new Message();

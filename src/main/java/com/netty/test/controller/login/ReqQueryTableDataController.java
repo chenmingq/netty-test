@@ -13,14 +13,13 @@ public class ReqQueryTableDataController {
     @ReqMapping(id = NettyTest.MESSAGE_TYPE.REQ_QUERY_TABLE_DATA_VALUE)
     public void reqQuery(ReqTableData reqTableData, @ParamName(name = "id") Object id) {
 
-//        System.out.println(reqTableData);
-//        System.out.println(id);
+        System.out.printf("服务端收到消息 -> reqTableData=> %s id=> %s \n\r", reqTableData, id);
 
 
         int msgId = NettyTest.MESSAGE_TYPE.RES_QUERY_TABLE_DATA_VALUE;
         int moduleId = NettyTest.MESSAGE_TYPE.QUERY_TABLE_VALUE;
         ResTableData resTableData = new ResTableData();
-        resTableData.setTableData("你好");
+        resTableData.setTableData("欢迎来撩我啊 ^_^");
         resTableData.setCmdId(msgId);
         resTableData.setModuleId(moduleId);
         MessageProcessHelper.getInstance().responseExecute(resTableData);

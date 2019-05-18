@@ -1,10 +1,14 @@
 package com.netty.test.coder.msg;
 
-import com.google.protobuf.*;
-import com.netty.test.pojo.proto.NettyTest;
+import com.google.protobuf.Descriptors;
+import com.google.protobuf.DynamicMessage;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Message;
 import com.netty.test.proto.BaseMsg;
+import com.netty.test.proto.CommonConst;
 import com.netty.test.server.ServerMessagePool;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,21 +37,37 @@ public class ProtobufCoderImpl implements MsgCoder {
 
     @Override
     public void prossonResponse(BaseMsg message) {
-        GeneratedMessageV3 resMsg = ServerMessagePool.getInstance().getResMsg(message.getCmdId());
+        Message resMsg = ServerMessagePool.getInstance().getResMsg(message.getCmdId());
         if (null == resMsg) {
             return;
         }
-        Message.Builder builder1 = resMsg.toBuilder();
-        Descriptors.Descriptor descriptorForType = builder1.getDescriptorForType();
-        System.out.println(descriptorForType);
-        Map<Descriptors.FieldDescriptor, Object> allFields = builder1.getAllFields();
-        System.out.println(allFields);
+        Message.Builder msgBuilder = resMsg.toBuilder();
+        Descriptors.Descriptor descriptorForType = msgBuilder.getDescriptorForType();
 
-        System.out.println(resMsg);
+        Class<? extends BaseMsg> messageClass = message.getClass();
+        Field[] declaredFields = messageClass.getDeclaredFields();
+        for (Field declaredField : declaredFields) {
+            String name = declaredField.getName();
+            Descriptors.FieldDescriptor fieldByName = descriptorForType.findFieldByName(name);
+            if (null == fieldByName) {
+                continue;
+            }
+            declaredField.setAccessible(true);
+            try {
+                Object msgValue = declaredField.get(message);
+                msgBuilder.setField(fieldByName, msgValue);
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        byte[] bytes = msgBuilder.build().toByteArray();
 
-        NettyTest.ResQueryTableData.Builder builder = NettyTest.ResQueryTableData.newBuilder();
-        builder.setTableData("zhangsan");
-        System.out.println(builder);
+        com.netty.test.proto.Message msg = new com.netty.test.proto.Message();
+        msg.setCmdId(message.getCmdId());
+        msg.setModuleId(message.getModuleId());
+        msg.setBody(bytes);
+        msg.setMagic(CommonConst.MAGIC_CODE);
 
+        // todo 发送消息 xxx.sendMsg(key,msg);
     }
 }
